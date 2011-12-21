@@ -74,18 +74,6 @@ public class Game extends Canvas implements Runnable {
 		{
 			menu = null;
 			levels[i].load("saves/level" + i + ".dat");
-			level = levels[currentLevel];
-			player = new Player(this, input);
-			player.findStartPos(level);
-			if (player.findStartPos(level)) {
-				level.add(player);
-				for (int i = 0; i < 5; i++) {
-				levels[i].trySpawn(5000);
-			}
-		}
-		for (int i = 0; i < 5; i++) {
-			levels[i].trySpawn(5000);
-		}
 		}
 		player.load("saves/player.data");
 		System.out.println("Loaded!");
