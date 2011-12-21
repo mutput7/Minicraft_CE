@@ -1,0 +1,863 @@
+	Session.vim	/^nnoremap <silent>  :call CommentLine()$/;"	m
+	Session.vim	/^onoremap <silent>  :call CommentLine()$/;"	m
+	Session.vim	/^vnoremap <silent>  :call RangeCommentLine()$/;"	m
+	Session.vim	/^map  :NERDTreeToggle$/;"	m
+	Session.vim	/^map  :call ToggleHex()$/;"	m
+		Session.vim	/^imap 	 =Smart_TabComplete()$/;"	m
+	Session.vim	/^nnoremap   za$/;"	m
+	Session.vim	/^map <silent>  :se invhlsearch$/;"	m
+	Session.vim	/^inoremap  u$/;"	m
+	Session.vim	/^nnoremap <silent>  :call UnCommentLine()$/;"	m
+	Session.vim	/^onoremap <silent>  :call UnCommentLine()$/;"	m
+	Session.vim	/^vnoremap <silent>  :call RangeUnCommentLine()$/;"	m
+	Session.vim	/^map  :tab split$/;"	m
+!	Session.vim	/^map ! :w$/;"	m
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+,b	Session.vim	/^nmap <silent> ,b :CommandTBuffer$/;"	m
+,c	Session.vim	/^map ,c :call OpenCFiles()$/;"	m
+,e	Session.vim	/^map ,e :tabe .\/$/;"	m
+,t	Session.vim	/^nmap <silent> ,t :CommandT$/;"	m
+<F11>	Session.vim	/^imap <F11> 1G=Ga$/;"	m
+<F11>	Session.vim	/^nmap <F11> 1G=G$/;"	m
+<F12>	Session.vim	/^map <silent> <F12> :wa$/;"	m
+<F2>	Session.vim	/^map <F2> :set spell!$/;"	m
+<F3>	Session.vim	/^map <F3> :mksession!$/;"	m
+<F4>	Session.vim	/^map <F4> :Lodgeit$/;"	m
+<F8>	Session.vim	/^map <F8> :Tlist$/;"	m
+<Plug>NetrwBrowseX	Session.vim	/^nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)$/;"	m
+AboutMenu	com/mojang/ld22/screen/AboutMenu.java	/^	public AboutMenu(Menu parent) {$/;"	m	class:AboutMenu
+AboutMenu	com/mojang/ld22/screen/AboutMenu.java	/^public class AboutMenu extends Menu {$/;"	c
+AirWizard	com/mojang/ld22/entity/AirWizard.java	/^	public AirWizard() {$/;"	m	class:AirWizard
+AirWizard	com/mojang/ld22/entity/AirWizard.java	/^public class AirWizard extends Mob {$/;"	c
+Anvil	com/mojang/ld22/entity/Anvil.java	/^	public Anvil() {$/;"	m	class:Anvil
+Anvil	com/mojang/ld22/entity/Anvil.java	/^public class Anvil extends Furniture {$/;"	c
+BIT_MIRROR_X	com/mojang/ld22/gfx/Screen.java	/^	public static final int BIT_MIRROR_X = 0x01;$/;"	f	class:Screen
+BIT_MIRROR_Y	com/mojang/ld22/gfx/Screen.java	/^	public static final int BIT_MIRROR_Y = 0x02;$/;"	f	class:Screen
+CactusTile	com/mojang/ld22/level/tile/CactusTile.java	/^	public CactusTile(int id) {$/;"	m	class:CactusTile
+CactusTile	com/mojang/ld22/level/tile/CactusTile.java	/^public class CactusTile extends Tile {$/;"	c
+Chest	com/mojang/ld22/entity/Chest.java	/^	public Chest() {$/;"	m	class:Chest
+Chest	com/mojang/ld22/entity/Chest.java	/^public class Chest extends Furniture {$/;"	c
+CloudCactusTile	com/mojang/ld22/level/tile/CloudCactusTile.java	/^	public CloudCactusTile(int id) {$/;"	m	class:CloudCactusTile
+CloudCactusTile	com/mojang/ld22/level/tile/CloudCactusTile.java	/^public class CloudCactusTile extends Tile {$/;"	c
+CloudTile	com/mojang/ld22/level/tile/CloudTile.java	/^	public CloudTile(int id) {$/;"	m	class:CloudTile
+CloudTile	com/mojang/ld22/level/tile/CloudTile.java	/^public class CloudTile extends Tile {$/;"	c
+Color	com/mojang/ld22/gfx/Color.java	/^public class Color {$/;"	c
+ContainerMenu	com/mojang/ld22/screen/ContainerMenu.java	/^	public ContainerMenu(Player player, String title, Inventory container) {$/;"	m	class:ContainerMenu
+ContainerMenu	com/mojang/ld22/screen/ContainerMenu.java	/^public class ContainerMenu extends Menu {$/;"	c
+Crafting	com/mojang/ld22/crafting/Crafting.java	/^public class Crafting {$/;"	c
+CraftingMenu	com/mojang/ld22/screen/CraftingMenu.java	/^	public CraftingMenu(List<Recipe> recipes, Player player) {$/;"	m	class:CraftingMenu
+CraftingMenu	com/mojang/ld22/screen/CraftingMenu.java	/^public class CraftingMenu extends Menu {$/;"	c
+DeadMenu	com/mojang/ld22/screen/DeadMenu.java	/^	public DeadMenu() {$/;"	m	class:DeadMenu
+DeadMenu	com/mojang/ld22/screen/DeadMenu.java	/^public class DeadMenu extends Menu {$/;"	c
+DirtTile	com/mojang/ld22/level/tile/DirtTile.java	/^	public DirtTile(int id) {$/;"	m	class:DirtTile
+DirtTile	com/mojang/ld22/level/tile/DirtTile.java	/^public class DirtTile extends Tile {$/;"	c
+Entity	com/mojang/ld22/entity/Entity.java	/^public class Entity {$/;"	c
+FarmTile	com/mojang/ld22/level/tile/FarmTile.java	/^	public FarmTile(int id) {$/;"	m	class:FarmTile
+FarmTile	com/mojang/ld22/level/tile/FarmTile.java	/^public class FarmTile extends Tile {$/;"	c
+FlowerTile	com/mojang/ld22/level/tile/FlowerTile.java	/^	public FlowerTile(int id) {$/;"	m	class:FlowerTile
+FlowerTile	com/mojang/ld22/level/tile/FlowerTile.java	/^public class FlowerTile extends GrassTile {$/;"	c
+Font	com/mojang/ld22/gfx/Font.java	/^public class Font {$/;"	c
+FoodResource	com/mojang/ld22/item/resource/FoodResource.java	/^	public FoodResource(String name, int sprite, int color, int heal, int staminaCost) {$/;"	m	class:FoodResource
+FoodResource	com/mojang/ld22/item/resource/FoodResource.java	/^public class FoodResource extends Resource {$/;"	c
+Furnace	com/mojang/ld22/entity/Furnace.java	/^	public Furnace() {$/;"	m	class:Furnace
+Furnace	com/mojang/ld22/entity/Furnace.java	/^public class Furnace extends Furniture {$/;"	c
+Furniture	com/mojang/ld22/entity/Furniture.java	/^	public Furniture(String name) {$/;"	m	class:Furniture
+Furniture	com/mojang/ld22/entity/Furniture.java	/^public class Furniture extends Entity {$/;"	c
+FurnitureItem	com/mojang/ld22/item/FurnitureItem.java	/^	public FurnitureItem(Furniture furniture) {$/;"	m	class:FurnitureItem
+FurnitureItem	com/mojang/ld22/item/FurnitureItem.java	/^public class FurnitureItem extends Item {$/;"	c
+FurnitureRecipe	com/mojang/ld22/crafting/FurnitureRecipe.java	/^	public FurnitureRecipe(Class<? extends Furniture> clazz) throws InstantiationException, IllegalAccessException {$/;"	m	class:FurnitureRecipe
+FurnitureRecipe	com/mojang/ld22/crafting/FurnitureRecipe.java	/^public class FurnitureRecipe extends Recipe {$/;"	c
+Game	com/mojang/ld22/Game.java	/^public class Game extends Canvas implements Runnable {$/;"	c
+GameApplet	com/mojang/ld22/GameApplet.java	/^public class GameApplet extends Applet {$/;"	c
+GrassTile	com/mojang/ld22/level/tile/GrassTile.java	/^	public GrassTile(int id) {$/;"	m	class:GrassTile
+GrassTile	com/mojang/ld22/level/tile/GrassTile.java	/^public class GrassTile extends Tile {$/;"	c
+HEIGHT	com/mojang/ld22/Game.java	/^	public static final int HEIGHT = 120;$/;"	f	class:Game
+HardRockTile	com/mojang/ld22/level/tile/HardRockTile.java	/^	public HardRockTile(int id) {$/;"	m	class:HardRockTile
+HardRockTile	com/mojang/ld22/level/tile/HardRockTile.java	/^public class HardRockTile extends Tile {$/;"	c
+HoleTile	com/mojang/ld22/level/tile/HoleTile.java	/^	public HoleTile(int id) {$/;"	m	class:HoleTile
+HoleTile	com/mojang/ld22/level/tile/HoleTile.java	/^public class HoleTile extends Tile {$/;"	c
+InfiniteFallTile	com/mojang/ld22/level/tile/InfiniteFallTile.java	/^	public InfiniteFallTile(int id) {$/;"	m	class:InfiniteFallTile
+InfiniteFallTile	com/mojang/ld22/level/tile/InfiniteFallTile.java	/^public class InfiniteFallTile extends Tile {$/;"	c
+InputHandler	com/mojang/ld22/InputHandler.java	/^	public InputHandler(Game game) {$/;"	m	class:InputHandler
+InputHandler	com/mojang/ld22/InputHandler.java	/^public class InputHandler implements KeyListener {$/;"	c
+InstructionsMenu	com/mojang/ld22/screen/InstructionsMenu.java	/^	public InstructionsMenu(Menu parent) {$/;"	m	class:InstructionsMenu
+InstructionsMenu	com/mojang/ld22/screen/InstructionsMenu.java	/^public class InstructionsMenu extends Menu {$/;"	c
+Inventory	com/mojang/ld22/entity/Inventory.java	/^public class Inventory {$/;"	c
+InventoryMenu	com/mojang/ld22/screen/InventoryMenu.java	/^	public InventoryMenu(Player player) {$/;"	m	class:InventoryMenu
+InventoryMenu	com/mojang/ld22/screen/InventoryMenu.java	/^public class InventoryMenu extends Menu {$/;"	c
+Item	com/mojang/ld22/item/Item.java	/^public class Item implements ListItem {$/;"	c
+ItemEntity	com/mojang/ld22/entity/ItemEntity.java	/^	public ItemEntity(Item item, int x, int y) {$/;"	m	class:ItemEntity
+ItemEntity	com/mojang/ld22/entity/ItemEntity.java	/^public class ItemEntity extends Entity {$/;"	c
+Key	com/mojang/ld22/InputHandler.java	/^		public Key() {$/;"	m	class:InputHandler.Key
+Key	com/mojang/ld22/InputHandler.java	/^	public class Key {$/;"	c	class:InputHandler
+LEVEL_COLORS	com/mojang/ld22/item/ToolItem.java	/^	public static final int[] LEVEL_COLORS = {\/\/$/;"	f	class:ToolItem
+LEVEL_NAMES	com/mojang/ld22/item/ToolItem.java	/^	public static final String[] LEVEL_NAMES = { \/\/$/;"	f	class:ToolItem
+Lantern	com/mojang/ld22/entity/Lantern.java	/^	public Lantern() {$/;"	m	class:Lantern
+Lantern	com/mojang/ld22/entity/Lantern.java	/^public class Lantern extends Furniture {$/;"	c
+LavaTile	com/mojang/ld22/level/tile/LavaTile.java	/^	public LavaTile(int id) {$/;"	m	class:LavaTile
+LavaTile	com/mojang/ld22/level/tile/LavaTile.java	/^public class LavaTile extends Tile {$/;"	c
+Level	com/mojang/ld22/level/Level.java	/^	public Level(int w, int h, int level, Level parentLevel) {$/;"	m	class:Level
+Level	com/mojang/ld22/level/Level.java	/^public class Level {$/;"	c
+LevelGen	com/mojang/ld22/level/levelgen/LevelGen.java	/^	public LevelGen(int w, int h, int featureSize) {$/;"	m	class:LevelGen
+LevelGen	com/mojang/ld22/level/levelgen/LevelGen.java	/^public class LevelGen {$/;"	c
+LevelTransitionMenu	com/mojang/ld22/screen/LevelTransitionMenu.java	/^	public LevelTransitionMenu(int dir) {$/;"	m	class:LevelTransitionMenu
+LevelTransitionMenu	com/mojang/ld22/screen/LevelTransitionMenu.java	/^public class LevelTransitionMenu extends Menu {$/;"	c
+ListItem	com/mojang/ld22/screen/ListItem.java	/^public interface ListItem {$/;"	i
+MAX_LEVEL	com/mojang/ld22/item/ToolItem.java	/^	public static final int MAX_LEVEL = 5;$/;"	f	class:ToolItem
+Menu	com/mojang/ld22/screen/Menu.java	/^public class Menu {$/;"	c
+Mob	com/mojang/ld22/entity/Mob.java	/^	public Mob() {$/;"	m	class:Mob
+Mob	com/mojang/ld22/entity/Mob.java	/^public class Mob extends Entity {$/;"	c
+NAME	com/mojang/ld22/Game.java	/^	public static final String NAME = "Minicraft";$/;"	f	class:Game
+OreTile	com/mojang/ld22/level/tile/OreTile.java	/^	public OreTile(int id, Resource toDrop) {$/;"	m	class:OreTile
+OreTile	com/mojang/ld22/level/tile/OreTile.java	/^public class OreTile extends Tile {$/;"	c
+Oven	com/mojang/ld22/entity/Oven.java	/^	public Oven() {$/;"	m	class:Oven
+Oven	com/mojang/ld22/entity/Oven.java	/^public class Oven extends Furniture {$/;"	c
+Particle	com/mojang/ld22/entity/particle/Particle.java	/^	public Particle() {$/;"	m	class:Particle
+Particle	com/mojang/ld22/entity/particle/Particle.java	/^public class Particle extends Entity {$/;"	c
+PlantableResource	com/mojang/ld22/item/resource/PlantableResource.java	/^	public PlantableResource(String name, int sprite, int color, Tile targetTile, List<Tile> sourceTiles) {$/;"	m	class:PlantableResource
+PlantableResource	com/mojang/ld22/item/resource/PlantableResource.java	/^	public PlantableResource(String name, int sprite, int color, Tile targetTile, Tile... sourceTiles1) {$/;"	m	class:PlantableResource
+PlantableResource	com/mojang/ld22/item/resource/PlantableResource.java	/^public class PlantableResource extends Resource {$/;"	c
+Player	com/mojang/ld22/entity/Player.java	/^	public Player(Game game, InputHandler input) {$/;"	m	class:Player
+Player	com/mojang/ld22/entity/Player.java	/^public class Player extends Mob {$/;"	c
+PowerGloveItem	com/mojang/ld22/item/PowerGloveItem.java	/^public class PowerGloveItem extends Item {$/;"	c
+Recipe	com/mojang/ld22/crafting/Recipe.java	/^	public Recipe(Item resultTemplate) {$/;"	m	class:Recipe
+Recipe	com/mojang/ld22/crafting/Recipe.java	/^public abstract class Recipe implements ListItem {$/;"	c
+Resource	com/mojang/ld22/item/resource/Resource.java	/^	public Resource(String name, int sprite, int color) {$/;"	m	class:Resource
+Resource	com/mojang/ld22/item/resource/Resource.java	/^public class Resource {$/;"	c
+ResourceItem	com/mojang/ld22/item/ResourceItem.java	/^	public ResourceItem(Resource resource) {$/;"	m	class:ResourceItem
+ResourceItem	com/mojang/ld22/item/ResourceItem.java	/^	public ResourceItem(Resource resource, int count) {$/;"	m	class:ResourceItem
+ResourceItem	com/mojang/ld22/item/ResourceItem.java	/^public class ResourceItem extends Item {$/;"	c
+ResourceRecipe	com/mojang/ld22/crafting/ResourceRecipe.java	/^	public ResourceRecipe(Resource resource) {$/;"	m	class:ResourceRecipe
+ResourceRecipe	com/mojang/ld22/crafting/ResourceRecipe.java	/^public class ResourceRecipe extends Recipe {$/;"	c
+RockTile	com/mojang/ld22/level/tile/RockTile.java	/^	public RockTile(int id) {$/;"	m	class:RockTile
+RockTile	com/mojang/ld22/level/tile/RockTile.java	/^public class RockTile extends Tile {$/;"	c
+SCALE	com/mojang/ld22/Game.java	/^	private static final int SCALE = 3;$/;"	f	class:Game	file:
+SandTile	com/mojang/ld22/level/tile/SandTile.java	/^	public SandTile(int id) {$/;"	m	class:SandTile
+SandTile	com/mojang/ld22/level/tile/SandTile.java	/^public class SandTile extends Tile {$/;"	c
+SaplingTile	com/mojang/ld22/level/tile/SaplingTile.java	/^	public SaplingTile(int id, Tile onType, Tile growsTo) {$/;"	m	class:SaplingTile
+SaplingTile	com/mojang/ld22/level/tile/SaplingTile.java	/^public class SaplingTile extends Tile {$/;"	c
+Screen	com/mojang/ld22/gfx/Screen.java	/^	public Screen(int w, int h, SpriteSheet sheet) {$/;"	m	class:Screen
+Screen	com/mojang/ld22/gfx/Screen.java	/^public class Screen {$/;"	c
+SessionLoad	Session.vim	/^let SessionLoad = 1$/;"	v
+Slime	com/mojang/ld22/entity/Slime.java	/^	public Slime(int lvl) {$/;"	m	class:Slime
+Slime	com/mojang/ld22/entity/Slime.java	/^public class Slime extends Mob {$/;"	c
+SmashParticle	com/mojang/ld22/entity/particle/SmashParticle.java	/^	public SmashParticle(int x, int y) {$/;"	m	class:SmashParticle
+SmashParticle	com/mojang/ld22/entity/particle/SmashParticle.java	/^public class SmashParticle extends Entity {$/;"	c
+Sound	com/mojang/ld22/sound/Sound.java	/^	private Sound(String name) {$/;"	m	class:Sound	file:
+Sound	com/mojang/ld22/sound/Sound.java	/^public class Sound {$/;"	c
+Spark	com/mojang/ld22/entity/Spark.java	/^	public Spark(AirWizard owner, double xa, double ya) {$/;"	m	class:Spark
+Spark	com/mojang/ld22/entity/Spark.java	/^public class Spark extends Entity {$/;"	c
+Sprite	com/mojang/ld22/gfx/Sprite.java	/^	public Sprite(int x, int y, int img, int col, int bits) {$/;"	m	class:Sprite
+Sprite	com/mojang/ld22/gfx/Sprite.java	/^public class Sprite {$/;"	c
+SpriteSheet	com/mojang/ld22/gfx/SpriteSheet.java	/^	public SpriteSheet(BufferedImage image) {$/;"	m	class:SpriteSheet
+SpriteSheet	com/mojang/ld22/gfx/SpriteSheet.java	/^public class SpriteSheet {$/;"	c
+StairsTile	com/mojang/ld22/level/tile/StairsTile.java	/^	public StairsTile(int id, boolean leadsUp) {$/;"	m	class:StairsTile
+StairsTile	com/mojang/ld22/level/tile/StairsTile.java	/^public class StairsTile extends Tile {$/;"	c
+StoneTile	com/mojang/ld22/level/tile/StoneTile.java	/^	public StoneTile(int id) {$/;"	m	class:StoneTile
+StoneTile	com/mojang/ld22/level/tile/StoneTile.java	/^public class StoneTile extends Tile {$/;"	c
+TextParticle	com/mojang/ld22/entity/particle/TextParticle.java	/^	public TextParticle(String msg, int x, int y, int col) {$/;"	m	class:TextParticle
+TextParticle	com/mojang/ld22/entity/particle/TextParticle.java	/^public class TextParticle extends Entity {$/;"	c
+Tile	com/mojang/ld22/level/tile/Tile.java	/^	public Tile(int id) {$/;"	m	class:Tile
+Tile	com/mojang/ld22/level/tile/Tile.java	/^public class Tile {$/;"	c
+TitleMenu	com/mojang/ld22/screen/TitleMenu.java	/^	public TitleMenu() {$/;"	m	class:TitleMenu
+TitleMenu	com/mojang/ld22/screen/TitleMenu.java	/^public class TitleMenu extends Menu {$/;"	c
+ToolItem	com/mojang/ld22/item/ToolItem.java	/^	public ToolItem(ToolType type, int level) {$/;"	m	class:ToolItem
+ToolItem	com/mojang/ld22/item/ToolItem.java	/^public class ToolItem extends Item {$/;"	c
+ToolRecipe	com/mojang/ld22/crafting/ToolRecipe.java	/^	public ToolRecipe(ToolType type, int level) {$/;"	m	class:ToolRecipe
+ToolRecipe	com/mojang/ld22/crafting/ToolRecipe.java	/^public class ToolRecipe extends Recipe {$/;"	c
+ToolType	com/mojang/ld22/item/ToolType.java	/^	private ToolType(String name, int sprite) {$/;"	m	class:ToolType	file:
+ToolType	com/mojang/ld22/item/ToolType.java	/^public class ToolType {$/;"	c
+TreeTile	com/mojang/ld22/level/tile/TreeTile.java	/^	public TreeTile(int id) {$/;"	m	class:TreeTile
+TreeTile	com/mojang/ld22/level/tile/TreeTile.java	/^public class TreeTile extends Tile {$/;"	c
+WIDTH	com/mojang/ld22/Game.java	/^	public static final int WIDTH = 160;$/;"	f	class:Game
+WaterTile	com/mojang/ld22/level/tile/WaterTile.java	/^	public WaterTile(int id) {$/;"	m	class:WaterTile
+WaterTile	com/mojang/ld22/level/tile/WaterTile.java	/^public class WaterTile extends Tile {$/;"	c
+WheatTile	com/mojang/ld22/level/tile/WheatTile.java	/^	public WheatTile(int id) {$/;"	m	class:WheatTile
+WheatTile	com/mojang/ld22/level/tile/WheatTile.java	/^public class WheatTile extends Tile {$/;"	c
+WonMenu	com/mojang/ld22/screen/WonMenu.java	/^	public WonMenu() {$/;"	m	class:WonMenu
+WonMenu	com/mojang/ld22/screen/WonMenu.java	/^public class WonMenu extends Menu {$/;"	c
+Workbench	com/mojang/ld22/entity/Workbench.java	/^	public Workbench() {$/;"	m	class:Workbench
+Workbench	com/mojang/ld22/entity/Workbench.java	/^public class Workbench extends Furniture {$/;"	c
+Zombie	com/mojang/ld22/entity/Zombie.java	/^	public Zombie(int lvl) {$/;"	m	class:Zombie
+Zombie	com/mojang/ld22/entity/Zombie.java	/^public class Zombie extends Mob {$/;"	c
+absorbs	com/mojang/ld22/InputHandler.java	/^		public int presses, absorbs;$/;"	f	class:InputHandler.Key
+acorn	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource acorn = new PlantableResource("Acorn", 3 + 4 * 32, Color.get(-1, 100, 531, 320), Tile.treeSapling, Tile.grass);$/;"	f	class:Resource
+activeItem	com/mojang/ld22/entity/Player.java	/^	public Item activeItem;$/;"	f	class:Player
+add	com/mojang/ld22/entity/Inventory.java	/^	public void add(Item item) {$/;"	m	class:Inventory
+add	com/mojang/ld22/entity/Inventory.java	/^	public void add(int slot, Item item) {$/;"	m	class:Inventory
+add	com/mojang/ld22/level/Level.java	/^	public void add(Entity entity) {$/;"	m	class:Level
+addCost	com/mojang/ld22/crafting/Recipe.java	/^	public Recipe addCost(Resource resource, int count) {$/;"	m	class:Recipe
+anvilRecipes	com/mojang/ld22/crafting/Crafting.java	/^	public static final List<Recipe> anvilRecipes = new ArrayList<Recipe>();$/;"	f	class:Crafting
+apple	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource apple = new FoodResource("Apple", 9 + 4 * 32, Color.get(-1, 100, 300, 500), 1, 5);$/;"	f	class:Resource
+attack	com/mojang/ld22/InputHandler.java	/^	public Key attack = new Key();$/;"	f	class:InputHandler
+attack	com/mojang/ld22/entity/Player.java	/^	private void attack() {$/;"	m	class:Player	file:
+attackDelay	com/mojang/ld22/entity/AirWizard.java	/^	private int attackDelay = 0;$/;"	f	class:AirWizard	file:
+attackDir	com/mojang/ld22/entity/Player.java	/^	private int attackTime, attackDir;$/;"	f	class:Player	file:
+attackItem	com/mojang/ld22/entity/Player.java	/^	public Item attackItem;$/;"	f	class:Player
+attackTime	com/mojang/ld22/entity/AirWizard.java	/^	private int attackTime = 0;$/;"	f	class:AirWizard	file:
+attackTime	com/mojang/ld22/entity/Player.java	/^	private int attackTime, attackDir;$/;"	f	class:Player	file:
+attackType	com/mojang/ld22/entity/AirWizard.java	/^	private int attackType = 0;$/;"	f	class:AirWizard	file:
+axe	com/mojang/ld22/item/ToolType.java	/^	public static ToolType axe = new ToolType("Axe", 4);$/;"	f	class:ToolType
+bits	com/mojang/ld22/gfx/Sprite.java	/^	public int bits;$/;"	f	class:Sprite
+blocks	com/mojang/ld22/entity/Entity.java	/^	public boolean blocks(Entity e) {$/;"	m	class:Entity
+blocks	com/mojang/ld22/entity/Furniture.java	/^	public boolean blocks(Entity e) {$/;"	m	class:Furniture
+blocks	com/mojang/ld22/entity/Mob.java	/^	public boolean blocks(Entity e) {$/;"	m	class:Mob
+bossdeath	com/mojang/ld22/sound/Sound.java	/^	public static final Sound bossdeath = new Sound("\/bossdeath.wav");$/;"	f	class:Sound
+bread	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource bread = new FoodResource("Bread", 8 + 4 * 32, Color.get(-1, 110, 330, 550), 2, 5);$/;"	f	class:Resource
+bumpedInto	com/mojang/ld22/level/tile/CactusTile.java	/^	public void bumpedInto(Level level, int x, int y, Entity entity) {$/;"	m	class:CactusTile
+bumpedInto	com/mojang/ld22/level/tile/CloudCactusTile.java	/^	public void bumpedInto(Level level, int x, int y, Entity entity) {$/;"	m	class:CloudCactusTile
+bumpedInto	com/mojang/ld22/level/tile/OreTile.java	/^	public void bumpedInto(Level level, int x, int y, Entity entity) {$/;"	m	class:OreTile
+bumpedInto	com/mojang/ld22/level/tile/Tile.java	/^	public void bumpedInto(Level level, int xt, int yt, Entity entity) {$/;"	m	class:Tile
+cactus	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile cactus = new CactusTile(7);$/;"	f	class:Tile
+cactusFlower	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource cactusFlower = new PlantableResource("Cactus", 4 + 4 * 32, Color.get(-1, 10, 40, 50), Tile.cactusSapling, Tile.sand);$/;"	f	class:Resource
+cactusSapling	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile cactusSapling = new SaplingTile(10, sand, cactus);$/;"	f	class:Tile
+canAttack	com/mojang/ld22/item/FurnitureItem.java	/^	public boolean canAttack() {$/;"	m	class:FurnitureItem
+canAttack	com/mojang/ld22/item/Item.java	/^	public boolean canAttack() {$/;"	m	class:Item
+canAttack	com/mojang/ld22/item/ToolItem.java	/^	public boolean canAttack() {$/;"	m	class:ToolItem
+canCraft	com/mojang/ld22/crafting/Recipe.java	/^	public boolean canCraft = false;$/;"	f	class:Recipe
+canSwim	com/mojang/ld22/entity/Entity.java	/^	public boolean canSwim() {$/;"	m	class:Entity
+canSwim	com/mojang/ld22/entity/Player.java	/^	public boolean canSwim() {$/;"	m	class:Player
+changeLevel	com/mojang/ld22/Game.java	/^	public void changeLevel(int dir) {$/;"	m	class:Game
+changeLevel	com/mojang/ld22/entity/Player.java	/^	public void changeLevel(int dir) {$/;"	m	class:Player
+chars	com/mojang/ld22/gfx/Font.java	/^	private static String chars = "" + \/\/$/;"	f	class:Font	file:
+checkCanCraft	com/mojang/ld22/crafting/Recipe.java	/^	public void checkCanCraft(Player player) {$/;"	m	class:Recipe
+clazz	com/mojang/ld22/crafting/FurnitureRecipe.java	/^	private Class<? extends Furniture> clazz;$/;"	f	class:FurnitureRecipe	file:
+clear	com/mojang/ld22/gfx/Screen.java	/^	public void clear(int color) {$/;"	m	class:Screen
+clicked	com/mojang/ld22/InputHandler.java	/^		public boolean down, clicked;$/;"	f	class:InputHandler.Key
+clip	com/mojang/ld22/sound/Sound.java	/^	private AudioClip clip;$/;"	f	class:Sound	file:
+cloth	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource cloth = new Resource("cloth", 1 + 4 * 32, Color.get(-1, 25, 252, 141));$/;"	f	class:Resource
+cloud	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource cloud = new PlantableResource("cloud", 2 + 4 * 32, Color.get(-1, 222, 555, 444), Tile.cloud, Tile.infiniteFall);$/;"	f	class:Resource
+cloud	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile cloud = new CloudTile(17);$/;"	f	class:Tile
+cloudCactus	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile cloudCactus = new CloudCactusTile(22);$/;"	f	class:Tile
+coal	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource coal = new Resource("COAL", 10 + 4 * 32, Color.get(-1, 000, 111, 111));$/;"	f	class:Resource
+col	com/mojang/ld22/entity/Furniture.java	/^	public int col, sprite;$/;"	f	class:Furniture
+col	com/mojang/ld22/entity/particle/TextParticle.java	/^	private int col;$/;"	f	class:TextParticle	file:
+col	com/mojang/ld22/gfx/Sprite.java	/^	public int col;$/;"	f	class:Sprite
+color	com/mojang/ld22/item/resource/Resource.java	/^	public final int color;$/;"	f	class:Resource
+color	com/mojang/ld22/level/tile/OreTile.java	/^	private int color;$/;"	f	class:OreTile	file:
+colors	com/mojang/ld22/Game.java	/^	private int[] colors = new int[256];$/;"	f	class:Game	file:
+com.mojang.ld22	com/mojang/ld22/Game.java	/^package com.mojang.ld22;$/;"	p
+com.mojang.ld22	com/mojang/ld22/GameApplet.java	/^package com.mojang.ld22;$/;"	p
+com.mojang.ld22	com/mojang/ld22/InputHandler.java	/^package com.mojang.ld22;$/;"	p
+com.mojang.ld22.crafting	com/mojang/ld22/crafting/Crafting.java	/^package com.mojang.ld22.crafting;$/;"	p
+com.mojang.ld22.crafting	com/mojang/ld22/crafting/FurnitureRecipe.java	/^package com.mojang.ld22.crafting;$/;"	p
+com.mojang.ld22.crafting	com/mojang/ld22/crafting/Recipe.java	/^package com.mojang.ld22.crafting;$/;"	p
+com.mojang.ld22.crafting	com/mojang/ld22/crafting/ResourceRecipe.java	/^package com.mojang.ld22.crafting;$/;"	p
+com.mojang.ld22.crafting	com/mojang/ld22/crafting/ToolRecipe.java	/^package com.mojang.ld22.crafting;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/AirWizard.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Anvil.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Chest.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Entity.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Furnace.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Furniture.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Inventory.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/ItemEntity.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Lantern.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Mob.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Oven.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Player.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Slime.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Spark.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Workbench.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity	com/mojang/ld22/entity/Zombie.java	/^package com.mojang.ld22.entity;$/;"	p
+com.mojang.ld22.entity.particle	com/mojang/ld22/entity/particle/Particle.java	/^package com.mojang.ld22.entity.particle;$/;"	p
+com.mojang.ld22.entity.particle	com/mojang/ld22/entity/particle/SmashParticle.java	/^package com.mojang.ld22.entity.particle;$/;"	p
+com.mojang.ld22.entity.particle	com/mojang/ld22/entity/particle/TextParticle.java	/^package com.mojang.ld22.entity.particle;$/;"	p
+com.mojang.ld22.gfx	com/mojang/ld22/gfx/Color.java	/^package com.mojang.ld22.gfx;$/;"	p
+com.mojang.ld22.gfx	com/mojang/ld22/gfx/Font.java	/^package com.mojang.ld22.gfx;$/;"	p
+com.mojang.ld22.gfx	com/mojang/ld22/gfx/Screen.java	/^package com.mojang.ld22.gfx;$/;"	p
+com.mojang.ld22.gfx	com/mojang/ld22/gfx/Sprite.java	/^package com.mojang.ld22.gfx;$/;"	p
+com.mojang.ld22.gfx	com/mojang/ld22/gfx/SpriteSheet.java	/^package com.mojang.ld22.gfx;$/;"	p
+com.mojang.ld22.item	com/mojang/ld22/item/FurnitureItem.java	/^package com.mojang.ld22.item;$/;"	p
+com.mojang.ld22.item	com/mojang/ld22/item/Item.java	/^package com.mojang.ld22.item;$/;"	p
+com.mojang.ld22.item	com/mojang/ld22/item/PowerGloveItem.java	/^package com.mojang.ld22.item;$/;"	p
+com.mojang.ld22.item	com/mojang/ld22/item/ResourceItem.java	/^package com.mojang.ld22.item;$/;"	p
+com.mojang.ld22.item	com/mojang/ld22/item/ToolItem.java	/^package com.mojang.ld22.item;$/;"	p
+com.mojang.ld22.item	com/mojang/ld22/item/ToolType.java	/^package com.mojang.ld22.item;$/;"	p
+com.mojang.ld22.item.resource	com/mojang/ld22/item/resource/FoodResource.java	/^package com.mojang.ld22.item.resource;$/;"	p
+com.mojang.ld22.item.resource	com/mojang/ld22/item/resource/PlantableResource.java	/^package com.mojang.ld22.item.resource;$/;"	p
+com.mojang.ld22.item.resource	com/mojang/ld22/item/resource/Resource.java	/^package com.mojang.ld22.item.resource;$/;"	p
+com.mojang.ld22.level	com/mojang/ld22/level/Level.java	/^package com.mojang.ld22.level;$/;"	p
+com.mojang.ld22.level.levelgen	com/mojang/ld22/level/levelgen/LevelGen.java	/^package com.mojang.ld22.level.levelgen;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/CactusTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/CloudCactusTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/CloudTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/DirtTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/FarmTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/FlowerTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/GrassTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/HardRockTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/HoleTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/InfiniteFallTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/LavaTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/OreTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/RockTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/SandTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/SaplingTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/StairsTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/StoneTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/Tile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/TreeTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/WaterTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.level.tile	com/mojang/ld22/level/tile/WheatTile.java	/^package com.mojang.ld22.level.tile;$/;"	p
+com.mojang.ld22.screen	com/mojang/ld22/screen/AboutMenu.java	/^package com.mojang.ld22.screen;$/;"	p
+com.mojang.ld22.screen	com/mojang/ld22/screen/ContainerMenu.java	/^package com.mojang.ld22.screen;$/;"	p
+com.mojang.ld22.screen	com/mojang/ld22/screen/CraftingMenu.java	/^package com.mojang.ld22.screen;$/;"	p
+com.mojang.ld22.screen	com/mojang/ld22/screen/DeadMenu.java	/^package com.mojang.ld22.screen;$/;"	p
+com.mojang.ld22.screen	com/mojang/ld22/screen/InstructionsMenu.java	/^package com.mojang.ld22.screen;$/;"	p
+com.mojang.ld22.screen	com/mojang/ld22/screen/InventoryMenu.java	/^package com.mojang.ld22.screen;$/;"	p
+com.mojang.ld22.screen	com/mojang/ld22/screen/LevelTransitionMenu.java	/^package com.mojang.ld22.screen;$/;"	p
+com.mojang.ld22.screen	com/mojang/ld22/screen/ListItem.java	/^package com.mojang.ld22.screen;$/;"	p
+com.mojang.ld22.screen	com/mojang/ld22/screen/Menu.java	/^package com.mojang.ld22.screen;$/;"	p
+com.mojang.ld22.screen	com/mojang/ld22/screen/TitleMenu.java	/^package com.mojang.ld22.screen;$/;"	p
+com.mojang.ld22.screen	com/mojang/ld22/screen/WonMenu.java	/^package com.mojang.ld22.screen;$/;"	p
+com.mojang.ld22.sound	com/mojang/ld22/sound/Sound.java	/^package com.mojang.ld22.sound;$/;"	p
+connectsToGrass	com/mojang/ld22/level/tile/Tile.java	/^	public boolean connectsToGrass = false;$/;"	f	class:Tile
+connectsToLava	com/mojang/ld22/level/tile/Tile.java	/^	public boolean connectsToLava = false;$/;"	f	class:Tile
+connectsToLiquid	com/mojang/ld22/level/tile/Tile.java	/^	public boolean connectsToLiquid() {$/;"	m	class:Tile
+connectsToSand	com/mojang/ld22/level/tile/Tile.java	/^	public boolean connectsToSand = false;$/;"	f	class:Tile
+connectsToWater	com/mojang/ld22/level/tile/Tile.java	/^	public boolean connectsToWater = false;$/;"	f	class:Tile
+container	com/mojang/ld22/screen/ContainerMenu.java	/^	private Inventory container;$/;"	f	class:ContainerMenu	file:
+costs	com/mojang/ld22/crafting/Recipe.java	/^	public List<Item> costs = new ArrayList<Item>();$/;"	f	class:Recipe
+count	com/mojang/ld22/entity/Inventory.java	/^	public int count(Item item) {$/;"	m	class:Inventory
+count	com/mojang/ld22/item/ResourceItem.java	/^	public int count = 1;$/;"	f	class:ResourceItem
+craft	com/mojang/ld22/crafting/FurnitureRecipe.java	/^	public void craft(Player player) {$/;"	m	class:FurnitureRecipe
+craft	com/mojang/ld22/crafting/Recipe.java	/^	public abstract void craft(Player player);$/;"	m	class:Recipe
+craft	com/mojang/ld22/crafting/ResourceRecipe.java	/^	public void craft(Player player) {$/;"	m	class:ResourceRecipe
+craft	com/mojang/ld22/crafting/ToolRecipe.java	/^	public void craft(Player player) {$/;"	m	class:ToolRecipe
+craft	com/mojang/ld22/sound/Sound.java	/^	public static final Sound craft = new Sound("\/craft.wav");$/;"	f	class:Sound
+createAndValidateSkyMap	com/mojang/ld22/level/levelgen/LevelGen.java	/^	public static byte[][] createAndValidateSkyMap(int w, int h) {$/;"	m	class:LevelGen
+createAndValidateTopMap	com/mojang/ld22/level/levelgen/LevelGen.java	/^	public static byte[][] createAndValidateTopMap(int w, int h) {$/;"	m	class:LevelGen
+createAndValidateUndergroundMap	com/mojang/ld22/level/levelgen/LevelGen.java	/^	public static byte[][] createAndValidateUndergroundMap(int w, int h, int depth) {$/;"	m	class:LevelGen
+createSkyMap	com/mojang/ld22/level/levelgen/LevelGen.java	/^	private static byte[][] createSkyMap(int w, int h) {$/;"	m	class:LevelGen	file:
+createTopMap	com/mojang/ld22/level/levelgen/LevelGen.java	/^	private static byte[][] createTopMap(int w, int h) {$/;"	m	class:LevelGen	file:
+createUndergroundMap	com/mojang/ld22/level/levelgen/LevelGen.java	/^	private static byte[][] createUndergroundMap(int w, int h, int depth) {$/;"	m	class:LevelGen	file:
+currentLevel	com/mojang/ld22/Game.java	/^	private int currentLevel = 3;$/;"	f	class:Game	file:
+data	com/mojang/ld22/level/Level.java	/^	public byte[] data;$/;"	f	class:Level
+deductCost	com/mojang/ld22/crafting/Recipe.java	/^	public void deductCost(Player player) {$/;"	m	class:Recipe
+depth	com/mojang/ld22/level/Level.java	/^	private int depth;$/;"	f	class:Level	file:
+die	com/mojang/ld22/entity/AirWizard.java	/^	protected void die() {$/;"	m	class:AirWizard
+die	com/mojang/ld22/entity/Mob.java	/^	protected void die() {$/;"	m	class:Mob
+die	com/mojang/ld22/entity/Player.java	/^	protected void die() {$/;"	m	class:Player
+die	com/mojang/ld22/entity/Slime.java	/^	protected void die() {$/;"	m	class:Slime
+die	com/mojang/ld22/entity/Zombie.java	/^	protected void die() {$/;"	m	class:Zombie
+dir	com/mojang/ld22/entity/ItemEntity.java	/^	protected int dir = 0;$/;"	f	class:ItemEntity
+dir	com/mojang/ld22/entity/Mob.java	/^	protected int dir = 0;$/;"	f	class:Mob
+dir	com/mojang/ld22/screen/LevelTransitionMenu.java	/^	private int dir;$/;"	f	class:LevelTransitionMenu	file:
+dirt	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource dirt = new PlantableResource("Dirt", 2 + 4 * 32, Color.get(-1, 100, 322, 432), Tile.dirt, Tile.hole, Tile.water, Tile.lava);$/;"	f	class:Resource
+dirt	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile dirt = new DirtTile(5);$/;"	f	class:Tile
+dirtColor	com/mojang/ld22/level/Level.java	/^	public int dirtColor = 322;$/;"	f	class:Level
+dither	com/mojang/ld22/gfx/Screen.java	/^	private int[] dither = new int[] { 0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5, };$/;"	f	class:Screen	file:
+doHurt	com/mojang/ld22/entity/AirWizard.java	/^	protected void doHurt(int damage, int attackDir) {$/;"	m	class:AirWizard
+doHurt	com/mojang/ld22/entity/Mob.java	/^	protected void doHurt(int damage, int attackDir) {$/;"	m	class:Mob
+doHurt	com/mojang/ld22/entity/Player.java	/^	protected void doHurt(int damage, int attackDir) {$/;"	m	class:Player
+down	com/mojang/ld22/InputHandler.java	/^		public boolean down, clicked;$/;"	f	class:InputHandler.Key
+down	com/mojang/ld22/InputHandler.java	/^	public Key down = new Key();$/;"	f	class:InputHandler
+draw	com/mojang/ld22/gfx/Font.java	/^	public static void draw(String msg, Screen screen, int x, int y, int col) {$/;"	m	class:Font
+entities	com/mojang/ld22/level/Level.java	/^	public List<Entity> entities = new ArrayList<Entity>();$/;"	f	class:Level
+entitiesInTiles	com/mojang/ld22/level/Level.java	/^	public List<Entity>[] entitiesInTiles;$/;"	f	class:Level
+experience	com/mojang/ld22/entity/Mob.java	/^	public int experience = 0;$/;"	f	class:Mob
+farmland	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile farmland = new FarmTile(11);$/;"	f	class:Tile
+findResource	com/mojang/ld22/entity/Inventory.java	/^	private ResourceItem findResource(Resource resource) {$/;"	m	class:Inventory	file:
+findStartPos	com/mojang/ld22/entity/Mob.java	/^	public boolean findStartPos(Level level) {$/;"	m	class:Mob
+findStartPos	com/mojang/ld22/entity/Player.java	/^	public boolean findStartPos(Level level) {$/;"	m	class:Player
+flower	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource flower = new PlantableResource("Flower", 0 + 4 * 32, Color.get(-1, 10, 444, 330), Tile.flower, Tile.grass);$/;"	f	class:Resource
+flower	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile flower = new FlowerTile(3);$/;"	f	class:Tile
+furnaceRecipes	com/mojang/ld22/crafting/Crafting.java	/^	public static final List<Recipe> furnaceRecipes = new ArrayList<Recipe>();$/;"	f	class:Crafting
+furniture	com/mojang/ld22/item/FurnitureItem.java	/^	public Furniture furniture;$/;"	f	class:FurnitureItem
+game	com/mojang/ld22/GameApplet.java	/^	private Game game = new Game();$/;"	f	class:GameApplet	file:
+game	com/mojang/ld22/entity/Player.java	/^	public Game game;$/;"	f	class:Player
+game	com/mojang/ld22/screen/Menu.java	/^	protected Game game;$/;"	f	class:Menu
+gameTime	com/mojang/ld22/Game.java	/^	public int gameTime = 0;$/;"	f	class:Game
+gameWon	com/mojang/ld22/entity/Player.java	/^	public void gameWon() {$/;"	m	class:Player
+gem	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource gem = new Resource("gem", 13 + 4 * 32, Color.get(-1, 101, 404, 545));$/;"	f	class:Resource
+gemOre	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile gemOre = new OreTile(21, Resource.gem);$/;"	f	class:Tile
+get	com/mojang/ld22/gfx/Color.java	/^	public static int get(int a, int b, int c, int d) {$/;"	m	class:Color
+get	com/mojang/ld22/gfx/Color.java	/^	public static int get(int d) {$/;"	m	class:Color
+getAttackDamage	com/mojang/ld22/entity/Player.java	/^	private int getAttackDamage(Entity e) {$/;"	m	class:Player	file:
+getAttackDamageBonus	com/mojang/ld22/item/Item.java	/^	public int getAttackDamageBonus(Entity e) {$/;"	m	class:Item
+getAttackDamageBonus	com/mojang/ld22/item/ToolItem.java	/^	public int getAttackDamageBonus(Entity e) {$/;"	m	class:ToolItem
+getColor	com/mojang/ld22/item/FurnitureItem.java	/^	public int getColor() {$/;"	m	class:FurnitureItem
+getColor	com/mojang/ld22/item/Item.java	/^	public int getColor() {$/;"	m	class:Item
+getColor	com/mojang/ld22/item/PowerGloveItem.java	/^	public int getColor() {$/;"	m	class:PowerGloveItem
+getColor	com/mojang/ld22/item/ResourceItem.java	/^	public int getColor() {$/;"	m	class:ResourceItem
+getColor	com/mojang/ld22/item/ToolItem.java	/^	public int getColor() {$/;"	m	class:ToolItem
+getData	com/mojang/ld22/level/Level.java	/^	public int getData(int x, int y) {$/;"	m	class:Level
+getEntities	com/mojang/ld22/level/Level.java	/^	public List<Entity> getEntities(int x0, int y0, int x1, int y1) {$/;"	m	class:Level
+getLightRadius	com/mojang/ld22/entity/Entity.java	/^	public int getLightRadius() {$/;"	m	class:Entity
+getLightRadius	com/mojang/ld22/entity/Lantern.java	/^	public int getLightRadius() {$/;"	m	class:Lantern
+getLightRadius	com/mojang/ld22/entity/Player.java	/^	public int getLightRadius() {$/;"	m	class:Player
+getLightRadius	com/mojang/ld22/level/tile/LavaTile.java	/^	public int getLightRadius(Level level, int x, int y) {$/;"	m	class:LavaTile
+getLightRadius	com/mojang/ld22/level/tile/Tile.java	/^	public int getLightRadius(Level level, int x, int y) {$/;"	m	class:Tile
+getName	com/mojang/ld22/item/FurnitureItem.java	/^	public String getName() {$/;"	m	class:FurnitureItem
+getName	com/mojang/ld22/item/Item.java	/^	public String getName() {$/;"	m	class:Item
+getName	com/mojang/ld22/item/PowerGloveItem.java	/^	public String getName() {$/;"	m	class:PowerGloveItem
+getName	com/mojang/ld22/item/ResourceItem.java	/^	public String getName() {$/;"	m	class:ResourceItem
+getName	com/mojang/ld22/item/ToolItem.java	/^	public String getName() {$/;"	m	class:ToolItem
+getSprite	com/mojang/ld22/item/FurnitureItem.java	/^	public int getSprite() {$/;"	m	class:FurnitureItem
+getSprite	com/mojang/ld22/item/Item.java	/^	public int getSprite() {$/;"	m	class:Item
+getSprite	com/mojang/ld22/item/PowerGloveItem.java	/^	public int getSprite() {$/;"	m	class:PowerGloveItem
+getSprite	com/mojang/ld22/item/ResourceItem.java	/^	public int getSprite() {$/;"	m	class:ResourceItem
+getSprite	com/mojang/ld22/item/ToolItem.java	/^	public int getSprite() {$/;"	m	class:ToolItem
+getTile	com/mojang/ld22/level/Level.java	/^	public Tile getTile(int x, int y) {$/;"	m	class:Level
+glass	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource glass = new Resource("glass", 12 + 4 * 32, Color.get(-1, 555, 555, 555));$/;"	f	class:Resource
+goldIngot	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource goldIngot = new Resource("GOLD", 11 + 4 * 32, Color.get(-1, 110, 330, 553));$/;"	f	class:Resource
+goldOre	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource goldOre = new Resource("G.ORE", 10 + 4 * 32, Color.get(-1, 110, 440, 553));$/;"	f	class:Resource
+goldOre	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile goldOre = new OreTile(20, Resource.goldOre);$/;"	f	class:Tile
+grass	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile grass = new GrassTile(0);$/;"	f	class:Tile
+grassColor	com/mojang/ld22/level/Level.java	/^	public int grassColor = 141;$/;"	f	class:Level
+growsTo	com/mojang/ld22/level/tile/SaplingTile.java	/^	private Tile growsTo;$/;"	f	class:SaplingTile	file:
+gx	Session.vim	/^nmap gx <Plug>NetrwBrowseX$/;"	m
+h	com/mojang/ld22/gfx/Screen.java	/^	public final int w, h;$/;"	f	class:Screen
+h	com/mojang/ld22/level/Level.java	/^	public int w, h;$/;"	f	class:Level
+h	com/mojang/ld22/level/levelgen/LevelGen.java	/^	private int w, h;$/;"	f	class:LevelGen	file:
+hardRock	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile hardRock = new HardRockTile(18);$/;"	f	class:Tile
+harvest	com/mojang/ld22/level/tile/WheatTile.java	/^	private void harvest(Level level, int x, int y) {$/;"	m	class:WheatTile	file:
+hasResources	com/mojang/ld22/entity/Inventory.java	/^	public boolean hasResources(Resource r, int count) {$/;"	m	class:Inventory
+hasWon	com/mojang/ld22/Game.java	/^	public boolean hasWon = false;$/;"	f	class:Game
+heal	com/mojang/ld22/entity/Mob.java	/^	public void heal(int heal) {$/;"	m	class:Mob
+heal	com/mojang/ld22/item/resource/FoodResource.java	/^	private int heal;$/;"	f	class:FoodResource	file:
+health	com/mojang/ld22/entity/Mob.java	/^	public int health = maxHealth;$/;"	f	class:Mob
+height	com/mojang/ld22/gfx/SpriteSheet.java	/^	public int width, height;$/;"	f	class:SpriteSheet
+hoe	com/mojang/ld22/item/ToolType.java	/^	public static ToolType hoe = new ToolType("Hoe", 1);$/;"	f	class:ToolType
+hole	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile hole = new HoleTile(8);$/;"	f	class:Tile
+hurt	com/mojang/ld22/entity/Entity.java	/^	public void hurt(Mob mob, int dmg, int attackDir) {$/;"	m	class:Entity
+hurt	com/mojang/ld22/entity/Entity.java	/^	public void hurt(Tile tile, int x, int y, int dmg) {$/;"	m	class:Entity
+hurt	com/mojang/ld22/entity/Mob.java	/^	public void hurt(Mob mob, int damage, int attackDir) {$/;"	m	class:Mob
+hurt	com/mojang/ld22/entity/Mob.java	/^	public void hurt(Tile tile, int x, int y, int damage) {$/;"	m	class:Mob
+hurt	com/mojang/ld22/entity/Player.java	/^	private void hurt(int x0, int y0, int x1, int y1) {$/;"	m	class:Player	file:
+hurt	com/mojang/ld22/level/tile/CactusTile.java	/^	public void hurt(Level level, int x, int y, Mob source, int dmg, int attackDir) {$/;"	m	class:CactusTile
+hurt	com/mojang/ld22/level/tile/CloudCactusTile.java	/^	public void hurt(Level level, int x, int y, Mob source, int dmg, int attackDir) {$/;"	m	class:CloudCactusTile
+hurt	com/mojang/ld22/level/tile/CloudCactusTile.java	/^	public void hurt(Level level, int x, int y, int dmg) {$/;"	m	class:CloudCactusTile
+hurt	com/mojang/ld22/level/tile/FlowerTile.java	/^	public void hurt(Level level, int x, int y, Mob source, int dmg, int attackDir) {$/;"	m	class:FlowerTile
+hurt	com/mojang/ld22/level/tile/HardRockTile.java	/^	public void hurt(Level level, int x, int y, Mob source, int dmg, int attackDir) {$/;"	m	class:HardRockTile
+hurt	com/mojang/ld22/level/tile/HardRockTile.java	/^	public void hurt(Level level, int x, int y, int dmg) {$/;"	m	class:HardRockTile
+hurt	com/mojang/ld22/level/tile/OreTile.java	/^	public void hurt(Level level, int x, int y, Mob source, int dmg, int attackDir) {$/;"	m	class:OreTile
+hurt	com/mojang/ld22/level/tile/OreTile.java	/^	public void hurt(Level level, int x, int y, int dmg) {$/;"	m	class:OreTile
+hurt	com/mojang/ld22/level/tile/RockTile.java	/^	public void hurt(Level level, int x, int y, Mob source, int dmg, int attackDir) {$/;"	m	class:RockTile
+hurt	com/mojang/ld22/level/tile/RockTile.java	/^	public void hurt(Level level, int x, int y, int dmg) {$/;"	m	class:RockTile
+hurt	com/mojang/ld22/level/tile/SaplingTile.java	/^	public void hurt(Level level, int x, int y, Mob source, int dmg, int attackDir) {$/;"	m	class:SaplingTile
+hurt	com/mojang/ld22/level/tile/Tile.java	/^	public void hurt(Level level, int x, int y, Mob source, int dmg, int attackDir) {$/;"	m	class:Tile
+hurt	com/mojang/ld22/level/tile/TreeTile.java	/^	private void hurt(Level level, int x, int y, int dmg) {$/;"	m	class:TreeTile	file:
+hurt	com/mojang/ld22/level/tile/TreeTile.java	/^	public void hurt(Level level, int x, int y, Mob source, int dmg, int attackDir) {$/;"	m	class:TreeTile
+hurt	com/mojang/ld22/level/tile/WheatTile.java	/^	public void hurt(Level level, int x, int y, Mob source, int dmg, int attackDir) {$/;"	m	class:WheatTile
+hurtTime	com/mojang/ld22/entity/ItemEntity.java	/^	public int hurtTime = 0;$/;"	f	class:ItemEntity
+hurtTime	com/mojang/ld22/entity/Mob.java	/^	public int hurtTime = 0;$/;"	f	class:Mob
+id	com/mojang/ld22/level/tile/Tile.java	/^	public final byte id;$/;"	f	class:Tile
+image	com/mojang/ld22/Game.java	/^	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);$/;"	f	class:Game	file:
+img	com/mojang/ld22/gfx/Sprite.java	/^	public int img;$/;"	f	class:Sprite
+infiniteFall	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile infiniteFall = new InfiniteFallTile(16);$/;"	f	class:Tile
+init	com/mojang/ld22/Game.java	/^	private void init() {$/;"	m	class:Game	file:
+init	com/mojang/ld22/GameApplet.java	/^	public void init() {$/;"	m	class:GameApplet
+init	com/mojang/ld22/entity/Entity.java	/^	public final void init(Level level) {$/;"	m	class:Entity
+init	com/mojang/ld22/screen/Menu.java	/^	public void init(Game game, InputHandler input) {$/;"	m	class:Menu
+input	com/mojang/ld22/Game.java	/^	private InputHandler input = new InputHandler(this);$/;"	f	class:Game	file:
+input	com/mojang/ld22/entity/Player.java	/^	private InputHandler input;$/;"	f	class:Player	file:
+input	com/mojang/ld22/screen/Menu.java	/^	protected InputHandler input;$/;"	f	class:Menu
+inputDelay	com/mojang/ld22/screen/DeadMenu.java	/^	private int inputDelay = 60;$/;"	f	class:DeadMenu	file:
+inputDelay	com/mojang/ld22/screen/WonMenu.java	/^	private int inputDelay = 60;$/;"	f	class:WonMenu	file:
+insertEntity	com/mojang/ld22/level/Level.java	/^	private void insertEntity(int x, int y, Entity e) {$/;"	m	class:Level	file:
+interact	com/mojang/ld22/entity/Entity.java	/^	public boolean interact(Player player, Item item, int attackDir) {$/;"	m	class:Entity
+interact	com/mojang/ld22/entity/Player.java	/^	private boolean interact(int x0, int y0, int x1, int y1) {$/;"	m	class:Player	file:
+interact	com/mojang/ld22/item/Item.java	/^	public boolean interact(Player player, Entity entity, int attackDir) {$/;"	m	class:Item
+interact	com/mojang/ld22/item/PowerGloveItem.java	/^	public boolean interact(Player player, Entity entity, int attackDir) {$/;"	m	class:PowerGloveItem
+interact	com/mojang/ld22/level/tile/CloudCactusTile.java	/^	public boolean interact(Level level, int xt, int yt, Player player, Item item, int attackDir) {$/;"	m	class:CloudCactusTile
+interact	com/mojang/ld22/level/tile/CloudTile.java	/^	public boolean interact(Level level, int xt, int yt, Player player, Item item, int attackDir) {$/;"	m	class:CloudTile
+interact	com/mojang/ld22/level/tile/DirtTile.java	/^	public boolean interact(Level level, int xt, int yt, Player player, Item item, int attackDir) {$/;"	m	class:DirtTile
+interact	com/mojang/ld22/level/tile/FarmTile.java	/^	public boolean interact(Level level, int xt, int yt, Player player, Item item, int attackDir) {$/;"	m	class:FarmTile
+interact	com/mojang/ld22/level/tile/FlowerTile.java	/^	public boolean interact(Level level, int x, int y, Player player, Item item, int attackDir) {$/;"	m	class:FlowerTile
+interact	com/mojang/ld22/level/tile/GrassTile.java	/^	public boolean interact(Level level, int xt, int yt, Player player, Item item, int attackDir) {$/;"	m	class:GrassTile
+interact	com/mojang/ld22/level/tile/HardRockTile.java	/^	public boolean interact(Level level, int xt, int yt, Player player, Item item, int attackDir) {$/;"	m	class:HardRockTile
+interact	com/mojang/ld22/level/tile/OreTile.java	/^	public boolean interact(Level level, int xt, int yt, Player player, Item item, int attackDir) {$/;"	m	class:OreTile
+interact	com/mojang/ld22/level/tile/RockTile.java	/^	public boolean interact(Level level, int xt, int yt, Player player, Item item, int attackDir) {$/;"	m	class:RockTile
+interact	com/mojang/ld22/level/tile/SandTile.java	/^	public boolean interact(Level level, int xt, int yt, Player player, Item item, int attackDir) {$/;"	m	class:SandTile
+interact	com/mojang/ld22/level/tile/Tile.java	/^	public boolean interact(Level level, int xt, int yt, Player player, Item item, int attackDir) {$/;"	m	class:Tile
+interact	com/mojang/ld22/level/tile/TreeTile.java	/^	public boolean interact(Level level, int xt, int yt, Player player, Item item, int attackDir) {$/;"	m	class:TreeTile
+interact	com/mojang/ld22/level/tile/WheatTile.java	/^	public boolean interact(Level level, int xt, int yt, Player player, Item item, int attackDir) {$/;"	m	class:WheatTile
+interactOn	com/mojang/ld22/item/FurnitureItem.java	/^	public boolean interactOn(Tile tile, Level level, int xt, int yt, Player player, int attackDir) {$/;"	m	class:FurnitureItem
+interactOn	com/mojang/ld22/item/Item.java	/^	public boolean interactOn(Tile tile, Level level, int xt, int yt, Player player, int attackDir) {$/;"	m	class:Item
+interactOn	com/mojang/ld22/item/ResourceItem.java	/^	public boolean interactOn(Tile tile, Level level, int xt, int yt, Player player, int attackDir) {$/;"	m	class:ResourceItem
+interactOn	com/mojang/ld22/item/resource/FoodResource.java	/^	public boolean interactOn(Tile tile, Level level, int xt, int yt, Player player, int attackDir) {$/;"	m	class:FoodResource
+interactOn	com/mojang/ld22/item/resource/PlantableResource.java	/^	public boolean interactOn(Tile tile, Level level, int xt, int yt, Player player, int attackDir) {$/;"	m	class:PlantableResource
+interactOn	com/mojang/ld22/item/resource/Resource.java	/^	public boolean interactOn(Tile tile, Level level, int xt, int yt, Player player, int attackDir) {$/;"	m	class:Resource
+intersects	com/mojang/ld22/entity/Entity.java	/^	public boolean intersects(int x0, int y0, int x1, int y1) {$/;"	m	class:Entity
+inventory	com/mojang/ld22/entity/Chest.java	/^	public Inventory inventory = new Inventory();$/;"	f	class:Chest
+inventory	com/mojang/ld22/entity/Player.java	/^	public Inventory inventory = new Inventory();$/;"	f	class:Player
+invulnerableTime	com/mojang/ld22/entity/Player.java	/^	public int invulnerableTime = 0;$/;"	f	class:Player
+ironIngot	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource ironIngot = new Resource("IRON", 11 + 4 * 32, Color.get(-1, 100, 322, 544));$/;"	f	class:Resource
+ironOre	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource ironOre = new Resource("I.ORE", 10 + 4 * 32, Color.get(-1, 100, 322, 544));$/;"	f	class:Resource
+ironOre	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile ironOre = new OreTile(19, Resource.ironOre);$/;"	f	class:Tile
+isBlockableBy	com/mojang/ld22/entity/Entity.java	/^	public boolean isBlockableBy(Mob mob) {$/;"	m	class:Entity
+isBlockableBy	com/mojang/ld22/entity/ItemEntity.java	/^	public boolean isBlockableBy(Mob mob) {$/;"	m	class:ItemEntity
+isBlockableBy	com/mojang/ld22/entity/Spark.java	/^	public boolean isBlockableBy(Mob mob) {$/;"	m	class:Spark
+isDepleted	com/mojang/ld22/item/FurnitureItem.java	/^	public boolean isDepleted() {$/;"	m	class:FurnitureItem
+isDepleted	com/mojang/ld22/item/Item.java	/^	public boolean isDepleted() {$/;"	m	class:Item
+isDepleted	com/mojang/ld22/item/ResourceItem.java	/^	public boolean isDepleted() {$/;"	m	class:ResourceItem
+isSwimming	com/mojang/ld22/entity/Mob.java	/^	protected boolean isSwimming() {$/;"	m	class:Mob
+item	com/mojang/ld22/entity/ItemEntity.java	/^	public Item item;$/;"	f	class:ItemEntity
+items	com/mojang/ld22/entity/Inventory.java	/^	public List<Item> items = new ArrayList<Item>();$/;"	f	class:Inventory
+jumpTime	com/mojang/ld22/entity/Slime.java	/^	private int jumpTime = 0;$/;"	f	class:Slime	file:
+keyPressed	com/mojang/ld22/InputHandler.java	/^	public void keyPressed(KeyEvent ke) {$/;"	m	class:InputHandler
+keyReleased	com/mojang/ld22/InputHandler.java	/^	public void keyReleased(KeyEvent ke) {$/;"	m	class:InputHandler
+keyTyped	com/mojang/ld22/InputHandler.java	/^	public void keyTyped(KeyEvent ke) {$/;"	m	class:InputHandler
+keys	com/mojang/ld22/InputHandler.java	/^	public List<Key> keys = new ArrayList<Key>();$/;"	f	class:InputHandler
+lava	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile lava = new LavaTile(13);$/;"	f	class:Tile
+leadsUp	com/mojang/ld22/level/tile/StairsTile.java	/^	private boolean leadsUp;$/;"	f	class:StairsTile	file:
+left	com/mojang/ld22/InputHandler.java	/^	public Key left = new Key();$/;"	f	class:InputHandler
+level	com/mojang/ld22/Game.java	/^	private Level level;$/;"	f	class:Game	file:
+level	com/mojang/ld22/crafting/ToolRecipe.java	/^	private int level;$/;"	f	class:ToolRecipe	file:
+level	com/mojang/ld22/entity/Entity.java	/^	public Level level;$/;"	f	class:Entity
+level	com/mojang/ld22/item/ToolItem.java	/^	public int level = 0;$/;"	f	class:ToolItem
+levels	com/mojang/ld22/Game.java	/^	private Level[] levels = new Level[5];$/;"	f	class:Game	file:
+lifeTime	com/mojang/ld22/entity/ItemEntity.java	/^	private int lifeTime;$/;"	f	class:ItemEntity	file:
+lifeTime	com/mojang/ld22/entity/Spark.java	/^	private int lifeTime;$/;"	f	class:Spark	file:
+lightScreen	com/mojang/ld22/Game.java	/^	private Screen lightScreen;$/;"	f	class:Game	file:
+lvl	com/mojang/ld22/entity/Mob.java	/^	public int lvl = 1;$/;"	f	class:Mob
+lvl	com/mojang/ld22/entity/Zombie.java	/^	private int lvl;$/;"	f	class:Zombie	file:
+main	com/mojang/ld22/Game.java	/^	public static void main(String[] args) {$/;"	m	class:Game
+main	com/mojang/ld22/level/levelgen/LevelGen.java	/^	public static void main(String[] args) {$/;"	m	class:LevelGen
+matches	com/mojang/ld22/item/Item.java	/^	public boolean matches(Item item) {$/;"	m	class:Item
+matches	com/mojang/ld22/item/ToolItem.java	/^	public boolean matches(Item item) {$/;"	m	class:ToolItem
+maxHealth	com/mojang/ld22/entity/Mob.java	/^	public int maxHealth = 10;$/;"	f	class:Mob
+maxStamina	com/mojang/ld22/entity/Player.java	/^	public int maxStamina = 10;$/;"	f	class:Player
+mayPass	com/mojang/ld22/level/tile/CactusTile.java	/^	public boolean mayPass(Level level, int x, int y, Entity e) {$/;"	m	class:CactusTile
+mayPass	com/mojang/ld22/level/tile/CloudCactusTile.java	/^	public boolean mayPass(Level level, int x, int y, Entity e) {$/;"	m	class:CloudCactusTile
+mayPass	com/mojang/ld22/level/tile/CloudTile.java	/^	public boolean mayPass(Level level, int x, int y, Entity e) {$/;"	m	class:CloudTile
+mayPass	com/mojang/ld22/level/tile/HardRockTile.java	/^	public boolean mayPass(Level level, int x, int y, Entity e) {$/;"	m	class:HardRockTile
+mayPass	com/mojang/ld22/level/tile/HoleTile.java	/^	public boolean mayPass(Level level, int x, int y, Entity e) {$/;"	m	class:HoleTile
+mayPass	com/mojang/ld22/level/tile/InfiniteFallTile.java	/^	public boolean mayPass(Level level, int x, int y, Entity e) {$/;"	m	class:InfiniteFallTile
+mayPass	com/mojang/ld22/level/tile/LavaTile.java	/^	public boolean mayPass(Level level, int x, int y, Entity e) {$/;"	m	class:LavaTile
+mayPass	com/mojang/ld22/level/tile/OreTile.java	/^	public boolean mayPass(Level level, int x, int y, Entity e) {$/;"	m	class:OreTile
+mayPass	com/mojang/ld22/level/tile/RockTile.java	/^	public boolean mayPass(Level level, int x, int y, Entity e) {$/;"	m	class:RockTile
+mayPass	com/mojang/ld22/level/tile/StoneTile.java	/^	public boolean mayPass(Level level, int x, int y, Entity e) {$/;"	m	class:StoneTile
+mayPass	com/mojang/ld22/level/tile/Tile.java	/^	public boolean mayPass(Level level, int x, int y, Entity e) {$/;"	m	class:Tile
+mayPass	com/mojang/ld22/level/tile/TreeTile.java	/^	public boolean mayPass(Level level, int x, int y, Entity e) {$/;"	m	class:TreeTile
+mayPass	com/mojang/ld22/level/tile/WaterTile.java	/^	public boolean mayPass(Level level, int x, int y, Entity e) {$/;"	m	class:WaterTile
+menu	com/mojang/ld22/Game.java	/^	public Menu menu;$/;"	f	class:Game
+menu	com/mojang/ld22/InputHandler.java	/^	public Key menu = new Key();$/;"	f	class:InputHandler
+monsterDensity	com/mojang/ld22/level/Level.java	/^	public int monsterDensity = 8;$/;"	f	class:Level
+monsterHurt	com/mojang/ld22/sound/Sound.java	/^	public static final Sound monsterHurt = new Sound("\/monsterhurt.wav");$/;"	f	class:Sound
+move	com/mojang/ld22/entity/Entity.java	/^	public boolean move(int xa, int ya) {$/;"	m	class:Entity
+move	com/mojang/ld22/entity/Mob.java	/^	public boolean move(int xa, int ya) {$/;"	m	class:Mob
+move2	com/mojang/ld22/entity/Entity.java	/^	protected boolean move2(int xa, int ya) {$/;"	m	class:Entity
+msg	com/mojang/ld22/entity/particle/TextParticle.java	/^	private String msg;$/;"	f	class:TextParticle	file:
+name	com/mojang/ld22/entity/Furniture.java	/^	public String name;$/;"	f	class:Furniture
+name	com/mojang/ld22/item/ToolType.java	/^	public final String name;$/;"	f	class:ToolType
+name	com/mojang/ld22/item/resource/Resource.java	/^	public final String name;$/;"	f	class:Resource
+oSelected	com/mojang/ld22/screen/ContainerMenu.java	/^	private int oSelected;$/;"	f	class:ContainerMenu	file:
+onStairDelay	com/mojang/ld22/entity/Player.java	/^	private int onStairDelay;$/;"	f	class:Player	file:
+onTake	com/mojang/ld22/item/FurnitureItem.java	/^	public void onTake(ItemEntity itemEntity) {$/;"	m	class:FurnitureItem
+onTake	com/mojang/ld22/item/Item.java	/^	public void onTake(ItemEntity itemEntity) {$/;"	m	class:Item
+onTake	com/mojang/ld22/item/ResourceItem.java	/^	public void onTake(ItemEntity itemEntity) {$/;"	m	class:ResourceItem
+onTake	com/mojang/ld22/item/ToolItem.java	/^	public void onTake(ItemEntity itemEntity) {$/;"	m	class:ToolItem
+onType	com/mojang/ld22/level/tile/SaplingTile.java	/^	private Tile onType;$/;"	f	class:SaplingTile	file:
+options	com/mojang/ld22/screen/TitleMenu.java	/^	private static final String[] options = { "Start game", "How to play", "About" };$/;"	f	class:TitleMenu	file:
+ovenRecipes	com/mojang/ld22/crafting/Crafting.java	/^	public static final List<Recipe> ovenRecipes = new ArrayList<Recipe>();$/;"	f	class:Crafting
+overlay	com/mojang/ld22/gfx/Screen.java	/^	public void overlay(Screen screen2, int xa, int ya) {$/;"	m	class:Screen
+owner	com/mojang/ld22/entity/Spark.java	/^	private AirWizard owner;$/;"	f	class:Spark	file:
+parent	com/mojang/ld22/screen/AboutMenu.java	/^	private Menu parent;$/;"	f	class:AboutMenu	file:
+parent	com/mojang/ld22/screen/InstructionsMenu.java	/^	private Menu parent;$/;"	f	class:InstructionsMenu	file:
+payStamina	com/mojang/ld22/entity/Player.java	/^	public boolean payStamina(int cost) {$/;"	m	class:Player
+pendingLevelChange	com/mojang/ld22/Game.java	/^	private int pendingLevelChange;$/;"	f	class:Game	file:
+pickaxe	com/mojang/ld22/item/ToolType.java	/^	public static ToolType pickaxe = new ToolType("Pick", 3);$/;"	f	class:ToolType
+pickup	com/mojang/ld22/sound/Sound.java	/^	public static final Sound pickup = new Sound("\/pickup.wav");$/;"	f	class:Sound
+pixels	com/mojang/ld22/Game.java	/^	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();$/;"	f	class:Game	file:
+pixels	com/mojang/ld22/gfx/Screen.java	/^	public int[] pixels;$/;"	f	class:Screen
+pixels	com/mojang/ld22/gfx/SpriteSheet.java	/^	public int[] pixels;$/;"	f	class:SpriteSheet
+placed	com/mojang/ld22/item/FurnitureItem.java	/^	public boolean placed = false;$/;"	f	class:FurnitureItem
+play	com/mojang/ld22/sound/Sound.java	/^	public void play() {$/;"	m	class:Sound
+player	com/mojang/ld22/Game.java	/^	public Player player;$/;"	f	class:Game
+player	com/mojang/ld22/level/Level.java	/^	public Player player;$/;"	f	class:Level
+player	com/mojang/ld22/screen/ContainerMenu.java	/^	private Player player;$/;"	f	class:ContainerMenu	file:
+player	com/mojang/ld22/screen/CraftingMenu.java	/^	private Player player;$/;"	f	class:CraftingMenu	file:
+player	com/mojang/ld22/screen/InventoryMenu.java	/^	private Player player;$/;"	f	class:InventoryMenu	file:
+playerDeadTime	com/mojang/ld22/Game.java	/^	private int playerDeadTime;$/;"	f	class:Game	file:
+playerDeath	com/mojang/ld22/sound/Sound.java	/^	public static final Sound playerDeath = new Sound("\/death.wav");$/;"	f	class:Sound
+playerHurt	com/mojang/ld22/sound/Sound.java	/^	public static final Sound playerHurt = new Sound("\/playerhurt.wav");$/;"	f	class:Sound
+presses	com/mojang/ld22/InputHandler.java	/^		public int presses, absorbs;$/;"	f	class:InputHandler.Key
+pushDir	com/mojang/ld22/entity/Furniture.java	/^	private int pushDir = -1;$/;"	f	class:Furniture	file:
+pushTime	com/mojang/ld22/entity/Furniture.java	/^	private int pushTime = 0;$/;"	f	class:Furniture	file:
+random	com/mojang/ld22/Game.java	/^	private Random random = new Random();$/;"	f	class:Game	file:
+random	com/mojang/ld22/entity/Entity.java	/^	protected final Random random = new Random();$/;"	f	class:Entity
+random	com/mojang/ld22/item/ToolItem.java	/^	private Random random = new Random();$/;"	f	class:ToolItem	file:
+random	com/mojang/ld22/level/Level.java	/^	private Random random = new Random();$/;"	f	class:Level	file:
+random	com/mojang/ld22/level/levelgen/LevelGen.java	/^	private static final Random random = new Random();$/;"	f	class:LevelGen	file:
+random	com/mojang/ld22/level/tile/Tile.java	/^	protected Random random = new Random();$/;"	f	class:Tile
+randomWalkTime	com/mojang/ld22/entity/AirWizard.java	/^	private int randomWalkTime = 0;$/;"	f	class:AirWizard	file:
+randomWalkTime	com/mojang/ld22/entity/Zombie.java	/^	private int randomWalkTime = 0;$/;"	f	class:Zombie	file:
+recipes	com/mojang/ld22/screen/CraftingMenu.java	/^	private List<Recipe> recipes;$/;"	f	class:CraftingMenu	file:
+releaseAll	com/mojang/ld22/InputHandler.java	/^	public void releaseAll() {$/;"	m	class:InputHandler
+remove	com/mojang/ld22/entity/Entity.java	/^	public void remove() {$/;"	m	class:Entity
+remove	com/mojang/ld22/level/Level.java	/^	public void remove(Entity e) {$/;"	m	class:Level
+removeEntity	com/mojang/ld22/level/Level.java	/^	private void removeEntity(int x, int y, Entity e) {$/;"	m	class:Level	file:
+removeResource	com/mojang/ld22/entity/Inventory.java	/^	public boolean removeResource(Resource r, int count) {$/;"	m	class:Inventory
+removed	com/mojang/ld22/entity/Entity.java	/^	public boolean removed;$/;"	f	class:Entity
+render	com/mojang/ld22/Game.java	/^	public void render() {$/;"	m	class:Game
+render	com/mojang/ld22/entity/AirWizard.java	/^	public void render(Screen screen) {$/;"	m	class:AirWizard
+render	com/mojang/ld22/entity/Entity.java	/^	public void render(Screen screen) {$/;"	m	class:Entity
+render	com/mojang/ld22/entity/Furniture.java	/^	public void render(Screen screen) {$/;"	m	class:Furniture
+render	com/mojang/ld22/entity/ItemEntity.java	/^	public void render(Screen screen) {$/;"	m	class:ItemEntity
+render	com/mojang/ld22/entity/Player.java	/^	public void render(Screen screen) {$/;"	m	class:Player
+render	com/mojang/ld22/entity/Slime.java	/^	public void render(Screen screen) {$/;"	m	class:Slime
+render	com/mojang/ld22/entity/Spark.java	/^	public void render(Screen screen) {$/;"	m	class:Spark
+render	com/mojang/ld22/entity/Zombie.java	/^	public void render(Screen screen) {$/;"	m	class:Zombie
+render	com/mojang/ld22/entity/particle/SmashParticle.java	/^	public void render(Screen screen) {$/;"	m	class:SmashParticle
+render	com/mojang/ld22/entity/particle/TextParticle.java	/^	public void render(Screen screen) {$/;"	m	class:TextParticle
+render	com/mojang/ld22/gfx/Screen.java	/^	public void render(int xp, int yp, int tile, int colors, int bits) {$/;"	m	class:Screen
+render	com/mojang/ld22/level/tile/CactusTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:CactusTile
+render	com/mojang/ld22/level/tile/CloudCactusTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:CloudCactusTile
+render	com/mojang/ld22/level/tile/CloudTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:CloudTile
+render	com/mojang/ld22/level/tile/DirtTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:DirtTile
+render	com/mojang/ld22/level/tile/FarmTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:FarmTile
+render	com/mojang/ld22/level/tile/FlowerTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:FlowerTile
+render	com/mojang/ld22/level/tile/GrassTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:GrassTile
+render	com/mojang/ld22/level/tile/HardRockTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:HardRockTile
+render	com/mojang/ld22/level/tile/HoleTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:HoleTile
+render	com/mojang/ld22/level/tile/InfiniteFallTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:InfiniteFallTile
+render	com/mojang/ld22/level/tile/LavaTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:LavaTile
+render	com/mojang/ld22/level/tile/OreTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:OreTile
+render	com/mojang/ld22/level/tile/RockTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:RockTile
+render	com/mojang/ld22/level/tile/SandTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:SandTile
+render	com/mojang/ld22/level/tile/SaplingTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:SaplingTile
+render	com/mojang/ld22/level/tile/StairsTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:StairsTile
+render	com/mojang/ld22/level/tile/StoneTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:StoneTile
+render	com/mojang/ld22/level/tile/Tile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:Tile
+render	com/mojang/ld22/level/tile/TreeTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:TreeTile
+render	com/mojang/ld22/level/tile/WaterTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:WaterTile
+render	com/mojang/ld22/level/tile/WheatTile.java	/^	public void render(Screen screen, Level level, int x, int y) {$/;"	m	class:WheatTile
+render	com/mojang/ld22/screen/AboutMenu.java	/^	public void render(Screen screen) {$/;"	m	class:AboutMenu
+render	com/mojang/ld22/screen/ContainerMenu.java	/^	public void render(Screen screen) {$/;"	m	class:ContainerMenu
+render	com/mojang/ld22/screen/CraftingMenu.java	/^	public void render(Screen screen) {$/;"	m	class:CraftingMenu
+render	com/mojang/ld22/screen/DeadMenu.java	/^	public void render(Screen screen) {$/;"	m	class:DeadMenu
+render	com/mojang/ld22/screen/InstructionsMenu.java	/^	public void render(Screen screen) {$/;"	m	class:InstructionsMenu
+render	com/mojang/ld22/screen/InventoryMenu.java	/^	public void render(Screen screen) {$/;"	m	class:InventoryMenu
+render	com/mojang/ld22/screen/LevelTransitionMenu.java	/^	public void render(Screen screen) {$/;"	m	class:LevelTransitionMenu
+render	com/mojang/ld22/screen/Menu.java	/^	public void render(Screen screen) {$/;"	m	class:Menu
+render	com/mojang/ld22/screen/TitleMenu.java	/^	public void render(Screen screen) {$/;"	m	class:TitleMenu
+render	com/mojang/ld22/screen/WonMenu.java	/^	public void render(Screen screen) {$/;"	m	class:WonMenu
+renderBackground	com/mojang/ld22/level/Level.java	/^	public void renderBackground(Screen screen, int xScroll, int yScroll) {$/;"	m	class:Level
+renderFocusNagger	com/mojang/ld22/Game.java	/^	private void renderFocusNagger() {$/;"	m	class:Game	file:
+renderFrame	com/mojang/ld22/gfx/Font.java	/^	public static void renderFrame(Screen screen, String title, int x0, int y0, int x1, int y1) {$/;"	m	class:Font
+renderGui	com/mojang/ld22/Game.java	/^	private void renderGui() {$/;"	m	class:Game	file:
+renderIcon	com/mojang/ld22/item/FurnitureItem.java	/^	public void renderIcon(Screen screen, int x, int y) {$/;"	m	class:FurnitureItem
+renderIcon	com/mojang/ld22/item/Item.java	/^	public void renderIcon(Screen screen, int x, int y) {$/;"	m	class:Item
+renderIcon	com/mojang/ld22/item/PowerGloveItem.java	/^	public void renderIcon(Screen screen, int x, int y) {$/;"	m	class:PowerGloveItem
+renderIcon	com/mojang/ld22/item/ResourceItem.java	/^	public void renderIcon(Screen screen, int x, int y) {$/;"	m	class:ResourceItem
+renderIcon	com/mojang/ld22/item/ToolItem.java	/^	public void renderIcon(Screen screen, int x, int y) {$/;"	m	class:ToolItem
+renderInventory	com/mojang/ld22/crafting/Recipe.java	/^	public void renderInventory(Screen screen, int x, int y) {$/;"	m	class:Recipe
+renderInventory	com/mojang/ld22/item/FurnitureItem.java	/^	public void renderInventory(Screen screen, int x, int y) {$/;"	m	class:FurnitureItem
+renderInventory	com/mojang/ld22/item/Item.java	/^	public void renderInventory(Screen screen, int x, int y) {$/;"	m	class:Item
+renderInventory	com/mojang/ld22/item/PowerGloveItem.java	/^	public void renderInventory(Screen screen, int x, int y) {$/;"	m	class:PowerGloveItem
+renderInventory	com/mojang/ld22/item/ResourceItem.java	/^	public void renderInventory(Screen screen, int x, int y) {$/;"	m	class:ResourceItem
+renderInventory	com/mojang/ld22/item/ToolItem.java	/^	public void renderInventory(Screen screen, int x, int y) {$/;"	m	class:ToolItem
+renderInventory	com/mojang/ld22/screen/ListItem.java	/^	void renderInventory(Screen screen, int i, int j);$/;"	m	interface:ListItem
+renderItemList	com/mojang/ld22/screen/Menu.java	/^	public void renderItemList(Screen screen, int xo, int yo, int x1, int y1, List<? extends ListItem> listItems, int selected) {$/;"	m	class:Menu
+renderLight	com/mojang/ld22/gfx/Screen.java	/^	public void renderLight(int x, int y, int r) {$/;"	m	class:Screen
+renderLight	com/mojang/ld22/level/Level.java	/^	public void renderLight(Screen screen, int xScroll, int yScroll) {$/;"	m	class:Level
+renderSprites	com/mojang/ld22/level/Level.java	/^	public void renderSprites(Screen screen, int xScroll, int yScroll) {$/;"	m	class:Level
+resetGame	com/mojang/ld22/Game.java	/^	public void resetGame() {$/;"	m	class:Game
+resource	com/mojang/ld22/crafting/ResourceRecipe.java	/^	private Resource resource;$/;"	f	class:ResourceRecipe	file:
+resource	com/mojang/ld22/item/ResourceItem.java	/^	public Resource resource;$/;"	f	class:ResourceItem
+resultTemplate	com/mojang/ld22/crafting/Recipe.java	/^	public Item resultTemplate;$/;"	f	class:Recipe
+right	com/mojang/ld22/InputHandler.java	/^	public Key right = new Key();$/;"	f	class:InputHandler
+rock	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile rock = new RockTile(1);$/;"	f	class:Tile
+rowSprites	com/mojang/ld22/level/Level.java	/^	private List<Entity> rowSprites = new ArrayList<Entity>();$/;"	f	class:Level	file:
+run	com/mojang/ld22/Game.java	/^	public void run() {$/;"	m	class:Game
+running	com/mojang/ld22/Game.java	/^	private boolean running = false;$/;"	f	class:Game	file:
+s:cpo_save	Session.vim	/^let s:cpo_save=&cpo$/;"	v
+s:so_save	Session.vim	/^let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0$/;"	v
+s:sx	Session.vim	/^let s:sx = expand("<sfile>:p:r")."x.vim"$/;"	v
+s:wipebuf	Session.vim	/^  let s:wipebuf = bufnr('%')$/;"	v
+sample	com/mojang/ld22/level/levelgen/LevelGen.java	/^	private double sample(int x, int y) {$/;"	m	class:LevelGen	file:
+sand	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource sand = new PlantableResource("Sand", 2 + 4 * 32, Color.get(-1, 110, 440, 550), Tile.sand, Tile.grass, Tile.dirt);$/;"	f	class:Resource
+sand	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile sand = new SandTile(6);$/;"	f	class:Tile
+sandColor	com/mojang/ld22/level/Level.java	/^	public int sandColor = 550;$/;"	f	class:Level
+scheduleLevelChange	com/mojang/ld22/Game.java	/^	public void scheduleLevelChange(int dir) {$/;"	m	class:Game
+score	com/mojang/ld22/entity/Player.java	/^	public int score;$/;"	f	class:Player
+screen	com/mojang/ld22/Game.java	/^	private Screen screen;$/;"	f	class:Game	file:
+seeds	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource seeds = new PlantableResource("Seeds", 5 + 4 * 32, Color.get(-1, 10, 40, 50), Tile.wheat, Tile.farmland);$/;"	f	class:Resource
+selected	com/mojang/ld22/screen/ContainerMenu.java	/^	private int selected = 0;$/;"	f	class:ContainerMenu	file:
+selected	com/mojang/ld22/screen/CraftingMenu.java	/^	private int selected = 0;$/;"	f	class:CraftingMenu	file:
+selected	com/mojang/ld22/screen/InventoryMenu.java	/^	private int selected = 0;$/;"	f	class:InventoryMenu	file:
+selected	com/mojang/ld22/screen/TitleMenu.java	/^	private int selected = 0;$/;"	f	class:TitleMenu	file:
+serialVersionUID	com/mojang/ld22/Game.java	/^	private static final long serialVersionUID = 1L;$/;"	f	class:Game	file:
+serialVersionUID	com/mojang/ld22/GameApplet.java	/^	private static final long serialVersionUID = 1L;$/;"	f	class:GameApplet	file:
+setData	com/mojang/ld22/level/Level.java	/^	public void setData(int x, int y, int val) {$/;"	m	class:Level
+setMenu	com/mojang/ld22/Game.java	/^	public void setMenu(Menu menu) {$/;"	m	class:Game
+setOffset	com/mojang/ld22/gfx/Screen.java	/^	public void setOffset(int xOffset, int yOffset) {$/;"	m	class:Screen
+setSample	com/mojang/ld22/level/levelgen/LevelGen.java	/^	private void setSample(int x, int y, double value) {$/;"	m	class:LevelGen	file:
+setTile	com/mojang/ld22/level/Level.java	/^	public void setTile(int x, int y, Tile t, int dataVal) {$/;"	m	class:Level
+sheet	com/mojang/ld22/gfx/Screen.java	/^	private SpriteSheet sheet;$/;"	f	class:Screen	file:
+shouldTake	com/mojang/ld22/entity/Furniture.java	/^	private Player shouldTake;$/;"	f	class:Furniture	file:
+shovel	com/mojang/ld22/item/ToolType.java	/^	public static ToolType shovel = new ToolType("Shvl", 0);$/;"	f	class:ToolType
+slime	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource slime = new Resource("SLIME", 10 + 4 * 32, Color.get(-1, 10, 30, 50));$/;"	f	class:Resource
+sortAndRender	com/mojang/ld22/level/Level.java	/^	private void sortAndRender(Screen screen, List<Entity> list) {$/;"	m	class:Level	file:
+sourceTiles	com/mojang/ld22/item/resource/PlantableResource.java	/^	private List<Tile> sourceTiles;$/;"	f	class:PlantableResource	file:
+sprite	com/mojang/ld22/entity/Furniture.java	/^	public int col, sprite;$/;"	f	class:Furniture
+sprite	com/mojang/ld22/item/ToolType.java	/^	public final int sprite;$/;"	f	class:ToolType
+sprite	com/mojang/ld22/item/resource/Resource.java	/^	public final int sprite;$/;"	f	class:Resource
+spriteSorter	com/mojang/ld22/level/Level.java	/^	private Comparator<Entity> spriteSorter = new Comparator<Entity>() {$/;"	f	class:Level	file:
+stairsDown	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile stairsDown = new StairsTile(14, false);$/;"	f	class:Tile
+stairsUp	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile stairsUp = new StairsTile(15, true);$/;"	f	class:Tile
+stamina	com/mojang/ld22/entity/Player.java	/^	public int stamina;$/;"	f	class:Player
+staminaCost	com/mojang/ld22/item/resource/FoodResource.java	/^	private int staminaCost;$/;"	f	class:FoodResource	file:
+staminaRecharge	com/mojang/ld22/entity/Player.java	/^	public int staminaRecharge;$/;"	f	class:Player
+staminaRechargeDelay	com/mojang/ld22/entity/Player.java	/^	public int staminaRechargeDelay;$/;"	f	class:Player
+start	com/mojang/ld22/Game.java	/^	public void start() {$/;"	m	class:Game
+start	com/mojang/ld22/GameApplet.java	/^	public void start() {$/;"	m	class:GameApplet
+steppedOn	com/mojang/ld22/level/tile/FarmTile.java	/^	public void steppedOn(Level level, int xt, int yt, Entity entity) {$/;"	m	class:FarmTile
+steppedOn	com/mojang/ld22/level/tile/SandTile.java	/^	public void steppedOn(Level level, int x, int y, Entity entity) {$/;"	m	class:SandTile
+steppedOn	com/mojang/ld22/level/tile/Tile.java	/^	public void steppedOn(Level level, int xt, int yt, Entity entity) {$/;"	m	class:Tile
+steppedOn	com/mojang/ld22/level/tile/WheatTile.java	/^	public void steppedOn(Level level, int xt, int yt, Entity entity) {$/;"	m	class:WheatTile
+stone	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource stone = new Resource("Stone", 2 + 4 * 32, Color.get(-1, 111, 333, 555));$/;"	f	class:Resource
+stop	com/mojang/ld22/Game.java	/^	public void stop() {$/;"	m	class:Game
+stop	com/mojang/ld22/GameApplet.java	/^	public void stop() {$/;"	m	class:GameApplet
+swimTimer	com/mojang/ld22/entity/Mob.java	/^	public int swimTimer = 0;$/;"	f	class:Mob
+sword	com/mojang/ld22/item/ToolType.java	/^	public static ToolType sword = new ToolType("Swrd", 2);$/;"	f	class:ToolType
+take	com/mojang/ld22/entity/Furniture.java	/^	public void take(Player player) {$/;"	m	class:Furniture
+take	com/mojang/ld22/entity/ItemEntity.java	/^	public void take(Player player) {$/;"	m	class:ItemEntity
+targetTile	com/mojang/ld22/item/resource/PlantableResource.java	/^	private Tile targetTile;$/;"	f	class:PlantableResource	file:
+test	com/mojang/ld22/sound/Sound.java	/^	public static final Sound test = new Sound("\/test.wav");$/;"	f	class:Sound
+tick	com/mojang/ld22/Game.java	/^	public void tick() {$/;"	m	class:Game
+tick	com/mojang/ld22/InputHandler.java	/^		public void tick() {$/;"	m	class:InputHandler.Key
+tick	com/mojang/ld22/InputHandler.java	/^	public void tick() {$/;"	m	class:InputHandler
+tick	com/mojang/ld22/entity/AirWizard.java	/^	public void tick() {$/;"	m	class:AirWizard
+tick	com/mojang/ld22/entity/Entity.java	/^	public void tick() {$/;"	m	class:Entity
+tick	com/mojang/ld22/entity/Furniture.java	/^	public void tick() {$/;"	m	class:Furniture
+tick	com/mojang/ld22/entity/ItemEntity.java	/^	public void tick() {$/;"	m	class:ItemEntity
+tick	com/mojang/ld22/entity/Mob.java	/^	public void tick() {$/;"	m	class:Mob
+tick	com/mojang/ld22/entity/Player.java	/^	public void tick() {$/;"	m	class:Player
+tick	com/mojang/ld22/entity/Slime.java	/^	public void tick() {$/;"	m	class:Slime
+tick	com/mojang/ld22/entity/Spark.java	/^	public void tick() {$/;"	m	class:Spark
+tick	com/mojang/ld22/entity/Zombie.java	/^	public void tick() {$/;"	m	class:Zombie
+tick	com/mojang/ld22/entity/particle/Particle.java	/^	public void tick() {$/;"	m	class:Particle
+tick	com/mojang/ld22/entity/particle/SmashParticle.java	/^	public void tick() {$/;"	m	class:SmashParticle
+tick	com/mojang/ld22/entity/particle/TextParticle.java	/^	public void tick() {$/;"	m	class:TextParticle
+tick	com/mojang/ld22/level/Level.java	/^	public void tick() {$/;"	m	class:Level
+tick	com/mojang/ld22/level/tile/CactusTile.java	/^	public void tick(Level level, int xt, int yt) {$/;"	m	class:CactusTile
+tick	com/mojang/ld22/level/tile/FarmTile.java	/^	public void tick(Level level, int xt, int yt) {$/;"	m	class:FarmTile
+tick	com/mojang/ld22/level/tile/GrassTile.java	/^	public void tick(Level level, int xt, int yt) {$/;"	m	class:GrassTile
+tick	com/mojang/ld22/level/tile/HardRockTile.java	/^	public void tick(Level level, int xt, int yt) {$/;"	m	class:HardRockTile
+tick	com/mojang/ld22/level/tile/InfiniteFallTile.java	/^	public void tick(Level level, int xt, int yt) {$/;"	m	class:InfiniteFallTile
+tick	com/mojang/ld22/level/tile/LavaTile.java	/^	public void tick(Level level, int xt, int yt) {$/;"	m	class:LavaTile
+tick	com/mojang/ld22/level/tile/RockTile.java	/^	public void tick(Level level, int xt, int yt) {$/;"	m	class:RockTile
+tick	com/mojang/ld22/level/tile/SandTile.java	/^	public void tick(Level level, int x, int y) {$/;"	m	class:SandTile
+tick	com/mojang/ld22/level/tile/SaplingTile.java	/^	public void tick(Level level, int x, int y) {$/;"	m	class:SaplingTile
+tick	com/mojang/ld22/level/tile/Tile.java	/^	public void tick(Level level, int xt, int yt) {$/;"	m	class:Tile
+tick	com/mojang/ld22/level/tile/TreeTile.java	/^	public void tick(Level level, int xt, int yt) {$/;"	m	class:TreeTile
+tick	com/mojang/ld22/level/tile/WaterTile.java	/^	public void tick(Level level, int xt, int yt) {$/;"	m	class:WaterTile
+tick	com/mojang/ld22/level/tile/WheatTile.java	/^	public void tick(Level level, int xt, int yt) {$/;"	m	class:WheatTile
+tick	com/mojang/ld22/screen/AboutMenu.java	/^	public void tick() {$/;"	m	class:AboutMenu
+tick	com/mojang/ld22/screen/ContainerMenu.java	/^	public void tick() {$/;"	m	class:ContainerMenu
+tick	com/mojang/ld22/screen/CraftingMenu.java	/^	public void tick() {$/;"	m	class:CraftingMenu
+tick	com/mojang/ld22/screen/DeadMenu.java	/^	public void tick() {$/;"	m	class:DeadMenu
+tick	com/mojang/ld22/screen/InstructionsMenu.java	/^	public void tick() {$/;"	m	class:InstructionsMenu
+tick	com/mojang/ld22/screen/InventoryMenu.java	/^	public void tick() {$/;"	m	class:InventoryMenu
+tick	com/mojang/ld22/screen/LevelTransitionMenu.java	/^	public void tick() {$/;"	m	class:LevelTransitionMenu
+tick	com/mojang/ld22/screen/Menu.java	/^	public void tick() {$/;"	m	class:Menu
+tick	com/mojang/ld22/screen/TitleMenu.java	/^	public void tick() {$/;"	m	class:TitleMenu
+tick	com/mojang/ld22/screen/WonMenu.java	/^	public void tick() {$/;"	m	class:WonMenu
+tickCount	com/mojang/ld22/Game.java	/^	private int tickCount = 0;$/;"	f	class:Game	file:
+tickCount	com/mojang/ld22/level/tile/Tile.java	/^	public static int tickCount = 0;$/;"	f	class:Tile
+tickTime	com/mojang/ld22/entity/Mob.java	/^	public int tickTime = 0;$/;"	f	class:Mob
+tiles	com/mojang/ld22/level/Level.java	/^	public byte[] tiles;$/;"	f	class:Level
+tiles	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile[] tiles = new Tile[256];$/;"	f	class:Tile
+time	com/mojang/ld22/entity/ItemEntity.java	/^	private int time = 0;$/;"	f	class:ItemEntity	file:
+time	com/mojang/ld22/entity/Spark.java	/^	private int time;$/;"	f	class:Spark	file:
+time	com/mojang/ld22/entity/particle/SmashParticle.java	/^	private int time = 0;$/;"	f	class:SmashParticle	file:
+time	com/mojang/ld22/entity/particle/TextParticle.java	/^	private int time = 0;$/;"	f	class:TextParticle	file:
+time	com/mojang/ld22/screen/LevelTransitionMenu.java	/^	private int time = 0;$/;"	f	class:LevelTransitionMenu	file:
+title	com/mojang/ld22/screen/ContainerMenu.java	/^	private String title;$/;"	f	class:ContainerMenu	file:
+toDrop	com/mojang/ld22/level/tile/OreTile.java	/^	private Resource toDrop;$/;"	f	class:OreTile	file:
+toggle	com/mojang/ld22/InputHandler.java	/^		public void toggle(boolean pressed) {$/;"	m	class:InputHandler.Key
+toggle	com/mojang/ld22/InputHandler.java	/^	private void toggle(KeyEvent ke, boolean pressed) {$/;"	m	class:InputHandler	file:
+touchItem	com/mojang/ld22/entity/Entity.java	/^	public void touchItem(ItemEntity itemEntity) {$/;"	m	class:Entity
+touchItem	com/mojang/ld22/entity/Player.java	/^	public void touchItem(ItemEntity itemEntity) {$/;"	m	class:Player
+touchedBy	com/mojang/ld22/entity/AirWizard.java	/^	protected void touchedBy(Entity entity) {$/;"	m	class:AirWizard
+touchedBy	com/mojang/ld22/entity/Entity.java	/^	protected void touchedBy(Entity entity) {$/;"	m	class:Entity
+touchedBy	com/mojang/ld22/entity/Furniture.java	/^	protected void touchedBy(Entity entity) {$/;"	m	class:Furniture
+touchedBy	com/mojang/ld22/entity/ItemEntity.java	/^	protected void touchedBy(Entity entity) {$/;"	m	class:ItemEntity
+touchedBy	com/mojang/ld22/entity/Player.java	/^	protected void touchedBy(Entity entity) {$/;"	m	class:Player
+touchedBy	com/mojang/ld22/entity/Slime.java	/^	protected void touchedBy(Entity entity) {$/;"	m	class:Slime
+touchedBy	com/mojang/ld22/entity/Zombie.java	/^	protected void touchedBy(Entity entity) {$/;"	m	class:Zombie
+tree	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile tree = new TreeTile(4);$/;"	f	class:Tile
+treeSapling	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile treeSapling = new SaplingTile(9, grass, tree);$/;"	f	class:Tile
+trySpawn	com/mojang/ld22/level/Level.java	/^	public void trySpawn(int count) {$/;"	m	class:Level
+type	com/mojang/ld22/crafting/ToolRecipe.java	/^	private ToolType type;$/;"	f	class:ToolRecipe	file:
+type	com/mojang/ld22/item/ToolItem.java	/^	public ToolType type;$/;"	f	class:ToolItem
+up	com/mojang/ld22/InputHandler.java	/^	public Key up = new Key();$/;"	f	class:InputHandler
+use	com/mojang/ld22/entity/Anvil.java	/^	public boolean use(Player player, int attackDir) {$/;"	m	class:Anvil
+use	com/mojang/ld22/entity/Chest.java	/^	public boolean use(Player player, int attackDir) {$/;"	m	class:Chest
+use	com/mojang/ld22/entity/Entity.java	/^	public boolean use(Player player, int attackDir) {$/;"	m	class:Entity
+use	com/mojang/ld22/entity/Furnace.java	/^	public boolean use(Player player, int attackDir) {$/;"	m	class:Furnace
+use	com/mojang/ld22/entity/Oven.java	/^	public boolean use(Player player, int attackDir) {$/;"	m	class:Oven
+use	com/mojang/ld22/entity/Player.java	/^	private boolean use() {$/;"	m	class:Player	file:
+use	com/mojang/ld22/entity/Player.java	/^	private boolean use(int x0, int y0, int x1, int y1) {$/;"	m	class:Player	file:
+use	com/mojang/ld22/entity/Workbench.java	/^	public boolean use(Player player, int attackDir) {$/;"	m	class:Workbench
+use	com/mojang/ld22/level/tile/Tile.java	/^	public boolean use(Level level, int xt, int yt, Player player, int attackDir) {$/;"	m	class:Tile
+values	com/mojang/ld22/level/levelgen/LevelGen.java	/^	public double[] values;$/;"	f	class:LevelGen
+w	com/mojang/ld22/gfx/Screen.java	/^	public final int w, h;$/;"	f	class:Screen
+w	com/mojang/ld22/level/Level.java	/^	public int w, h;$/;"	f	class:Level
+w	com/mojang/ld22/level/levelgen/LevelGen.java	/^	private int w, h;$/;"	f	class:LevelGen	file:
+wRandom	com/mojang/ld22/level/tile/LavaTile.java	/^	private Random wRandom = new Random();$/;"	f	class:LavaTile	file:
+wRandom	com/mojang/ld22/level/tile/WaterTile.java	/^	private Random wRandom = new Random();$/;"	f	class:WaterTile	file:
+walkDist	com/mojang/ld22/entity/ItemEntity.java	/^	protected int walkDist = 0;$/;"	f	class:ItemEntity
+walkDist	com/mojang/ld22/entity/Mob.java	/^	protected int walkDist = 0;$/;"	f	class:Mob
+water	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile water = new WaterTile(2);$/;"	f	class:Tile
+wheat	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource wheat = new Resource("Wheat", 6 + 4 * 32, Color.get(-1, 110, 330, 550));$/;"	f	class:Resource
+wheat	com/mojang/ld22/level/tile/Tile.java	/^	public static Tile wheat = new WheatTile(12);$/;"	f	class:Tile
+width	com/mojang/ld22/gfx/SpriteSheet.java	/^	public int width, height;$/;"	f	class:SpriteSheet
+window	com/mojang/ld22/screen/ContainerMenu.java	/^	private int window = 0;$/;"	f	class:ContainerMenu	file:
+won	com/mojang/ld22/Game.java	/^	public void won() {$/;"	m	class:Game
+wonTimer	com/mojang/ld22/Game.java	/^	private int wonTimer = 0;$/;"	f	class:Game	file:
+wood	com/mojang/ld22/item/resource/Resource.java	/^	public static Resource wood = new Resource("Wood", 1 + 4 * 32, Color.get(-1, 200, 531, 430));$/;"	f	class:Resource
+workbenchRecipes	com/mojang/ld22/crafting/Crafting.java	/^	public static final List<Recipe> workbenchRecipes = new ArrayList<Recipe>();$/;"	f	class:Crafting
+x	com/mojang/ld22/entity/Entity.java	/^	public int x, y;$/;"	f	class:Entity
+x	com/mojang/ld22/gfx/Sprite.java	/^	public int x, y;$/;"	f	class:Sprite
+xKnockback	com/mojang/ld22/entity/ItemEntity.java	/^	protected int xKnockback, yKnockback;$/;"	f	class:ItemEntity
+xKnockback	com/mojang/ld22/entity/Mob.java	/^	protected int xKnockback, yKnockback;$/;"	f	class:Mob
+xOffset	com/mojang/ld22/gfx/Screen.java	/^	public int xOffset;$/;"	f	class:Screen
+xa	com/mojang/ld22/entity/AirWizard.java	/^	private int xa, ya;$/;"	f	class:AirWizard	file:
+xa	com/mojang/ld22/entity/ItemEntity.java	/^	public double xa, ya, za;$/;"	f	class:ItemEntity
+xa	com/mojang/ld22/entity/Slime.java	/^	private int xa, ya;$/;"	f	class:Slime	file:
+xa	com/mojang/ld22/entity/Spark.java	/^	public double xa, ya;$/;"	f	class:Spark
+xa	com/mojang/ld22/entity/Zombie.java	/^	private int xa, ya;$/;"	f	class:Zombie	file:
+xa	com/mojang/ld22/entity/particle/TextParticle.java	/^	public double xa, ya, za;$/;"	f	class:TextParticle
+xr	com/mojang/ld22/entity/Entity.java	/^	public int xr = 6;$/;"	f	class:Entity
+xx	com/mojang/ld22/entity/ItemEntity.java	/^	public double xx, yy, zz;$/;"	f	class:ItemEntity
+xx	com/mojang/ld22/entity/Spark.java	/^	public double xx, yy;$/;"	f	class:Spark
+xx	com/mojang/ld22/entity/particle/TextParticle.java	/^	public double xx, yy, zz;$/;"	f	class:TextParticle
+y	com/mojang/ld22/entity/Entity.java	/^	public int x, y;$/;"	f	class:Entity
+y	com/mojang/ld22/gfx/Sprite.java	/^	public int x, y;$/;"	f	class:Sprite
+yKnockback	com/mojang/ld22/entity/ItemEntity.java	/^	protected int xKnockback, yKnockback;$/;"	f	class:ItemEntity
+yKnockback	com/mojang/ld22/entity/Mob.java	/^	protected int xKnockback, yKnockback;$/;"	f	class:Mob
+yOffset	com/mojang/ld22/gfx/Screen.java	/^	public int yOffset;$/;"	f	class:Screen
+ya	com/mojang/ld22/entity/AirWizard.java	/^	private int xa, ya;$/;"	f	class:AirWizard	file:
+ya	com/mojang/ld22/entity/ItemEntity.java	/^	public double xa, ya, za;$/;"	f	class:ItemEntity
+ya	com/mojang/ld22/entity/Slime.java	/^	private int xa, ya;$/;"	f	class:Slime	file:
+ya	com/mojang/ld22/entity/Spark.java	/^	public double xa, ya;$/;"	f	class:Spark
+ya	com/mojang/ld22/entity/Zombie.java	/^	private int xa, ya;$/;"	f	class:Zombie	file:
+ya	com/mojang/ld22/entity/particle/TextParticle.java	/^	public double xa, ya, za;$/;"	f	class:TextParticle
+yr	com/mojang/ld22/entity/Entity.java	/^	public int yr = 6;$/;"	f	class:Entity
+yy	com/mojang/ld22/entity/ItemEntity.java	/^	public double xx, yy, zz;$/;"	f	class:ItemEntity
+yy	com/mojang/ld22/entity/Spark.java	/^	public double xx, yy;$/;"	f	class:Spark
+yy	com/mojang/ld22/entity/particle/TextParticle.java	/^	public double xx, yy, zz;$/;"	f	class:TextParticle
+za	com/mojang/ld22/entity/ItemEntity.java	/^	public double xa, ya, za;$/;"	f	class:ItemEntity
+za	com/mojang/ld22/entity/particle/TextParticle.java	/^	public double xa, ya, za;$/;"	f	class:TextParticle
+zz	com/mojang/ld22/entity/ItemEntity.java	/^	public double xx, yy, zz;$/;"	f	class:ItemEntity
+zz	com/mojang/ld22/entity/particle/TextParticle.java	/^	public double xx, yy, zz;$/;"	f	class:TextParticle
+ã	Session.vim	/^imap ã :call JCommentWriter()$/;"	m
+ã	Session.vim	/^map ã :call JCommentWriter()$/;"	m
+è	Session.vim	/^nmap è <<$/;"	m
+ê	Session.vim	/^nmap ê ddp$/;"	m
+ë	Session.vim	/^nmap ë ddkP$/;"	m
+ì	Session.vim	/^nmap ì >>$/;"	m
+î	Session.vim	/^imap î :call SearchInvalidComment(0)$/;"	m
+î	Session.vim	/^map î :call SearchInvalidComment(0)$/;"	m
+ð	Session.vim	/^imap ð :call SearchInvalidComment(1)$/;"	m
+ð	Session.vim	/^map ð :call SearchInvalidComment(1)$/;"	m
