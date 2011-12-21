@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
+import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 
@@ -72,7 +73,7 @@ public class Game extends Canvas implements Runnable {
 		for (int i = 0; i < 5; i++)
 		{
 			menu = null;
-			levels[i].load("saves/level" + i);
+			levels[i].load("saves/level" + i + ".dat");
 		}
 		player.load("saves/player.data");
 		System.out.println("Loaded !");
@@ -81,12 +82,19 @@ public class Game extends Canvas implements Runnable {
 	public static void save() {
 		for (int i = 0; i < 5; i++)
 		{
-			levels[i].save("saves/level" + i);
+			levels[i].save("./saves/level" + i + ".dat");
 		}
-		player.save("saves/player.data");
+		boolean status;
+		status = new File("./saves").mkdirs();
+		report(status);
+		player.save("./saves/player.data");
 		System.out.println("Saved !");
 	}
 	
+	  static void report(boolean b) {
+		    System.out.println(b ? "success" : "failure");
+		  }
+
 	public void stop() {
 		running = false;
 	}

@@ -17,7 +17,7 @@ import com.mojang.ld22.item.resource.Resource;
 import com.mojang.ld22.level.Level;
 import com.mojang.ld22.level.tile.Tile;
 import com.mojang.ld22.screen.InventoryMenu;
-import com.mojang.ld22.screen.SaveLoadMenu;
+import com.mojang.ld22.screen.PauseMenu;
 import com.mojang.ld22.sound.Sound;
 
 @SuppressWarnings("unused")
@@ -159,9 +159,9 @@ public class Player extends Mob {
 				game.setMenu(new InventoryMenu(this));
 			}
 		}
-		if (input.dropitems.clicked) {
+		if (input.pause.clicked) {
 			if (!use()) {
-				game.setMenu(new SaveLoadMenu(this));
+				game.setMenu(new PauseMenu(this));
 			}
 		}
 		if (attackTime > 0) attackTime--;

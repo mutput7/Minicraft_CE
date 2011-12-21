@@ -6,10 +6,10 @@ import com.mojang.ld22.gfx.Color;
 import com.mojang.ld22.gfx.Font;
 import com.mojang.ld22.gfx.Screen;
 
-public class SaveLoadMenu extends Menu {
+public class PauseMenu extends Menu {
 	private int inputDelay = 60;
 
-	public SaveLoadMenu(Player player) {
+	public PauseMenu(Player player) {
 	}
 
 	public void tick() {
@@ -21,7 +21,7 @@ public class SaveLoadMenu extends Menu {
 		else if (input.attack.clicked ) {
 			Game.save();
 		}
-		else if (input.dropitems.clicked) {
+		else if (input.pause.clicked) {
 			game.setMenu(null);
 		}
 	}
