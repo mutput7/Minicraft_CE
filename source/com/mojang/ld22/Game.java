@@ -76,23 +76,24 @@ public class Game extends Canvas implements Runnable {
 			levels[i].load("saves/level" + i + ".dat");
 		}
 		player.load("saves/player.data");
-		System.out.println("Loaded !");
+		System.out.println("Loaded!");
 	}
 
 	public static void save() {
 		for (int i = 0; i < 5; i++)
 		{
+			boolean status;
+			status = new File("./saves").mkdirs();
+			report(status);
 			levels[i].save("./saves/level" + i + ".dat");
 		}
-		boolean status;
-		status = new File("./saves").mkdirs();
-		report(status);
+
 		player.save("./saves/player.data");
-		System.out.println("Saved !");
+		System.out.println("Saved!");
 	}
 	
 	  static void report(boolean b) {
-		    System.out.println(b ? "success" : "failure");
+		    System.out.println(b ? "" : "");
 		  }
 
 	public void stop() {
@@ -132,6 +133,10 @@ public class Game extends Canvas implements Runnable {
 		player.findStartPos(level);
 		if (player.findStartPos(level)) {
 			level.add(player);
+			
+			for (int i = 0; i < 5; i++) {
+				levels[i].trySpawn(5000);
+			}
 		}
 		for (int i = 0; i < 5; i++) {
 			levels[i].trySpawn(5000);

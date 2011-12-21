@@ -115,7 +115,7 @@ public class Player extends Mob {
 				attack();
 			}
 			
-/*          ^ Stamina | Health v                     */
+//          ^ Stamina | Health v                     
 /*
 			
 			if (health <= 0 && healthRechargeDelay == 0 && healthRecharge == 0) {
@@ -140,8 +140,8 @@ public class Player extends Mob {
 			if (healthRechargeDelay % 2 == 0) {
 				move(xa, ya);
 			}
-*/
-/*			if (input.attack.clicked) {
+
+ 			if (input.attack.clicked) {
 				if (health == 0) {
 
 				} else {

@@ -1,5 +1,6 @@
 package com.mojang.ld22.screen;
 
+import com.mojang.ld22.Game;
 import com.mojang.ld22.gfx.Color;
 import com.mojang.ld22.gfx.Font;
 import com.mojang.ld22.gfx.Screen;
@@ -8,7 +9,7 @@ import com.mojang.ld22.sound.Sound;
 public class TitleMenu extends Menu {
 	private int selected = 0;
 
-	private static final String[] options = { "Begin Awesome!", "Wut duz I do? D:", "About", "A note from Notch", "Settings" };
+	private static final String[] options = { "Begin Awesome!", "Load Game", "How to play", "About", "A note from Notch", "Settings" };
 
 	public TitleMenu() {
 	}
@@ -27,10 +28,13 @@ public class TitleMenu extends Menu {
 				game.resetGame();
 				game.setMenu(null);
 			}
-			if (selected == 1) game.setMenu(new InstructionsMenu(this));
-			if (selected == 2) game.setMenu(new AboutMenu(this));
-			if (selected == 3) game.setMenu(new NotchMenu(this));
-			if (selected == 4) game.setMenu(new SettingsMenu(this)); 
+			if (selected == 1) {
+				Game.load();
+			}
+			if (selected == 2) game.setMenu(new InstructionsMenu(this));
+			if (selected == 3) game.setMenu(new AboutMenu(this));
+			if (selected == 4) game.setMenu(new NotchMenu(this));
+			if (selected == 5) game.setMenu(new SettingsMenu(this)); 
 		}
 	}
 
@@ -48,7 +52,7 @@ public class TitleMenu extends Menu {
 			}
 		}
 
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 6; i++) {
 			String msg = options[i];
 			int col = Color.get(0, 222, 222, 222);
 			if (i == selected) {

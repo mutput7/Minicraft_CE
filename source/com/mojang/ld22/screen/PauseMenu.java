@@ -47,6 +47,6 @@ public class PauseMenu extends Menu {
 		Font.draw("" + Game.player.score, screen, 133, 96, Color.get(-1, 550, 550, 550));
 		Font.draw("Press C to save", screen, 85, 114, Color.get(-1, 333, 333, 333));
 		Font.draw("Press X to load", screen, 85, 128, Color.get(-1, 333, 333, 333));
-		Font.draw("Press K to resume", screen, 85, 140, Color.get(-1, 333, 333, 333));
+		Font.draw("Press Z to resume", screen, 85, 140, Color.get(-1, 333, 333, 333));
 	}
 }

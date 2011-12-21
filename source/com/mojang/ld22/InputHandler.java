@@ -92,7 +92,9 @@ public class InputHandler implements KeyListener {
 
 		if (ke.getKeyCode() == KeyEvent.VK_X) menu.toggle(pressed);
 		if (ke.getKeyCode() == KeyEvent.VK_C) attack.toggle(pressed);
-		if (ke.getKeyCode() == KeyEvent.VK_K) pause.toggle(pressed);
+		if (ke.getKeyCode() == KeyEvent.VK_Z) pause.toggle(pressed);
+		if (ke.getKeyCode() == KeyEvent.VK_P) pause.toggle(pressed);
+		if (ke.getKeyCode() == KeyEvent.VK_ESCAPE) pause.toggle(pressed);
 	}
 
 	public void keyTyped(KeyEvent ke) {

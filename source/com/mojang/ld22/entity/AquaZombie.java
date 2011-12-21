@@ -66,12 +66,12 @@ public class AquaZombie extends Mob {
 		int xo = x - 8;
 		int yo = y - 11;
 
-		int col = Color.get(-1, 10, 252, 050);
-		if (lvl == 2) col = Color.get(-1, 100, 522, 050);
-		if (lvl == 3) col = Color.get(-1, 111, 444, 050);
-		if (lvl == 4) col = Color.get(-1, 000, 111, 020);
+		int col = Color.get(-1, 252, 10, 050);
+		if (lvl == 2) col = Color.get(-1, 522, 100, 050);
+		if (lvl == 3) col = Color.get(-1, 444, 100, 050);
+		if (lvl == 4) col = Color.get(-1, 111, 000, 020);
 		if (hurtTime > 0) {
-			col = Color.get(-1, 555, 555, 555);
+			col = Color.get(-1, 555, 0, 0);
 		}
 
 		screen.render(xo + 8 * flip1, yo + 0, xt + yt * 32, col, flip1);
