@@ -388,10 +388,10 @@ public class Player extends Mob {
 		super.die();
 		// drop items
 		for (Item it : inventory.getAll()) {
-			level.add(new ItemEntity(it, x, y));
+			level.add(new ItemEntity(it, x, y, 300));
 		}
 		if (activeItem != null)
-			level.add(new ItemEntity(activeItem, x, y));
+			level.add(new ItemEntity(activeItem, x, y, 300));
 		// reset some values
 		inventory.removeAll();
 		invulnerableTime = 0;
