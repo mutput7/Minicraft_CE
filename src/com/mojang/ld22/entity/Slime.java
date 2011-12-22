@@ -8,10 +8,9 @@ import com.mojang.ld22.item.resource.Resource;
 public class Slime extends Mob {
 	private int xa, ya;
 	private int jumpTime = 0;
-	private int lvl;
 
 	public Slime(int lvl) {
-		this.lvl = lvl;
+		super(lvl);
 		x = random.nextInt(64 * 16);
 		y = random.nextInt(64 * 16);
 		health = maxHealth = lvl * lvl * 5;

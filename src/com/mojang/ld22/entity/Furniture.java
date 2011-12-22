@@ -56,6 +56,7 @@ public class Furniture extends Entity {
 	public void take(Player player) {
 		shouldTake = player;
 	}
+
 	protected void touchedBy1(Entity entity) {
 		if (entity instanceof AquaZombie && pushTime == 0) {
 			pushDir = ((AquaZombie) entity).dir;
@@ -66,4 +67,5 @@ public class Furniture extends Entity {
 	public void take(AquaZombie aqzmb) {
 		shouldTake1 = aqzmb;
 	}
+
 }

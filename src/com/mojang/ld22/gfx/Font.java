@@ -1,10 +1,10 @@
 package com.mojang.ld22.gfx;
 
 public class Font {
-	private static String chars = "" + //
-			"ABCDEFGHIJKLMNOPQRSTUVWXYZ      " + //
-			"0123456789.,!?'\"-+=/\\%()<>:;     " + //
-			"";
+	private static String chars = "" +
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ      " +
+		"0123456789.,!?'\"-+=/\\%()<>:;     " +
+		"";
 
 	public static void draw(String msg, Screen screen, int x, int y, int col) {
 		msg = msg.toUpperCase();
@@ -40,7 +40,7 @@ public class Font {
 			}
 		}
 
-		draw(title, screen, x0 * 8 + 8, y0 * 8, Color.get(5, 550, 5, 5));
+		draw(title, screen, x0 * 8 + 8, y0 * 8, Color.get(5, 5, 5, 550));
 
 	}
 }

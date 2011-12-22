@@ -7,25 +7,32 @@ import com.mojang.ld22.gfx.Font;
 import com.mojang.ld22.gfx.Screen;
 
 public class PauseMenu extends Menu {
+	private Game game;
+	private boolean saved = false;
+	private boolean loaded = false;
+
 	private int inputDelay = 60;
 
-	public PauseMenu(Player player) {
+	public PauseMenu(Game game, Player player) {
+		this.game = game;
 	}
 
 	public void tick() {
 		if (inputDelay > 0)
 			inputDelay--;
-		else if (input.menu.clicked ) {
-			Game.load();
+		else if (input.menu.clicked && !loaded) {
+			game.loadGame();
+			loaded = true;
 		}
-		else if (input.attack.clicked ) {
-			Game.save();
+		else if (input.attack.clicked && !saved) {
+			game.saveGame();
+			saved = true;
 		}
 		else if (input.pause.clicked) {
 			game.setMenu(null);
 		}
 	}
-	
+
 	public void render(Screen screen) {
 		Font.renderFrame(screen, "", 10, 8, 28, 18);
 		Font.draw("PAUSE", screen, 85, 70, Color.get(-1, 555, 555, 555));
@@ -44,9 +51,11 @@ public class PauseMenu extends Menu {
 		Font.draw("Time:", screen, 85, 80, Color.get(-1, 555, 555, 555));
 		Font.draw(timeString, screen, 123, 80, Color.get(-1, 550, 550, 550));
 		Font.draw("Score:", screen, 85, 96, Color.get(-1, 555, 555, 555));
-		Font.draw("" + Game.player.score, screen, 133, 96, Color.get(-1, 550, 550, 550));
-		Font.draw("Press C to save", screen, 85, 114, Color.get(-1, 333, 333, 333));
-		Font.draw("Press X to load", screen, 85, 128, Color.get(-1, 333, 333, 333));
+		Font.draw("" + game.player.score, screen, 133, 96, Color.get(-1, 550, 550, 550));
+		if (saved == false)
+			Font.draw("Press C to save", screen, 85, 114, Color.get(-1, 333, 333, 333));
+		if (loaded == false)
+			Font.draw("Press X to load", screen, 85, 128, Color.get(-1, 333, 333, 333));
 		Font.draw("Press Z to resume", screen, 85, 140, Color.get(-1, 333, 333, 333));
 	}
 }

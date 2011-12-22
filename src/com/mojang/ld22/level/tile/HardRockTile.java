@@ -18,7 +18,6 @@ import com.mojang.ld22.level.Level;
 public class HardRockTile extends Tile {
 	public HardRockTile(int id) {
 		super(id);
-		connectsToGrass = true;
 	}
 
 	public void render(Screen screen, Level level, int x, int y) {

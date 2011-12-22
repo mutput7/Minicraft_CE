@@ -1,13 +1,12 @@
 package com.mojang.ld22.entity;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-import com.mojang.ld22.item.Item;
-import com.mojang.ld22.item.ResourceItem;
-import com.mojang.ld22.item.resource.Resource;
+import com.mojang.ld22.item.*;
+import com.mojang.ld22.item.resource.*;
+import com.mojang.ld22.Dumpable;
 
-public class Inventory {
+public class Inventory extends Dumpable {
 	public List<Item> items = new ArrayList<Item>();
 
 	public void add(Item item) {
@@ -15,6 +14,7 @@ public class Inventory {
 	}
 
 	public void add(int slot, Item item) {
+		if (slot == -1) slot = items.size();
 		if (item instanceof ResourceItem) {
 			ResourceItem toTake = (ResourceItem) item;
 			ResourceItem has = findResource(toTake.resource);
@@ -29,13 +29,18 @@ public class Inventory {
 	}
 
 	private ResourceItem findResource(Resource resource) {
-		for (int i = 0; i < items.size(); i++) {
-			if (items.get(i) instanceof ResourceItem) {
-				ResourceItem has = (ResourceItem) items.get(i);
-				if (has.resource == resource) return has;
+		for (Item it : items) {
+			if (it.isResource()) {
+				ResourceItem has = (ResourceItem) it;
+				if (has.resource == resource)
+					return has;
 			}
 		}
 		return null;
+	}
+
+	public void removeAll() {
+		items.clear();
 	}
 
 	public boolean hasResources(Resource r, int count) {
@@ -66,4 +71,25 @@ public class Inventory {
 		}
 		return 0;
 	}
+
+	public void saveTo(StringBuffer str) {
+		super.saveTo(str);
+		int size = items.size();
+		str.append(size + " ");
+		for (Item i : items) {
+			i.saveTo(str);
+		}
+	}
+
+	public void loadFrom(StringTokenizer st) {
+		super.loadFrom(st);
+		int size = nextInt(st);
+		for (int i = 0; i < size; i++) {
+			Item it = Item.get(st);
+			if (it != null) {
+				add(-1, it);
+			}
+		}
+	}
+
 }

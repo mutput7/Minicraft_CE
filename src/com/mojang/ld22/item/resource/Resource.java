@@ -1,11 +1,14 @@
 package com.mojang.ld22.item.resource;
 
+import java.util.*;
+
 import com.mojang.ld22.entity.Player;
 import com.mojang.ld22.gfx.Color;
 import com.mojang.ld22.level.Level;
 import com.mojang.ld22.level.tile.Tile;
+import com.mojang.ld22.Dumpable;
 
-public class Resource {
+public class Resource extends Dumpable {
 	public static Resource wood = new Resource("Wood", 1 + 4 * 32, Color.get(-1, 200, 531, 430));
 	public static Resource stone = new Resource("Stone", 2 + 4 * 32, Color.get(-1, 111, 333, 555));
 	public static Resource flower = new PlantableResource("Flower", 0 + 4 * 32, Color.get(-1, 10, 444, 330), Tile.flower, Tile.grass);
@@ -30,12 +33,13 @@ public class Resource {
 	public static Resource cloud = new PlantableResource("cloud", 2 + 4 * 32, Color.get(-1, 222, 555, 444), Tile.cloud, Tile.infiniteFall);
 	public static Resource gem = new Resource("gem", 13 + 4 * 32, Color.get(-1, 101, 404, 545));
 
-	public final String name;
-	public final int sprite;
-	public final int color;
+	public String name;
+	public int sprite;
+	public int color;
 
-	public Resource(String name, int sprite, int color) {
-		if (name.length() > 6) throw new RuntimeException("Name cannot be longer than six characters!");
+	protected Resource(String name, int sprite, int color) {
+		if (name != null && name.length() > 6)
+			throw new RuntimeException("Name cannot be longer than six characters!");
 		this.name = name;
 		this.sprite = sprite;
 		this.color = color;
@@ -43,5 +47,30 @@ public class Resource {
 
 	public boolean interactOn(Tile tile, Level level, int xt, int yt, Player player, int attackDir) {
 		return false;
+	}
+
+	static public Resource get(String name) {
+		if (name.equals("Wood")) return wood;
+		if (name.equals("Stone")) return stone;
+		if (name.equals("Flower")) return flower;
+		if (name.equals("Acorn")) return acorn;
+		if (name.equals("Dirt")) return dirt;
+		if (name.equals("Sand")) return sand;
+		if (name.equals("Cactus")) return cactusFlower;
+		if (name.equals("Seeds")) return seeds;
+		if (name.equals("Wheat")) return wheat;
+		if (name.equals("Bread")) return bread;
+		if (name.equals("Apple")) return apple;
+		if (name.equals("COAL")) return coal;
+		if (name.equals("I.ORE")) return ironOre;
+		if (name.equals("G.ORE")) return goldOre;
+		if (name.equals("IRON")) return ironIngot;
+		if (name.equals("GOLD")) return goldIngot;
+		if (name.equals("SLIME")) return slime;
+		if (name.equals("glass")) return glass;
+		if (name.equals("cloth")) return cloth;
+		if (name.equals("cloud")) return cloud;
+		if (name.equals("gem")) return gem;
+		return null;
 	}
 }

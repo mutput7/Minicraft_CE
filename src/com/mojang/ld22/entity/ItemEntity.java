@@ -1,8 +1,10 @@
 package com.mojang.ld22.entity;
 
+import java.util.*;
+
 import com.mojang.ld22.gfx.Color;
 import com.mojang.ld22.gfx.Screen;
-import com.mojang.ld22.item.Item;
+import com.mojang.ld22.item.*;
 import com.mojang.ld22.sound.Sound;
 
 public class ItemEntity extends Entity {
@@ -84,4 +86,15 @@ public class ItemEntity extends Entity {
 		item.onTake(this);
 		remove();
 	}
+
+	public void loadFrom(StringTokenizer st) {
+		super.loadFrom(st);
+		item = Item.get(st);
+	}
+
+	public void saveTo(StringBuffer str) {
+		super.saveTo(str);
+		item.saveTo(str);
+	}
+
 }

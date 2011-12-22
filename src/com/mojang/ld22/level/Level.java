@@ -1,23 +1,15 @@
 package com.mojang.ld22.level;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
-import com.mojang.ld22.entity.AirWizard;
-import com.mojang.ld22.entity.Entity;
-import com.mojang.ld22.entity.Mob;
-import com.mojang.ld22.entity.Player;
-import com.mojang.ld22.entity.Slime;
-import com.mojang.ld22.entity.Zombie;
+import com.mojang.ld22.entity.*;
+import com.mojang.ld22.entity.particle.*;
 import com.mojang.ld22.gfx.Screen;
 import com.mojang.ld22.level.levelgen.LevelGen;
 import com.mojang.ld22.level.tile.Tile;
+import com.mojang.ld22.Dumpable;
 
-public class Level {
+public class Level extends Dumpable {
 	private Random random = new Random();
 
 	public int w, h;
@@ -102,9 +94,9 @@ public class Level {
 		for (int i = 0; i < w * h; i++) {
 			entitiesInTiles[i] = new ArrayList<Entity>();
 		}
-		
+
 		if (level==1) {
-			AirWizard aw = new AirWizard();
+			AirWizard aw = new AirWizard(1);
 			aw.x = w*8;
 			aw.y = h*8;
 			add(aw);
@@ -173,10 +165,6 @@ public class Level {
 		}
 		screen.setOffset(0, 0);
 	}
-
-	// private void renderLight(Screen screen, int x, int y, int r) {
-	// screen.renderLight(x, y, r);
-	// }
 
 	private void sortAndRender(Screen screen, List<Entity> list) {
 		Collections.sort(list, spriteSorter);
@@ -264,7 +252,7 @@ public class Level {
 
 		for (int i = 0; i < w * h / 50; i++) {
 			int xt = random.nextInt(w);
-			int yt = random.nextInt(w);
+			int yt = random.nextInt(h);
 			getTile(xt, yt).tick(this, xt, yt);
 		}
 		for (int i = 0; i < entities.size(); i++) {
@@ -307,49 +295,107 @@ public class Level {
 		}
 		return result;
 	}
-	public void save(String filename) {
-		try {
-			FileOutputStream writer = new FileOutputStream(filename);
-			for (int x = 0; x < w; x++) {
-				for (int y = 0; y < h; y++) {
-					writer.write(tiles[x+y*w]);
-				}
+
+	public void saveTo(StringBuffer str) {
+		super.saveTo(str);
+		for (int x = 0; x < w; x++) {
+			for (int y = 0; y < h; y++) {
+				str.append((int)tiles[x+y*w] + " ");
 			}
-			for (int x = 0; x < w; x++) {
-				for (int y = 0; y < h; y++) {
-					writer.write(data[x+y*w]);
-				}
+		}
+		for (int x = 0; x < w; x++) {
+			for (int y = 0; y < h; y++) {
+				str.append((int)data[x+y*w] + " ");
 			}
-			writer.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("File not found: " + filename);
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
+		}
+		int size = entities.size();
+		if (entities.contains(player)) size--;
+		str.append(size + " ");
+		for (Entity e : entities) {
+			if (!(e instanceof Player))
+			{
+				str.append(e.getClass().getSimpleName() + " ");
+				e.saveTo(str);
+			}
 		}
 	}
 
-	public void load(String filename) {
-		try {
-			FileInputStream reader = new FileInputStream(filename);
-			for (int x = 0; x < w; x++) {
-				for (int y = 0; y < h; y++) {
-					tiles[x+y*w] = (byte)reader.read();
-				}
+	public void loadFrom(StringTokenizer st) {
+		super.loadFrom(st);
+		for (int x = 0; x < w; x++) {
+			for (int y = 0; y < h; y++) {
+				tiles[x+y*w] = (byte)Integer.parseInt(st.nextToken());
 			}
-			for (int x = 0; x < w; x++) {
-				for (int y = 0; y < h; y++) {
-					data[x+y*w] = (byte)reader.read();
-				}
+		}
+		for (int x = 0; x < w; x++) {
+			for (int y = 0; y < h; y++) {
+				data[x+y*w] = (byte)Integer.parseInt(st.nextToken());
 			}
-			reader.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("File not found: " + filename);
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
+		}
+		int size = Integer.parseInt(st.nextToken());
+		System.out.println("Loading " + size + " entities");
+		for (int i = 0; i < size; i++) {
+			String cl = null;
+			try {
+				cl = nextString(st);
+			} catch (Exception ex) {
+				System.out.println("[Level] Error at: " + i);
+				ex.printStackTrace();
+				continue;
+			}
+			Entity e = null;
+			if(cl.equals("Zombie")) {
+				e = new Zombie(0);
+			} else if (cl.equals("Slime")) {
+				e = new Slime(0);
+			} else if (cl.equals("AirWizard")) {
+				e = new AirWizard(0);
+			} else if (cl.equals("Mob")) {
+				e = new Mob(0);
+			} else if (cl.equals("Entity")) {
+				e = new Entity();
+			} else if (cl.equals("Oven")) {
+				e = new Oven();
+			} else if (cl.equals("Furnace")) {
+				e = new Furnace();
+			} else if (cl.equals("Anvil")) {
+				e = new Anvil();
+			} else if (cl.equals("Chest")) {
+				e = new Chest();
+			} else if (cl.equals("Spark")) {
+				e = new Spark(null, 0, 0); // !!!
+			} else if (cl.equals("Workbench")) {
+				e = new Workbench();
+			} else if (cl.equals("Furniture")) {
+				e = new Furniture("name");
+			} else if (cl.equals("Lantern")) {
+				e = new Lantern();
+			} else if (cl.equals("Spark")) {
+				//e = new Spark(null, 0, 0); // don't load spark
+			} else if (cl.equals("ItemEntity")) {
+				e = new ItemEntity(null, 0, 0); // !!!
+			} else if (cl.equals("TextParticle")) {
+				e = new TextParticle("test", 0, 0, 0); // !!!
+			} else if (cl.equals("SmashParticle")) {
+				e = new SmashParticle(0, 0);
+			} else if (cl.equals("Particle")) {
+				e = new Particle();
+			} else if (cl.equals("ItemEntity")) {
+				e = new ItemEntity(null, 0, 0);
+			} else {
+				System.out.println("[Level] Unknow entity : "+cl);
+			}
+			if (e != null)
+			{
+				try {
+					e.loadFrom(st);
+				} catch (Exception ex) {
+					System.out.println("[Level] Error loading entity: "+cl);
+					ex.printStackTrace();
+				}
+				add(e);
+			}
 		}
 	}
+
 }

@@ -1,5 +1,7 @@
 package com.mojang.ld22.entity;
 
+import java.io.*;
+import java.util.*;
 import com.mojang.ld22.entity.particle.TextParticle;
 import com.mojang.ld22.gfx.Color;
 import com.mojang.ld22.level.Level;
@@ -15,8 +17,20 @@ public class Mob extends Entity {
 	public int health = maxHealth;
 	public int swimTimer = 0;
 	public int tickTime = 0;
+	public int maxLvl = 10;
+	public int lvl = 1;
+	public int exp = 0;
 
 	public Mob() {
+		x = y = 8;
+		xr = 4;
+		yr = 3;
+	}
+
+	public Mob(int lvl) {
+		this.lvl = lvl;
+		maxHealth += lvl*2;
+		health = maxHealth;
 		x = y = 8;
 		xr = 4;
 		yr = 3;
@@ -32,6 +46,16 @@ public class Mob extends Entity {
 			die();
 		}
 		if (hurtTime > 0) hurtTime--;
+		if (lvl < maxLvl && exp >= Math.pow(2, lvl)) {
+			levelUp();
+		}
+	}
+
+	protected void levelUp() {
+		lvl++;
+		exp = 0;
+		maxHealth += 2;
+		health = maxHealth;
 	}
 
 	protected void die() {
@@ -85,6 +109,10 @@ public class Mob extends Entity {
 
 	public void hurt(Mob mob, int damage, int attackDir) {
 		doHurt(damage, attackDir);
+		if (health <= 0)
+		{
+			mob.exp += lvl;
+		}
 	}
 
 	public void heal(int heal) {
@@ -136,5 +164,18 @@ public class Mob extends Entity {
 		}
 
 		return false;
+	}
+
+	public void loadFrom(StringTokenizer st) {
+		super.loadFrom(st);
+		health = nextInt(st);
+		maxHealth = nextInt(st);
+		lvl = nextInt(st);
+		dir = nextInt(st);
+	}
+
+	public void saveTo(StringBuffer str) {
+		super.saveTo(str);
+		str.append(health + " " + maxHealth + " " + lvl + " " + dir + " ");
 	}
 }

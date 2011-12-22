@@ -1,8 +1,10 @@
 package com.mojang.ld22.screen;
 
+import com.mojang.ld22.Game;
+import com.mojang.ld22.InputHandler;
 import com.mojang.ld22.entity.Player;
-import com.mojang.ld22.gfx.Color;
 import com.mojang.ld22.gfx.Font;
+import com.mojang.ld22.gfx.Color;
 import com.mojang.ld22.gfx.Screen;
 import com.mojang.ld22.item.Item;
 
@@ -10,8 +12,9 @@ public class InventoryMenu extends Menu {
 	private Player player;
 	private int selected = 0;
 
-	public InventoryMenu(Player player) {
-		this.player = player;
+	public void init(Game game, InputHandler input) {
+		super.init(game, input);
+		this.player = game.player;
 
 		if (player.activeItem != null) {
 			player.inventory.items.add(0, player.activeItem);

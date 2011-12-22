@@ -7,11 +7,10 @@ import com.mojang.ld22.item.resource.Resource;
 
 public class Zombie extends Mob {
 	private int xa, ya;
-	private int lvl;
 	private int randomWalkTime = 0;
 
 	public Zombie(int lvl) {
-		this.lvl = lvl;
+		super(lvl);
 		x = random.nextInt(64 * 16);
 		y = random.nextInt(64 * 16);
 		health = maxHealth = lvl * lvl * 10;

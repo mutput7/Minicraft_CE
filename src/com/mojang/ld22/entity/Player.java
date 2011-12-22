@@ -1,6 +1,8 @@
 package com.mojang.ld22.entity;
 
 import java.util.List;
+import java.io.*;
+import java.util.*;
 
 import com.mojang.ld22.Game;
 import com.mojang.ld22.InputHandler;
@@ -17,13 +19,13 @@ import com.mojang.ld22.item.resource.Resource;
 import com.mojang.ld22.level.Level;
 import com.mojang.ld22.level.tile.Tile;
 import com.mojang.ld22.screen.InventoryMenu;
-import com.mojang.ld22.screen.PauseMenu;
 import com.mojang.ld22.sound.Sound;
+import com.mojang.ld22.screen.PauseMenu;
 
-@SuppressWarnings("unused")
 public class Player extends Mob {
 	private InputHandler input;
 	private int attackTime, attackDir;
+	private int spawnX, spawnY;
 
 	public Game game;
 	public Inventory inventory = new Inventory();
@@ -32,25 +34,27 @@ public class Player extends Mob {
 	public int stamina;
 	public int staminaRecharge;
 	public int staminaRechargeDelay;
-	public int score;
 	public int maxStamina = 10;
-/*	public int health;*/
-	public int healthRecharge;
-	public int healthRechargeDelay;
-/*	public int maxHealth = 10;*/
+	public int score;
 	private int onStairDelay;
 	public int invulnerableTime = 0;
 
 	public Player(Game game, InputHandler input) {
+		super(1);
 		this.game = game;
 		this.input = input;
-		x = 24;
-		y = 24;
+		x = spawnX = 0;
+		y = spawnY = 0;
 		stamina = maxStamina;
-		health = maxHealth;
 
 		inventory.add(new FurnitureItem(new Workbench()));
 		inventory.add(new PowerGloveItem());
+	}
+
+	protected void levelUp() {
+		super.levelUp();
+		level.add(new TextParticle("Level up !", x, y, Color.get(-1, 351, 351, 351)));
+		maxStamina += 2;
 	}
 
 	public void tick() {
@@ -114,58 +118,16 @@ public class Player extends Mob {
 				staminaRecharge = 0;
 				attack();
 			}
-			
-//          ^ Stamina | Health v                     
-/*
-			
-			if (health <= 0 && healthRechargeDelay == 0 && healthRecharge == 0) {
-				healthRechargeDelay = 40;
-			}
-
-			if (healthRechargeDelay > 0) {
-				healthRechargeDelay--;
-			}
-
-			if (healthRechargeDelay == 0) {
-				healthRecharge++;
-				if (isSwimming()) {
-					healthRecharge = 0;
-				}
-				while (healthRecharge > 10) {
-					healthRecharge -= 10;
-					if (health < maxHealth) health++;
-				}
-			}
-
-			if (healthRechargeDelay % 2 == 0) {
-				move(xa, ya);
-			}
-
- 			if (input.attack.clicked) {
-				if (health == 0) {
-
-				} else {
-					health--;
-					healthRecharge = 0;
-					attack();
-				}
-
-*/			
-			
-/*       */                                            	
 		}
 		if (input.menu.clicked) {
 			if (!use()) {
-				game.setMenu(new InventoryMenu(this));
+				game.setMenu(new InventoryMenu());
 			}
 		}
 		if (input.pause.clicked) {
-			if (!use()) {
-				game.setMenu(new PauseMenu(this));
-			}
+			game.setMenu(new PauseMenu(game, this));
 		}
 		if (attackTime > 0) attackTime--;
-		
 	}
 
 	private boolean use() {
@@ -382,15 +344,23 @@ public class Player extends Mob {
 	}
 
 	public boolean findStartPos(Level level) {
+		if (spawnX != 0 && spawnY != 0) return true;
 		while (true) {
 			int x = random.nextInt(level.w);
 			int y = random.nextInt(level.h);
 			if (level.getTile(x, y) == Tile.grass) {
-				this.x = x * 16 + 8;
-				this.y = y * 16 + 8;
+				spawnX = x * 16 + 8;
+				spawnY = y * 16 + 8;
+				respawn();
 				return true;
 			}
 		}
+	}
+
+	public void respawn() {
+		x = spawnX;
+		y = spawnY;
+		invulnerableTime = 60;
 	}
 
 	public boolean payStamina(int cost) {
@@ -416,6 +386,10 @@ public class Player extends Mob {
 
 	protected void die() {
 		super.die();
+		invulnerableTime = 0;
+		hurtTime = 0;
+		xKnockback = 0;
+		yKnockback = 0;
 		Sound.playerDeath.play();
 	}
 
@@ -444,13 +418,32 @@ public class Player extends Mob {
 		game.won();
 	}
 
-	public void load(String string) {
-		// TODO Auto-generated method stub
-		
+	public void loadFrom(StringTokenizer st) {
+		super.loadFrom(st);
+		spawnX = nextInt(st);
+		spawnY = nextInt(st);
+		stamina = nextInt(st);
+		maxStamina = nextInt(st);
+		game.setCurrentLevel(nextInt(st));
+		score = nextInt(st);
+		// load inventory
+		inventory.removeAll();
+		inventory.loadFrom(st);
+		// load active item
+		int has = nextInt(st);
+		if (has != 0)
+			activeItem = Item.get(st);
 	}
 
-	public void save(String string) {
-		// TODO Auto-generated method stub
-		
+	public void saveTo(StringBuffer str) {
+		super.saveTo(str);
+		str.append(spawnX + " " + spawnY + " " + stamina + " " + maxStamina + " " + game.getCurrentLevel() + " " + score + " ");
+		// save inventory
+		inventory.saveTo(str);
+		// save active item
+		int has = activeItem != null ? 1 : 0;
+		str.append(has + " ");
+		if (activeItem != null)
+			activeItem.saveTo(str);
 	}
 }
