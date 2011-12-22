@@ -43,6 +43,10 @@ public class Inventory extends Dumpable {
 		items.clear();
 	}
 
+	public List<Item> getAll() {
+		return items;
+	}
+
 	public boolean hasResources(Resource r, int count) {
 		ResourceItem ri = findResource(r);
 		if (ri == null) return false;

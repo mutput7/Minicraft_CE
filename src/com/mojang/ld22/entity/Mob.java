@@ -29,7 +29,7 @@ public class Mob extends Entity {
 
 	public Mob(int lvl) {
 		this.lvl = lvl;
-		maxHealth += lvl*2;
+		maxHealth += lvl;
 		health = maxHealth;
 		x = y = 8;
 		xr = 4;
@@ -54,7 +54,7 @@ public class Mob extends Entity {
 	protected void levelUp() {
 		lvl++;
 		exp = 0;
-		maxHealth += 2;
+		maxHealth += 1;
 		health = maxHealth;
 	}
 

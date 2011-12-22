@@ -41,8 +41,7 @@ public class InventoryMenu extends Menu {
 	}
 
 	public void render(Screen screen) {
-		Font.renderFrame(screen, "inventory", 12, 8, 26, 20);
-		Font.draw("Inventory", screen, 105, 65, Color.get(-1, 555, 555, 555));
-		renderItemList(screen, 13, 9, 24, 18, player.inventory.items, selected);
+		Font.renderFrame(screen, "Inventory", 12, 8, 26, 20);
+		renderItemList(screen, 12, 8, 26, 20, player.inventory.items, selected);
 	}
 }

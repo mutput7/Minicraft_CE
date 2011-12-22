@@ -9,7 +9,7 @@ import com.mojang.ld22.sound.Sound;
 public class TitleMenu extends Menu {
 	private int selected = 0;
 
-	private static final String[] options = { "Begin Awesome!", "Load Game", "How to play", "About", "A note from Notch", "Settings", "Quit" };
+	private static final String[] options = { "Begin the adventure!", "Load Game", "How to play", "About", "Note from Notch", "Settings", "Quit" };
 
 
 	public void tick() {

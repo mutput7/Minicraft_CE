@@ -386,6 +386,14 @@ public class Player extends Mob {
 
 	protected void die() {
 		super.die();
+		// drop items
+		for (Item it : inventory.getAll()) {
+			level.add(new ItemEntity(it, x, y));
+		}
+		if (activeItem)
+			level.add(new ItemEntity(activeItem, x, y));
+		// reset some values
+		inventory.removeAll();
 		invulnerableTime = 0;
 		hurtTime = 0;
 		xKnockback = 0;
