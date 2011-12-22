@@ -19,6 +19,10 @@ public class ItemEntity extends Entity {
 	private int time = 0;
 
 	public ItemEntity(Item item, int x, int y) {
+		this(item, x, y, 10);
+	}
+
+	public ItemEntity(Item item, int x, int y, int time) {
 		this.item = item;
 		xx = this.x = x;
 		yy = this.y = y;
@@ -29,8 +33,7 @@ public class ItemEntity extends Entity {
 		xa = random.nextGaussian() * 0.3;
 		ya = random.nextGaussian() * 0.2;
 		za = random.nextFloat() * 0.7 + 1;
-
-		lifeTime = 60 * 10 + random.nextInt(60);
+		lifeTime = 60 * time;
 	}
 
 	public void tick() {

@@ -10,7 +10,7 @@ import com.mojang.ld22.Dumpable;
 
 public class Resource extends Dumpable {
 	public static Resource wood = new Resource("Wood", 1 + 4 * 32, Color.get(-1, 200, 531, 430));
-	public static Resource stone = new PlantableResource("Stone", 2 + 4 * 32, Color.get(-1, 111, 333, 555), Tile.rock, Tile.grass);
+	public static Resource stone = new PlantableResource("Stone", 2 + 4 * 32, Color.get(-1, 111, 333, 555), Tile.rock, Tile.grass, Tile.dirt);
 	public static Resource flower = new PlantableResource("Flower", 0 + 4 * 32, Color.get(-1, 10, 444, 330), Tile.flower, Tile.grass);
 	public static Resource acorn = new PlantableResource("Acorn", 3 + 4 * 32, Color.get(-1, 100, 531, 320), Tile.treeSapling, Tile.grass);
 	public static Resource dirt = new PlantableResource("Dirt", 2 + 4 * 32, Color.get(-1, 100, 322, 432), Tile.dirt, Tile.hole, Tile.water, Tile.lava);
