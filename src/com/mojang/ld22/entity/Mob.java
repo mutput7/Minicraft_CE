@@ -28,12 +28,10 @@ public class Mob extends Entity {
 	}
 
 	public Mob(int lvl) {
+		this();
 		this.lvl = lvl;
-		maxHealth += lvl;
+		maxHealth += lvl-1;
 		health = maxHealth;
-		x = y = 8;
-		xr = 4;
-		yr = 3;
 	}
 
 	public void tick() {

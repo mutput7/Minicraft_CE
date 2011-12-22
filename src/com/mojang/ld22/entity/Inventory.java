@@ -14,7 +14,6 @@ public class Inventory extends Dumpable {
 	}
 
 	public void add(int slot, Item item) {
-		if (slot == -1) slot = items.size();
 		if (item instanceof ResourceItem) {
 			ResourceItem toTake = (ResourceItem) item;
 			ResourceItem has = findResource(toTake.resource);
@@ -91,7 +90,7 @@ public class Inventory extends Dumpable {
 		for (int i = 0; i < size; i++) {
 			Item it = Item.get(st);
 			if (it != null) {
-				add(-1, it);
+				add(it);
 			}
 		}
 	}

@@ -58,7 +58,7 @@ public class Slime extends Mob {
 		if (level.player != null) {
 			level.player.score += 25*lvl;
 		}
-		
+
 	}
 
 	public void render(Screen screen) {
@@ -76,7 +76,7 @@ public class Slime extends Mob {
 		int col = Color.get(-1, 10, 252, 555);
 		if (lvl == 2) col = Color.get(-1, 100, 522, 555);
 		if (lvl == 3) col = Color.get(-1, 111, 444, 555);
-		if (lvl == 4) col = Color.get(-1, 000, 111, 224);
+		if (lvl >= 4) col = Color.get(-1, 000, 111, 224);
 
 		if (hurtTime > 0) {
 			col = Color.get(-1, 555, 555, 555);

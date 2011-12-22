@@ -378,7 +378,7 @@ public class Game extends Canvas implements Runnable, ComponentListener {
 
 		// display health
 		for (int i = 0; i < 10; i++) {
-			if (i < player.health)
+			if (i < player.health*10/player.maxHealth)
 				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(000, 200, 500, 533), 0);
 			else
 				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(000, 100, 000, 000), 0);

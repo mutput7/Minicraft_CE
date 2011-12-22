@@ -68,7 +68,7 @@ public class Zombie extends Mob {
 		int col = Color.get(-1, 10, 252, 050);
 		if (lvl == 2) col = Color.get(-1, 100, 522, 050);
 		if (lvl == 3) col = Color.get(-1, 111, 444, 050);
-		if (lvl == 4) col = Color.get(-1, 000, 111, 020);
+		if (lvl >= 4) col = Color.get(-1, 000, 111, 020);
 		if (hurtTime > 0) {
 			col = Color.get(-1, 555, 555, 555);
 		}
