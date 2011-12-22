@@ -390,7 +390,7 @@ public class Player extends Mob {
 		for (Item it : inventory.getAll()) {
 			level.add(new ItemEntity(it, x, y));
 		}
-		if (activeItem)
+		if (activeItem != null)
 			level.add(new ItemEntity(activeItem, x, y));
 		// reset some values
 		inventory.removeAll();
