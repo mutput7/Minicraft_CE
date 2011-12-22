@@ -78,12 +78,6 @@ public class SandTile extends Tile {
 					return true;
 				}
 			}
-		}
-		return false;
-	}
-	public boolean build(Level level, int xt, int yt, Player player, Item item, int attackDir) {
-		if (item instanceof ToolItem) {
-			ToolItem tool = (ToolItem) item;
 			if (tool.type == ToolType.wand) {
 				if (player.payStamina(4 - tool.level)) {
 					level.setTile(xt, yt, Tile.rock, 0);

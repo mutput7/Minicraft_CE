@@ -43,6 +43,13 @@ public class DirtTile extends Tile {
 					return true;
 				}
 			}
+			if (tool.type == ToolType.wand) {
+				if (player.payStamina(4 - tool.level)) {
+					level.setTile(xt, yt, Tile.rock, 0);
+					level.add(new ItemEntity(new ResourceItem(Resource.sand), xt * 16 + random.nextInt(10) + 3, yt * 16 + random.nextInt(10) + 3));
+					return true;
+				}
+			}
 		}
 		return false;
 	}

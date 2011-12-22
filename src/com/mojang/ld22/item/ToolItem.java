@@ -22,6 +22,7 @@ public class ToolItem extends Item {
 			Color.get(-1, 100, 321, 555),//
 			Color.get(-1, 100, 321, 550),//
 			Color.get(-1, 100, 321, 055),//
+			Color.get(-1, 255, 100, 100),//
 	};
 
 	public ToolType type;
