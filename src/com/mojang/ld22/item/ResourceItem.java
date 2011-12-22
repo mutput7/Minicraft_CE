@@ -1,5 +1,7 @@
 package com.mojang.ld22.item;
 
+import java.util.*;
+
 import com.mojang.ld22.entity.ItemEntity;
 import com.mojang.ld22.entity.Player;
 import com.mojang.ld22.gfx.Color;
@@ -59,6 +61,21 @@ public class ResourceItem extends Item {
 
 	public boolean isDepleted() {
 		return count <= 0;
+	}
+
+	public boolean isResource() {
+		return true;
+	}
+
+	public void loadFrom(StringTokenizer st) {
+		super.loadFrom(st);
+		count = nextInt(st);
+		resource = Resource.get(nextString(st));
+	}
+
+	public void saveTo(StringBuffer str) {
+		super.saveTo(str);
+		str.append(count + " " + resource.name + " ");
 	}
 
 }

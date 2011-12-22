@@ -1,14 +1,14 @@
 package com.mojang.ld22.entity;
 
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
+import com.mojang.ld22.Dumpable;
 import com.mojang.ld22.gfx.Screen;
 import com.mojang.ld22.item.Item;
 import com.mojang.ld22.level.Level;
 import com.mojang.ld22.level.tile.Tile;
 
-public class Entity {
+public class Entity extends Dumpable {
 	protected final Random random = new Random();
 	public int x, y;
 	public int xr = 6;
@@ -130,5 +130,16 @@ public class Entity {
 
 	public int getLightRadius() {
 		return 0;
+	}
+
+	public void loadFrom(StringTokenizer st) {
+		super.loadFrom(st);
+		x = nextInt(st);
+		y = nextInt(st);
+	}
+
+	public void saveTo(StringBuffer str) {
+		super.saveTo(str);
+		str.append(x + " " + y + " ");
 	}
 }

@@ -17,8 +17,8 @@ public class LevelTransitionMenu extends Menu {
 	}
 
 	public void render(Screen screen) {
-		for (int x = 0; x < 20; x++) {
-			for (int y = 0; y < 15; y++) {
+		for (int x = 0; x < screen.w/8; x++) {
+			for (int y = 0; y < screen.h/8; y++) {
 				int dd = (y + x % 2 * 2 + x / 3) - time;
 				if (dd < 0 && dd > -30) {
 					if (dir > 0)

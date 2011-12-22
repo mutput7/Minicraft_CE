@@ -1,5 +1,7 @@
 package com.mojang.ld22.entity;
 
+import java.util.*;
+
 import com.mojang.ld22.gfx.Color;
 import com.mojang.ld22.gfx.Screen;
 import com.mojang.ld22.item.ResourceItem;
@@ -13,7 +15,8 @@ public class AirWizard extends Mob {
 	private int attackTime = 0;
 	private int attackType = 0;
 
-	public AirWizard() {
+	public AirWizard(int lvl) {
+		super(lvl);
 		x = random.nextInt(64 * 16);
 		y = random.nextInt(64 * 16);
 		health = maxHealth = 2000;

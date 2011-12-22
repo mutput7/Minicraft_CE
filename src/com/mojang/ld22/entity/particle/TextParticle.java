@@ -1,5 +1,7 @@
 package com.mojang.ld22.entity.particle;
 
+import java.util.*;
+
 import com.mojang.ld22.entity.Entity;
 import com.mojang.ld22.gfx.Color;
 import com.mojang.ld22.gfx.Font;
@@ -48,6 +50,18 @@ public class TextParticle extends Entity {
 //		Font.draw(msg, screen, x - msg.length() * 4, y, Color.get(-1, 0, 0, 0));
 		Font.draw(msg, screen, x - msg.length() * 4 + 1, y - (int) (zz) + 1, Color.get(-1, 0, 0, 0));
 		Font.draw(msg, screen, x - msg.length() * 4, y - (int) (zz), col);
+	}
+
+	public void loadFrom(StringTokenizer st) {
+		super.loadFrom(st);
+		msg = st.nextToken().replace("_", " ");
+		col = nextInt(st);
+		time = nextInt(st);
+	}
+
+	public void saveTo(StringBuffer str) {
+		super.saveTo(str);
+		str.append(msg.replace(" ", "_") + " " + col + " " + time + " "); // xx, yy ??
 	}
 
 }
