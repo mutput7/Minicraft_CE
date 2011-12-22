@@ -41,7 +41,7 @@ public class InventoryMenu extends Menu {
 	}
 
 	public void render(Screen screen) {
-		Font.renderFrame(screen, "Inventory", 12, 8, 26, 20);
-		renderItemList(screen, 12, 8, 26, 20, player.inventory.items, selected);
+		Font.renderFrame(screen, "Inventory", 10, 6, 26, 16);
+		renderItemList(screen, 10, 6, 26, 16, player.inventory.items, selected);
 	}
 }

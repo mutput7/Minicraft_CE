@@ -9,12 +9,12 @@ import com.mojang.ld22.gfx.Screen;
 import com.mojang.ld22.sound.Sound;
 
 @SuppressWarnings("unused")
-public class SettingsMenu extends Menu {
+public class SizeMenu extends Menu {
 	private int selected = 0;
 
-	private static final String[] options = { "Size (Buggy)", "GUI Options", "Back" };
+	private static final String[] options = { "Small", "Big", "Back" };
 
-	public SettingsMenu(TitleMenu titleMenu) {
+	public SizeMenu(TitleMenu titleMenu) {
 	}
 
 	public void tick() {
@@ -26,8 +26,14 @@ public class SettingsMenu extends Menu {
 		if (selected >= len) selected -= len;
 
 		if (input.attack.clicked || input.menu.clicked) {
-			if (selected == 0) game.setMenu(new SizeMenu(null));
-			if (selected == 1) game.setMenu(new GUIMenu(null));
+			if (selected == 0) {
+				game.resizeScreen(120, 160);
+				game.setMenu(new TitleMenu());
+			}
+			if (selected == 1) {
+				game.resizeScreen(160, 287);
+				game.setMenu(new TitleMenu());
+			}
 			if (selected == 2) game.setMenu(new TitleMenu());
 			}
 		}

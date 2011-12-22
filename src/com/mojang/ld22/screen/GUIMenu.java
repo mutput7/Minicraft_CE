@@ -9,15 +9,20 @@ import com.mojang.ld22.gfx.Screen;
 import com.mojang.ld22.sound.Sound;
 
 @SuppressWarnings("unused")
-public class SettingsMenu extends Menu {
+public class GUIMenu extends Menu {
 	private int selected = 0;
 
-	private static final String[] options = { "Size (Buggy)", "GUI Options", "Back" };
+	private int bbar;
 
-	public SettingsMenu(TitleMenu titleMenu) {
+	private static final String[] options = { "Show black bar", "Hide black bar", "Back" };
+
+	public static int showbbar = 000;
+
+	public GUIMenu(TitleMenu titleMenu) {
 	}
 
 	public void tick() {
+		int bbar = GUIMenu.showbbar;
 		if (input.up.clicked) selected--;
 		if (input.down.clicked) selected++;
 
@@ -26,11 +31,15 @@ public class SettingsMenu extends Menu {
 		if (selected >= len) selected -= len;
 
 		if (input.attack.clicked || input.menu.clicked) {
-			if (selected == 0) game.setMenu(new SizeMenu(null));
-			if (selected == 1) game.setMenu(new GUIMenu(null));
-			if (selected == 2) game.setMenu(new TitleMenu());
+			if (selected == 0) {
+				GUIMenu.showbbar = 000;
 			}
+			if (selected == 1) {
+				GUIMenu.showbbar = -1;
+			}
+			if (selected == 2) game.setMenu(new TitleMenu());
 		}
+	}
 
 	public void render(Screen screen) {
 		screen.clear(0);

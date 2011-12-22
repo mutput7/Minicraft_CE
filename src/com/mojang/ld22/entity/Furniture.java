@@ -10,7 +10,6 @@ public class Furniture extends Entity {
 	public int col, sprite;
 	public String name;
 	private Player shouldTake;
-	private AquaZombie shouldTake1;
 
 	public Furniture(String name) {
 		this.name = name;
@@ -55,17 +54,6 @@ public class Furniture extends Entity {
 
 	public void take(Player player) {
 		shouldTake = player;
-	}
-
-	protected void touchedBy1(Entity entity) {
-		if (entity instanceof AquaZombie && pushTime == 0) {
-			pushDir = ((AquaZombie) entity).dir;
-			pushTime = 10;
-		}
-	}
-
-	public void take(AquaZombie aqzmb) {
-		shouldTake1 = aqzmb;
 	}
 
 }

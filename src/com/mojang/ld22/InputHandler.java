@@ -42,6 +42,7 @@ public class InputHandler implements KeyListener {
 	public Key attack = new Key();
 	public Key menu = new Key();
 	public Key pause = new Key();
+	public Key drop = new Key();
 
 	public void releaseAll() {
 		for (int i = 0; i < keys.size(); i++) {
@@ -96,6 +97,7 @@ public class InputHandler implements KeyListener {
 		if (ke.getKeyCode() == KeyEvent.VK_Z) pause.toggle(pressed);
 		if (ke.getKeyCode() == KeyEvent.VK_P) pause.toggle(pressed);
 		if (ke.getKeyCode() == KeyEvent.VK_ESCAPE) pause.toggle(pressed);
+		if (ke.getKeyCode() == KeyEvent.VK_Q) drop.toggle(pressed);
 	}
 
 	public void keyTyped(KeyEvent ke) {

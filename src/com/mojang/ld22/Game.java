@@ -23,6 +23,7 @@ import com.mojang.ld22.gfx.SpriteSheet;
 import com.mojang.ld22.level.Level;
 import com.mojang.ld22.level.tile.Tile;
 import com.mojang.ld22.screen.DeadMenu;
+import com.mojang.ld22.screen.GUIMenu;
 import com.mojang.ld22.screen.LevelTransitionMenu;
 import com.mojang.ld22.screen.Menu;
 import com.mojang.ld22.screen.TitleMenu;
@@ -33,8 +34,8 @@ public class Game extends Canvas implements Runnable, ComponentListener {
 	private static final long serialVersionUID = 1L;
 	private Random random = new Random();
 	public static final String NAME = "Minicraft : Community Edition";
-	public int WIDTH = 360;
-	public int HEIGHT = 220;
+	public int WIDTH = 287;
+	public int HEIGHT = 150;
 	private static final int SCALE = 3;
 
 	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
@@ -372,32 +373,32 @@ public class Game extends Canvas implements Runnable, ComponentListener {
 		// draw gui background
 		for (int y = 0; y < 2; y++) {
 			for (int x = 0; x < WIDTH/8 + 1; x++) {
-				screen.render(x * 8, screen.h - 16 + y * 8, 0 + 12 * 32, Color.get(000, 000, 000, 000), 0);
+				screen.render(x * 8, screen.h - 16 + y * 8, 0 + 12 * 32, Color.get(GUIMenu.showbbar, GUIMenu.showbbar, GUIMenu.showbbar, GUIMenu.showbbar), 0);
 			}
 		}
 
 		// display health
 		for (int i = 0; i < 10; i++) {
 			if (i < player.health*10/player.maxHealth)
-				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(000, 200, 500, 533), 0);
+				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(GUIMenu.showbbar, 200, 500, 533), 0);
 			else
-				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(000, 100, 000, 000), 0);
+				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(GUIMenu.showbbar, 100, 000, 000), 0);
 		}
 
 		// display stamina
 		if (player.staminaRechargeDelay > 0) {
 			for (int i = 0; i < 10; i++) {
 				if (player.staminaRechargeDelay / 4 % 2 == 0)
-					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(000, 555, 000, 000), 0);
+					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(GUIMenu.showbbar, 555, 000, 000), 0);
 				else
-					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(000, 110, 000, 000), 0);
+					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(GUIMenu.showbbar, 110, 000, 000), 0);
 			}
 		} else {
 			for (int i = 0; i < 10; i++) {
 				if (i <= player.stamina*10/player.maxStamina)
-					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(000, 220, 550, 553), 0);
+					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(GUIMenu.showbbar, 220, 550, 553), 0);
 				else
-					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(000, 110, 000, 000), 0);
+					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(GUIMenu.showbbar, 110, 000, 000), 0);
 			}
 		}
 		// draw active item
@@ -406,7 +407,7 @@ public class Game extends Canvas implements Runnable, ComponentListener {
 		}
 
 		// draw lvl
-		Font.draw("Level: "+player.lvl, screen, screen.w-75, screen.h-9, Color.get(-1, 333, 333, 333));
+		Font.draw("Level: "+player.lvl, screen, screen.w-75, screen.h-9, Color.get(GUIMenu.showbbar, 333, 333, 333));
 
 		if (menu != null) {
 			menu.render(screen);
