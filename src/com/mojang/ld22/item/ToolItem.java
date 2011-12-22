@@ -13,7 +13,7 @@ public class ToolItem extends Item {
 
 	public static final int MAX_LEVEL = 5;
 	public static final String[] LEVEL_NAMES = { //
-	"Wdn", "Stn", "Irn", "Gld", "Gem"//
+	"Wdn", "Stn", "Irn", "Gld", "Gem", "Mgc"//
 	};
 
 	public static final int[] LEVEL_COLORS = {//

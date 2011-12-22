@@ -73,6 +73,19 @@ public class SandTile extends Tile {
 			ToolItem tool = (ToolItem) item;
 			if (tool.type == ToolType.shovel) {
 				if (player.payStamina(4 - tool.level)) {
+					level.setTile(xt, yt, Tile.dirt, 0);
+					level.add(new ItemEntity(new ResourceItem(Resource.sand), xt * 16 + random.nextInt(10) + 3, yt * 16 + random.nextInt(10) + 3));
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	public boolean build(Level level, int xt, int yt, Player player, Item item, int attackDir) {
+		if (item instanceof ToolItem) {
+			ToolItem tool = (ToolItem) item;
+			if (tool.type == ToolType.wand) {
+				if (player.payStamina(4 - tool.level)) {
 					level.setTile(xt, yt, Tile.rock, 0);
 					level.add(new ItemEntity(new ResourceItem(Resource.sand), xt * 16 + random.nextInt(10) + 3, yt * 16 + random.nextInt(10) + 3));
 					return true;
