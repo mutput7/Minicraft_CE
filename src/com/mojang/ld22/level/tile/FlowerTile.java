@@ -23,13 +23,10 @@ public class FlowerTile extends GrassTile {
 		super.render(screen, level, x, y);
 
 		int data = level.getData(x, y);
-		int shape = (data / 16) % 2;
-		int flowerCol = Color.get(10, level.grassColor, 555, 440);
+		int col = data % 4;
+		int flowerCol = Color.get(10, level.grassColor, 55 + 122*col, (550-110*col));
 
-		if (shape == 0) screen.render(x * 16 + 0, y * 16 + 0, 1 + 1 * 32, flowerCol, 0);
-		if (shape == 1) screen.render(x * 16 + 8, y * 16 + 0, 1 + 1 * 32, flowerCol, 0);
-		if (shape == 1) screen.render(x * 16 + 0, y * 16 + 8, 1 + 1 * 32, flowerCol, 0);
-		if (shape == 0) screen.render(x * 16 + 8, y * 16 + 8, 1 + 1 * 32, flowerCol, 0);
+		screen.render(x * 16 + 0, y * 16 + 0, 1 + 1 * 32, flowerCol, 0);
 	}
 
 	public boolean interact(Level level, int x, int y, Player player, Item item, int attackDir) {
@@ -54,4 +51,5 @@ public class FlowerTile extends GrassTile {
 		}
 		level.setTile(x, y, Tile.grass, 0);
 	}
+
 }

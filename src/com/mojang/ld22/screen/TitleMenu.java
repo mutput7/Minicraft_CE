@@ -9,10 +9,8 @@ import com.mojang.ld22.sound.Sound;
 public class TitleMenu extends Menu {
 	private int selected = 0;
 
-	private static final String[] options = { "Begin Awesome!", "Load Game", "How to play", "About", "A note from Notch", "Settings" };
+	private static final String[] options = { "Begin the adventure!", "Load Game", "How to play", "About", "Note from Notch", "Settings", "Quit" };
 
-	public TitleMenu() {
-	}
 
 	public void tick() {
 		if (input.up.clicked) selected--;
@@ -25,16 +23,19 @@ public class TitleMenu extends Menu {
 		if (input.attack.clicked || input.menu.clicked) {
 			if (selected == 0) {
 				Sound.test.play();
-				game.resetGame();
 				game.setMenu(null);
+				game.newGame();
 			}
 			if (selected == 1) {
-				Game.load();
+				Sound.test.play();
+				game.setMenu(null);
+				game.loadGame();
 			}
 			if (selected == 2) game.setMenu(new InstructionsMenu(this));
 			if (selected == 3) game.setMenu(new AboutMenu(this));
 			if (selected == 4) game.setMenu(new NotchMenu(this));
-			if (selected == 5) game.setMenu(new SettingsMenu(this)); 
+			if (selected == 5) game.setMenu(new SettingsMenu(this));
+			if (selected == 6) game.stop();
 		}
 	}
 
@@ -52,7 +53,7 @@ public class TitleMenu extends Menu {
 			}
 		}
 
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < options.length; i++) {
 			String msg = options[i];
 			int col = Color.get(0, 222, 222, 222);
 			if (i == selected) {

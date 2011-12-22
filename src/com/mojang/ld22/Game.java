@@ -7,9 +7,10 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
-import java.io.File;
+import java.awt.event.*;
 import java.io.IOException;
-import java.util.Random;
+import java.util.*;
+import java.io.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
@@ -26,14 +27,14 @@ import com.mojang.ld22.screen.LevelTransitionMenu;
 import com.mojang.ld22.screen.Menu;
 import com.mojang.ld22.screen.TitleMenu;
 import com.mojang.ld22.screen.WonMenu;
+import com.mojang.ld22.Dumpable;
 
-public class Game extends Canvas implements Runnable {
+public class Game extends Canvas implements Runnable, ComponentListener {
 	private static final long serialVersionUID = 1L;
-	@SuppressWarnings("unused")
 	private Random random = new Random();
-	public static final String NAME = "Minicraft: Community Edition";
-	public static int HEIGHT = 170;
-	public static int WIDTH = 287;
+	public static final String NAME = "Minicraft : Community Edition";
+	public int WIDTH = 360;
+	public int HEIGHT = 220;
 	private static final int SCALE = 3;
 
 	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
@@ -48,18 +49,34 @@ public class Game extends Canvas implements Runnable {
 	public int gameTime = 0;
 
 	private Level level;
-	private static Level[] levels = new Level[5];
+	private Level[] levels = new Level[5];
 	private int currentLevel = 3;
-	public static Player player;
+	public Player player;
 
-	public static Menu menu;
+	public Menu menu;
 	private int playerDeadTime;
 	private int pendingLevelChange;
 	private int wonTimer = 0;
 	public boolean hasWon = false;
 
+	public Game() {
+		setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+		setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+		setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+
+		JFrame frame = new JFrame(NAME);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLayout(new BorderLayout());
+		frame.add(this, BorderLayout.CENTER);
+		frame.pack();
+		frame.setResizable(true);
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+		frame.addComponentListener(this);
+	}
+
 	public void setMenu(Menu menu) {
-		Game.menu = menu;
+		this.menu = menu;
 		if (menu != null) menu.init(this, input);
 	}
 
@@ -68,43 +85,84 @@ public class Game extends Canvas implements Runnable {
 		new Thread(this).start();
 	}
 
-	public static void load() {
-//		if (menu != null) return; // we're still in the title menu
+	public void newGame() {
+		resetGame();
+
+		playerDeadTime = 0;
+		wonTimer = 0;
+		gameTime = 0;
+		hasWon = false;
+
+		player.findStartPos(level);
+		setCurrentLevel(3);
+		for (int i = 0; i < 5; i++) {
+			levels[i].trySpawn(50000);
+		}
+	}
+
+	public void loadGame() {
+		resetGame();
+		// load Game
+		String filename = "saves/game.dat";
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(filename));
+			StringTokenizer st = new StringTokenizer(reader.readLine());
+			gameTime = Integer.parseInt(st.nextToken());
+			reader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found : " + filename);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// load levels
 		for (int i = 0; i < 5; i++)
 		{
-			menu = null;
 			levels[i].load("saves/level" + i + ".dat");
 		}
-		player.load("saves/player.data");
-		System.out.println("Loaded!");
+		// load player
+		player.load("saves/player.dat");
+		System.out.println("Loaded !");
 	}
 
-	public static void save() {
+	public void saveGame() {
+		File f = new File("saves");
+		try {
+			f.mkdir();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// save Game
+		String filename = "saves/game.dat";
+		try {
+			FileOutputStream writer = new FileOutputStream(filename);
+			StringBuffer str = new StringBuffer();
+			str.append(gameTime + " ");
+			writer.write(str.toString().getBytes());
+			writer.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found : " + filename);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// save levels
 		for (int i = 0; i < 5; i++)
 		{
-			boolean status;
-			status = new File("./saves").mkdirs();
-			report(status);
-			levels[i].save("./saves/level" + i + ".dat");
+			levels[i].save("saves/level" + i + ".dat");
 		}
-
-		player.save("./saves/player.data");
-		System.out.println("Saved!");
+		// save player
+		player.save("saves/player.dat");
+		System.out.println("Saved !");
 	}
-	
-	  static void report(boolean b) {
-		    System.out.println(b ? "" : "");
-		  }
 
 	public void stop() {
 		running = false;
 	}
 
 	public void resetGame() {
-		playerDeadTime = 0;
-		wonTimer = 0;
-		gameTime = 0;
-		hasWon = false;
 
 		levels = new Level[5];
 		currentLevel = 3;
@@ -117,30 +175,6 @@ public class Game extends Canvas implements Runnable {
 
 		level = levels[currentLevel];
 		player = new Player(this, input);
-		player.findStartPos(level);
-
-		level.add(player);
-
-		for (int i = 0; i < 5; i++) {
-			levels[i].trySpawn(5000);
-		}
-	}
-	
-	public void Respawn()
-	{
-		level = levels[currentLevel];
-		player = new Player(this, input);
-		player.findStartPos(level);
-		if (player.findStartPos(level)) {
-		level.add(player);
-			
-			for (int i = 0; i < 5; i++) {
-					levels[i].trySpawn(5000);
-			}
-		}
-		for (int i = 0; i < 5; i++) {
-			levels[i].trySpawn(5000);
-		}
 	}
 
 	private void init() {
@@ -168,8 +202,8 @@ public class Game extends Canvas implements Runnable {
 			e.printStackTrace();
 		}
 
-		resetGame();
 		setMenu(new TitleMenu());
+		resetGame();
 	}
 
 	public void run() {
@@ -186,7 +220,7 @@ public class Game extends Canvas implements Runnable {
 			long now = System.nanoTime();
 			unprocessed += (now - lastTime) / nsPerTick;
 			lastTime = now;
-			boolean shouldRender = true;
+			boolean shouldRender = false;
 			while (unprocessed >= 1) {
 				ticks++;
 				tick();
@@ -203,6 +237,7 @@ public class Game extends Canvas implements Runnable {
 			if (shouldRender) {
 				frames++;
 				render();
+				screen.unfreeze();
 			}
 
 			if (System.currentTimeMillis() - lastTimer1 > 1000) {
@@ -212,6 +247,7 @@ public class Game extends Canvas implements Runnable {
 				ticks = 0;
 			}
 		}
+		System.exit(0);
 	}
 
 	public void tick() {
@@ -219,12 +255,14 @@ public class Game extends Canvas implements Runnable {
 		if (!hasFocus()) {
 			input.releaseAll();
 		} else {
-			if (!player.removed && !hasWon) gameTime++;
-
 			input.tick();
+			//if (input.quit.clicked && menu == null) {
+			//stop();
+			//}
 			if (menu != null) {
 				menu.tick();
 			} else {
+				if (!player.removed && !hasWon) gameTime++;
 				if (player.removed) {
 					playerDeadTime++;
 					if (playerDeadTime > 60) {
@@ -248,13 +286,30 @@ public class Game extends Canvas implements Runnable {
 	}
 
 	public void changeLevel(int dir) {
-		level.remove(player);
-		currentLevel += dir;
-		level = levels[currentLevel];
+		setCurrentLevel(currentLevel + dir);
+		// fix player position
 		player.x = (player.x >> 4) * 16 + 8;
 		player.y = (player.y >> 4) * 16 + 8;
-		level.add(player);
+	}
 
+	public int getCurrentLevel() {
+		return currentLevel;
+	}
+
+	public void setCurrentLevel(int l) {
+		level.remove(player);
+		currentLevel = l;
+		level = levels[currentLevel];
+		level.add(player);
+	}
+
+	public void respawnPlayer() {
+		player.removed = false;
+		player.health = player.maxHealth / 2;
+		player.stamina = 0;
+		playerDeadTime = 0;
+		player.respawn();
+		setCurrentLevel(3);
 	}
 
 	public void render() {
@@ -264,6 +319,8 @@ public class Game extends Canvas implements Runnable {
 			requestFocus();
 			return;
 		}
+
+		if (screen != null && screen.isFrozen()) return;
 
 		int xScroll = player.x - screen.w / 2;
 		int yScroll = player.y - (screen.h - 8) / 2;
@@ -312,33 +369,44 @@ public class Game extends Canvas implements Runnable {
 	}
 
 	private void renderGui() {
+		// draw gui background
 		for (int y = 0; y < 2; y++) {
-			for (int x = 0; x < 20; x++) {
-				screen.render(x * 8, screen.h - 16 + y * 8, 0 + 12 * 32, Color.get(-1, -1, -1, -1), 0);
+			for (int x = 0; x < WIDTH/8 + 1; x++) {
+				screen.render(x * 8, screen.h - 16 + y * 8, 0 + 12 * 32, Color.get(000, 000, 000, 000), 0);
 			}
 		}
 
+		// display health
 		for (int i = 0; i < 10; i++) {
-			if (i < player.health)
-				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(-1, 200, 500, 533), 0);
+			if (i < player.health*10/player.maxHealth)
+				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(000, 200, 500, 533), 0);
 			else
-				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(-1, 000, 100, 255), 0);
+				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(000, 100, 000, 000), 0);
+		}
 
-			if (player.staminaRechargeDelay > 0) {
+		// display stamina
+		if (player.staminaRechargeDelay > 0) {
+			for (int i = 0; i < 10; i++) {
 				if (player.staminaRechargeDelay / 4 % 2 == 0)
-					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(-1, 00, 000, 555), 0);
+					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(000, 555, 000, 000), 0);
 				else
-					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(-1, 110, 000, 000), 0);
-			} else {
-				if (i < player.stamina)
-					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(-1, 220, 550, 553), 0);
+					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(000, 110, 000, 000), 0);
+			}
+		} else {
+			for (int i = 0; i < 10; i++) {
+				if (i <= player.stamina*10/player.maxStamina)
+					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(000, 220, 550, 553), 0);
 				else
-					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(-1, 110, 000, 000), 0);
+					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(000, 110, 000, 000), 0);
 			}
 		}
+		// draw active item
 		if (player.activeItem != null) {
 			player.activeItem.renderInventory(screen, 10 * 8, screen.h - 16);
 		}
+
+		// draw lvl
+		Font.draw("Level: "+player.lvl, screen, screen.w-75, screen.h-9, Color.get(-1, 333, 333, 333));
 
 		if (menu != null) {
 			menu.render(screen);
@@ -378,24 +446,35 @@ public class Game extends Canvas implements Runnable {
 
 	public static void main(String[] args) {
 		Game game = new Game();
-		game.setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-		game.setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-		game.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-
-		JFrame frame = new JFrame(Game.NAME);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setLayout(new BorderLayout());
-		frame.add(game, BorderLayout.CENTER);
-		frame.pack();
-		frame.setResizable(true);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
-
 		game.start();
 	}
 
 	public void won() {
 		wonTimer = 60 * 3;
 		hasWon = true;
+	}
+
+	public void resizeScreen(int w, int h) {
+		if (screen != null)
+			screen.freeze();
+		WIDTH = w;
+		HEIGHT = h;
+		setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+		setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+		setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+		if (screen != null)
+			screen.resize(WIDTH, HEIGHT);
+		image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+		pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
+	}
+
+	public void componentResized(ComponentEvent e) {
+		resizeScreen(getSize().width/SCALE, getSize().height/SCALE);
+	}
+	public void componentHidden(ComponentEvent e) {
+	}
+	public void componentShown(ComponentEvent e) {
+	}
+	public void componentMoved(ComponentEvent e) {
 	}
 }

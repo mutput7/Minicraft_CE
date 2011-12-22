@@ -72,7 +72,6 @@ public class LevelGen {
 	}
 
 	public static byte[][] createAndValidateTopMap(int w, int h) {
-		@SuppressWarnings("unused")
 		int attempt = 0;
 		do {
 			byte[][] result = createTopMap(w, h);
@@ -94,7 +93,6 @@ public class LevelGen {
 	}
 
 	public static byte[][] createAndValidateUndergroundMap(int w, int h, int depth) {
-		@SuppressWarnings("unused")
 		int attempt = 0;
 		do {
 			byte[][] result = createUndergroundMap(w, h, depth);
@@ -115,7 +113,6 @@ public class LevelGen {
 	}
 
 	public static byte[][] createAndValidateSkyMap(int w, int h) {
-		@SuppressWarnings("unused")
 		int attempt = 0;
 		do {
 			byte[][] result = createSkyMap(w, h);
@@ -211,14 +208,14 @@ public class LevelGen {
 		for (int i = 0; i < w * h / 400; i++) {
 			int x = random.nextInt(w);
 			int y = random.nextInt(h);
-			int col = random.nextInt(4);
+			int col = random.nextInt(255);
 			for (int j = 0; j < 30; j++) {
 				int xx = x + random.nextInt(5) - random.nextInt(5);
 				int yy = y + random.nextInt(5) - random.nextInt(5);
 				if (xx >= 0 && yy >= 0 && xx < w && yy < h) {
 					if (map[xx + yy * w] == Tile.grass.id) {
 						map[xx + yy * w] = Tile.flower.id;
-						data[xx + yy * w] = (byte) (col + random.nextInt(4) * 16);
+						data[xx + yy * w] = (byte) col;
 					}
 				}
 			}
@@ -239,10 +236,11 @@ public class LevelGen {
 			int x = random.nextInt(w - 2) + 1;
 			int y = random.nextInt(h - 2) + 1;
 
-			for (int yy = y - 1; yy <= y + 1; yy++)
+			for (int yy = y - 1; yy <= y + 1; yy++) {
 				for (int xx = x - 1; xx <= x + 1; xx++) {
 					if (map[xx + yy * w] != Tile.rock.id) continue stairsLoop;
 				}
+			}
 
 			map[x + y * w] = Tile.stairsDown.id;
 			count++;
@@ -405,15 +403,14 @@ public class LevelGen {
 	}
 
 	public static void main(String[] args) {
-		@SuppressWarnings("unused")
 		int d = 0;
 		while (true) {
 			int w = 128;
 			int h = 128;
 
 			byte[] map = LevelGen.createAndValidateTopMap(w, h)[0];
-			// byte[] map = LevelGen.createAndValidateUndergroundMap(w, h, (d++ % 3) + 1)[0];
-			// byte[] map = LevelGen.createAndValidateSkyMap(w, h)[0];
+			//byte[] map = LevelGen.createAndValidateUndergroundMap(w, h, (d++ % 3) + 1)[0];
+			//byte[] map = LevelGen.createAndValidateSkyMap(w, h)[0];
 
 			BufferedImage img = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
 			int[] pixels = new int[w * h];

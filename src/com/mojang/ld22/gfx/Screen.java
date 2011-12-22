@@ -3,7 +3,7 @@ package com.mojang.ld22.gfx;
 public class Screen {
 	/*
 	 * public static final int MAP_WIDTH = 64; // Must be 2^x public static final int MAP_WIDTH_MASK = MAP_WIDTH - 1;
-	 * 
+	 *
 	 * public int[] tiles = new int[MAP_WIDTH * MAP_WIDTH]; public int[] colors = new int[MAP_WIDTH * MAP_WIDTH]; public int[] databits = new int[MAP_WIDTH * MAP_WIDTH];
 	 */
 	public int xOffset;
@@ -12,10 +12,11 @@ public class Screen {
 	public static final int BIT_MIRROR_X = 0x01;
 	public static final int BIT_MIRROR_Y = 0x02;
 
-	public final int w, h;
+	public int w, h;
 	public int[] pixels;
 
 	private SpriteSheet sheet;
+	private boolean frozen = false;
 
 	public Screen(int w, int h, SpriteSheet sheet) {
 		this.sheet = sheet;
@@ -28,27 +29,46 @@ public class Screen {
 
 		/*
 		 * for (int i = 0; i < MAP_WIDTH * MAP_WIDTH; i++) { colors[i] = Color.get(00, 40, 50, 40); tiles[i] = 0;
-		 * 
+		 *
 		 * if (random.nextInt(40) == 0) { tiles[i] = 32; colors[i] = Color.get(111, 40, 222, 333); databits[i] = random.nextInt(2); } else if (random.nextInt(40) == 0) { tiles[i] = 33; colors[i] = Color.get(20, 40, 30, 550); } else { tiles[i] = random.nextInt(4); databits[i] = random.nextInt(4);
-		 * 
+		 *
 		 * } }
-		 * 
+		 *
 		 * Font.setMap("Testing the 0341879123", this, 0, 0, Color.get(0, 555, 555, 555));
 		 */
 	}
 
+	public void resize(int x, int y) {
+		w = x; h = y;
+		pixels = new int[w*h];
+	}
+
+	public void freeze() {
+		frozen = true;
+	}
+
+	public void unfreeze() {
+		frozen = false;
+	}
+
+	public boolean isFrozen() {
+		return frozen;
+	}
+
 	public void clear(int color) {
+		if (frozen) return;
 		for (int i = 0; i < pixels.length; i++)
 			pixels[i] = color;
 	}
 
 	/*
 	 * public void renderBackground() { for (int yt = yScroll >> 3; yt <= (yScroll + h) >> 3; yt++) { int yp = yt * 8 - yScroll; for (int xt = xScroll >> 3; xt <= (xScroll + w) >> 3; xt++) { int xp = xt * 8 - xScroll; int ti = (xt & (MAP_WIDTH_MASK)) + (yt & (MAP_WIDTH_MASK)) * MAP_WIDTH; render(xp, yp, tiles[ti], colors[ti], databits[ti]); } }
-	 * 
+	 *
 	 * for (int i = 0; i < sprites.size(); i++) { Sprite s = sprites.get(i); render(s.x, s.y, s.img, s.col, s.bits); } sprites.clear(); }
 	 */
 
 	public void render(int xp, int yp, int tile, int colors, int bits) {
+		if (frozen) return;
 		xp -= xOffset;
 		yp -= yOffset;
 		boolean mirrorX = (bits & BIT_MIRROR_X) > 0;
@@ -81,6 +101,7 @@ public class Screen {
 	private int[] dither = new int[] { 0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5, };
 
 	public void overlay(Screen screen2, int xa, int ya) {
+		if (frozen) return;
 		int[] oPixels = screen2.pixels;
 		int i = 0;
 		for (int y = 0; y < h; y++) {
@@ -93,6 +114,7 @@ public class Screen {
 	}
 
 	public void renderLight(int x, int y, int r) {
+		if (frozen) return;
 		x -= xOffset;
 		y -= yOffset;
 		int x0 = x - r;
