@@ -1,5 +1,7 @@
 package com.mojang.ld22.entity;
 
+import java.util.*;
+
 import com.mojang.ld22.crafting.Crafting;
 import com.mojang.ld22.gfx.Color;
 import com.mojang.ld22.screen.CraftingMenu;
@@ -17,4 +19,13 @@ public class Workbench extends Furniture {
 		player.game.setMenu(new CraftingMenu(Crafting.workbenchRecipes, player));
 		return true;
 	}
+
+	public void loadFrom(StringTokenizer st) {
+		super.loadFrom(st);
+	}
+
+	public void saveTo(StringBuffer str) {
+		super.saveTo(str);
+	}
+
 }

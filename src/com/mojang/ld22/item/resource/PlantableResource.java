@@ -2,12 +2,14 @@ package com.mojang.ld22.item.resource;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 import com.mojang.ld22.entity.Player;
 import com.mojang.ld22.level.Level;
 import com.mojang.ld22.level.tile.Tile;
 
 public class PlantableResource extends Resource {
+	private Random random = new Random();
 	private List<Tile> sourceTiles;
 	private Tile targetTile;
 
@@ -24,8 +26,12 @@ public class PlantableResource extends Resource {
 	public boolean interactOn(Tile tile, Level level, int xt, int yt, Player player, int attackDir) {
 		if (sourceTiles.contains(tile)) {
 			level.setTile(xt, yt, targetTile, 0);
+			if (targetTile == Tile.flower) {
+				level.setData(xt, yt, random.nextInt(255));
+			}
 			return true;
 		}
 		return false;
 	}
+
 }

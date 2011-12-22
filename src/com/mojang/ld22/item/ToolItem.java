@@ -1,6 +1,6 @@
 package com.mojang.ld22.item;
 
-import java.util.Random;
+import java.util.*;
 
 import com.mojang.ld22.entity.Entity;
 import com.mojang.ld22.entity.ItemEntity;
@@ -12,17 +12,17 @@ public class ToolItem extends Item {
 	private Random random = new Random();
 
 	public static final int MAX_LEVEL = 5;
-	public static final String[] LEVEL_NAMES = { //
-	"Wdn", "Stn", "Irn", "Gld", "Gem", "Mgc"//
+	public static final String[] LEVEL_NAMES = {
+		"Wood", "Rock", "Iron", "Gold", "Gem", "Magic"
 	};
 
-	public static final int[] LEVEL_COLORS = {//
-	Color.get(-1, 100, 321, 431),//
-			Color.get(-1, 100, 321, 111),//
-			Color.get(-1, 100, 321, 555),//
-			Color.get(-1, 100, 321, 550),//
-			Color.get(-1, 100, 321, 055),//
-			Color.get(-1, 255, 100, 100),//
+	public static final int[] LEVEL_COLORS = {
+		Color.get(-1, 100, 321, 431),
+		Color.get(-1, 100, 321, 111),
+		Color.get(-1, 100, 321, 555),
+		Color.get(-1, 100, 321, 550),
+		Color.get(-1, 100, 321, 055),
+		Color.get(-1, 255, 100, 100),
 	};
 
 	public ToolType type;
@@ -80,4 +80,16 @@ public class ToolItem extends Item {
 		}
 		return false;
 	}
+
+	public void loadFrom(StringTokenizer st) {
+		super.loadFrom(st);
+		level = nextInt(st);
+		type = ToolType.get(nextString(st));
+	}
+
+	public void saveTo(StringBuffer str) {
+		super.saveTo(str);
+		str.append(level + " " + type.name + " ");
+	}
+
 }

@@ -48,7 +48,8 @@ public class Tile {
 
 	public Tile(int id) {
 		this.id = (byte) id;
-		if (tiles[id] != null) throw new RuntimeException("Duplicate tile ids!");
+		if (tiles[id] != null)
+			throw new RuntimeException("Duplicate tile ids!");
 		tiles[id] = this;
 	}
 

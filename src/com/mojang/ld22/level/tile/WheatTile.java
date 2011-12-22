@@ -63,7 +63,6 @@ public class WheatTile extends Tile {
 	}
 
 	public void hurt(Level level, int x, int y, Mob source, int dmg, int attackDir) {
-
 		harvest(level, x, y);
 	}
 

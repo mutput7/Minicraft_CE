@@ -27,15 +27,13 @@ public class SettingsMenu extends Menu {
 
 		if (input.attack.clicked || input.menu.clicked) {
 			if (selected == 0) {
-				Game.WIDTH = 120;
-				Game.HEIGHT = 160;
+				game.resizeScreen(120, 160);
 				game.setMenu(new TitleMenu());
-				}
+			}
 			if (selected == 1) {
-				Game.WIDTH = 220;
-				Game.HEIGHT = 287;
+				game.resizeScreen(220, 287);
 				game.setMenu(new TitleMenu());
-				}
+			}
 		}
 	}
 
