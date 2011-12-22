@@ -13,7 +13,7 @@ public class ToolItem extends Item {
 
 	public static final int MAX_LEVEL = 5;
 	public static final String[] LEVEL_NAMES = {
-		"Wood", "Rock", "Iron", "Gold", "Gem"
+		"Wood", "Rock", "Iron", "Gold", "Gem", "Magic"
 	};
 
 	public static final int[] LEVEL_COLORS = {
@@ -22,6 +22,7 @@ public class ToolItem extends Item {
 		Color.get(-1, 100, 321, 555),
 		Color.get(-1, 100, 321, 550),
 		Color.get(-1, 100, 321, 055),
+		Color.get(-1, 255, 100, 100),
 	};
 
 	public ToolType type;
