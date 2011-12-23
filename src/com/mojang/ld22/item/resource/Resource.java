@@ -33,10 +33,11 @@ public class Resource extends Dumpable {
 	public static Resource cloth = new Resource("Cloth", 1 + 4 * 32, Color.get(-1, 25, 252, 141));
 	public static Resource cloud = new PlantableResource("Cloud", 2 + 4 * 32, Color.get(-1, 222, 555, 444), Tile.cloud, Tile.infiniteFall);
 	public static Resource gem = new Resource("Gem", 13 + 4 * 32, Color.get(-1, 101, 404, 545));
+	public static Resource feather = new Resource("Feathr", 9 + 10 * 32, Color.get(-1, 332, 443, 554));
 	public static Resource torch;
 	static {
 		try {
-			torch = new EntityResource("Torch", 13 + 4 * 32, Color.get(-1, 101, 404, 545), Torch.class);
+			torch = new EntityResource("Torch", 14 + 4 * 32, Color.get(-1, 210, 410, 550), Torch.class);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -81,6 +82,7 @@ public class Resource extends Dumpable {
 		if (name.equals("Cloud")) return cloud;
 		if (name.equals("Gem")) return gem;
 		if (name.equals("Torch")) return torch;
+		if (name.equals("Feathr")) return feather;
 		return null;
 	}
 

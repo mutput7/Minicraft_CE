@@ -50,6 +50,7 @@ public class Player extends Mob {
 		inventory.add(new FurnitureItem(new Workbench()));
 		inventory.add(new PowerGloveItem());
 		inventory.add(new ResourceItem(Resource.torch, 5));
+		inventory.add(new ResourceItem(Resource.feather, 5));
 	}
 
 	protected void levelUp() {

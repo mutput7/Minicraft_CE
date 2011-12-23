@@ -236,10 +236,21 @@ public class Level extends Dumpable {
 			}
 
 			int lvl = random.nextInt(maxLevel - minLevel + 1) + minLevel;
-			if (random.nextInt(2) == 0)
-				mob = new Slime(lvl);
-			else
-				mob = new Zombie(lvl);
+			if (depth == 0) {
+				int r = random.nextInt(3);
+				if (r == 0)
+					mob = new Slime(lvl);
+				else if (r == 1)
+					mob = new Zombie(lvl);
+				else
+					mob = new Chicken(lvl);
+			} else {
+				int r = random.nextInt(2);
+				if (r == 0)
+					mob = new Slime(lvl);
+				else
+					mob = new Zombie(lvl);
+			}
 
 			if (mob.findStartPos(this)) {
 				this.add(mob);
@@ -352,6 +363,8 @@ public class Level extends Dumpable {
 				e = new AirWizard(0);
 			} else if (cl.equals("Mob")) {
 				e = new Mob(0);
+			} else if (cl.equals("Chicken")) {
+				e = new Chicken(0);
 			} else if (cl.equals("Entity")) {
 				e = new Entity();
 			} else if (cl.equals("Oven")) {
