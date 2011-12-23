@@ -9,62 +9,35 @@ import com.mojang.ld22.gfx.Screen;
 import com.mojang.ld22.sound.Sound;
 
 @SuppressWarnings("unused")
-public class GUIMenu extends Menu {
-	private int selected = 0;
+public class GUIMenu extends SelectionMenu {
 
-	private int bbar;
-
-	private static final String[] options = { "Show black bar", "Hide black bar", "Back" };
-
-	public static int showbbar = 000;
-
-	public GUIMenu(TitleMenu titleMenu) {
+	public GUIMenu(Menu parent) {
+		super(parent, "", "Back");
 	}
 
-	public void tick() {
-		int bbar = GUIMenu.showbbar;
-		if (input.up.clicked) selected--;
-		if (input.down.clicked) selected++;
+	protected void postInit() {
+		if (game.hasBar)
+			options[0] = "Hide black bar";
+		else
+			options[0] = "Show black bar";
+	}
 
-		int len = options.length;
-		if (selected < 0) selected += len;
-		if (selected >= len) selected -= len;
-
-		if (input.attack.clicked || input.menu.clicked) {
-			if (selected == 0) {
-				GUIMenu.showbbar = 000;
-			}
-			if (selected == 1) {
-				GUIMenu.showbbar = -1;
-			}
-			if (selected == 2) game.setMenu(new TitleMenu());
+	@Override
+	protected void selectElement(int e) {
+		if (e == 0) {
+			toggleBar();
+		} else {
+			game.setMenu(parent);
 		}
 	}
 
-	public void render(Screen screen) {
-		screen.clear(0);
-
-		int h = 4;
-		int w = 13;
-		int titleColor = Color.get(0, 010, 131, 551);
-		int xo = (screen.w - w * 8) / 2;
-		int yo = 24;
-		for (int y = 0; y < h; y++) {
-			for (int x = 0; x < w; x++) {
-				screen.render(xo + x * 8, yo + y * 8, x + (y + 6) * 32, titleColor, 0);
-			}
-		}
-
-		for (int i = 0; i < 3; i++) {
-			String msg = options[i];
-			int col = Color.get(0, 222, 222, 222);
-			if (i == selected) {
-				msg = "> " + msg + " <";
-				col = Color.get(0, 555, 555, 555);
-			}
-			Font.draw(msg, screen, (screen.w - msg.length() * 8) / 2, (8 + i) * 8, col);
-		}
-
-		Font.draw("(Arrows/WASD,and X/C or ENTER/Space)", screen, 0, screen.h - 8, Color.get(0, 111, 111, 111));
+	private void toggleBar() {
+		boolean active = game.hasBar;
+		if (active)
+			options[0] = "Show black bar";
+		else
+			options[0] = "Hide black bar";
+		game.setBar(!active);
 	}
+
 }

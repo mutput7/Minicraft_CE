@@ -12,9 +12,16 @@ public class Menu {
 	protected Game game;
 	protected InputHandler input;
 
+	public Menu() {
+	}
+
 	public void init(Game game, InputHandler input) {
 		this.input = input;
 		this.game = game;
+		postInit();
+	}
+
+	protected void postInit() {
 	}
 
 	public void tick() {

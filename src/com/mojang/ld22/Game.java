@@ -59,6 +59,7 @@ public class Game extends Canvas implements Runnable, ComponentListener {
 	private int pendingLevelChange;
 	private int wonTimer = 0;
 	public boolean hasWon = false;
+	public boolean hasBar = true;
 
 	public Game() {
 		setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
@@ -109,6 +110,7 @@ public class Game extends Canvas implements Runnable, ComponentListener {
 			BufferedReader reader = new BufferedReader(new FileReader(filename));
 			StringTokenizer st = new StringTokenizer(reader.readLine());
 			gameTime = Integer.parseInt(st.nextToken());
+			hasBar = Integer.parseInt(st.nextToken()) == 1;
 			reader.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found : " + filename);
@@ -139,7 +141,7 @@ public class Game extends Canvas implements Runnable, ComponentListener {
 		try {
 			FileOutputStream writer = new FileOutputStream(filename);
 			StringBuffer str = new StringBuffer();
-			str.append(gameTime + " ");
+			str.append(gameTime + " " + (hasBar ? 1 : 0) + " ");
 			writer.write(str.toString().getBytes());
 			writer.close();
 		} catch (FileNotFoundException e) {
@@ -257,9 +259,6 @@ public class Game extends Canvas implements Runnable, ComponentListener {
 			input.releaseAll();
 		} else {
 			input.tick();
-			//if (input.quit.clicked && menu == null) {
-			//stop();
-			//}
 			if (menu != null) {
 				menu.tick();
 			} else {
@@ -370,35 +369,38 @@ public class Game extends Canvas implements Runnable, ComponentListener {
 	}
 
 	private void renderGui() {
+		int bgCol = getBarColor();
 		// draw gui background
-		for (int y = 0; y < 2; y++) {
-			for (int x = 0; x < WIDTH/8 + 1; x++) {
-				screen.render(x * 8, screen.h - 16 + y * 8, 0 + 12 * 32, Color.get(GUIMenu.showbbar, GUIMenu.showbbar, GUIMenu.showbbar, GUIMenu.showbbar), 0);
+		if (hasBar) {
+			for (int y = 0; y < 2; y++) {
+				for (int x = 0; x < WIDTH/8 + 1; x++) {
+					screen.render(x * 8, screen.h - 16 + y * 8, 0 + 12 * 32, Color.get(bgCol, bgCol, bgCol, bgCol), 0);
+				}
 			}
 		}
 
 		// display health
 		for (int i = 0; i < 10; i++) {
 			if (i < player.health*10/player.maxHealth)
-				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(GUIMenu.showbbar, 200, 500, 533), 0);
+				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(bgCol, 200, 500, 533), 0);
 			else
-				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(GUIMenu.showbbar, 100, 000, 000), 0);
+				screen.render(i * 8, screen.h - 16, 0 + 12 * 32, Color.get(bgCol, 100, 000, 000), 0);
 		}
 
 		// display stamina
 		if (player.staminaRechargeDelay > 0) {
 			for (int i = 0; i < 10; i++) {
 				if (player.staminaRechargeDelay / 4 % 2 == 0)
-					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(GUIMenu.showbbar, 555, 000, 000), 0);
+					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(bgCol, 555, 000, 000), 0);
 				else
-					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(GUIMenu.showbbar, 110, 000, 000), 0);
+					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(bgCol, 110, 000, 000), 0);
 			}
 		} else {
 			for (int i = 0; i < 10; i++) {
 				if (i <= player.stamina*10/player.maxStamina)
-					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(GUIMenu.showbbar, 220, 550, 553), 0);
+					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(bgCol, 220, 550, 553), 0);
 				else
-					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(GUIMenu.showbbar, 110, 000, 000), 0);
+					screen.render(i * 8, screen.h - 8, 1 + 12 * 32, Color.get(bgCol, 110, 000, 000), 0);
 			}
 		}
 		// draw active item
@@ -407,7 +409,7 @@ public class Game extends Canvas implements Runnable, ComponentListener {
 		}
 
 		// draw lvl
-		Font.draw("Level: "+player.lvl, screen, screen.w-75, screen.h-9, Color.get(GUIMenu.showbbar, 333, 333, 333));
+		Font.draw("Level: "+player.lvl, screen, screen.w-75, screen.h-9, Color.get(bgCol, 333, 333, 333));
 
 		if (menu != null) {
 			menu.render(screen);
@@ -478,4 +480,16 @@ public class Game extends Canvas implements Runnable, ComponentListener {
 	}
 	public void componentMoved(ComponentEvent e) {
 	}
+
+	public void setBar(boolean bar) {
+		hasBar = bar;
+	}
+
+	public int getBarColor() {
+		if (hasBar)
+			return 000;
+		else
+			return -1;
+	}
+
 }
