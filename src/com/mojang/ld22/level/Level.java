@@ -370,6 +370,8 @@ public class Level extends Dumpable {
 				e = new Furniture("name");
 			} else if (cl.equals("Lantern")) {
 				e = new Lantern();
+			} else if (cl.equals("Torch")) {
+				e = new Torch();
 			} else if (cl.equals("Spark")) {
 				//e = new Spark(null, 0, 0); // don't load spark
 			} else if (cl.equals("ItemEntity")) {

@@ -240,7 +240,6 @@ public class Game extends Canvas implements Runnable, ComponentListener {
 			if (shouldRender) {
 				frames++;
 				render();
-				screen.unfreeze();
 			}
 
 			if (System.currentTimeMillis() - lastTimer1 > 1000) {
@@ -320,6 +319,7 @@ public class Game extends Canvas implements Runnable, ComponentListener {
 			return;
 		}
 
+		if (screen != null) screen.tick();
 		if (screen != null && screen.isFrozen()) return;
 
 		int xScroll = player.x - screen.w / 2;

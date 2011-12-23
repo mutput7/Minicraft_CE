@@ -16,7 +16,7 @@ public class Screen {
 	public int[] pixels;
 
 	private SpriteSheet sheet;
-	private boolean frozen = false;
+	private int frozeTime = 0;
 
 	public Screen(int w, int h, SpriteSheet sheet) {
 		this.sheet = sheet;
@@ -44,19 +44,23 @@ public class Screen {
 	}
 
 	public void freeze() {
-		frozen = true;
+		frozeTime = 60/2;
 	}
 
 	public void unfreeze() {
-		frozen = false;
+		frozeTime = 0;
 	}
 
 	public boolean isFrozen() {
-		return frozen;
+		return frozeTime > 0;
+	}
+
+	public void tick() {
+		if (frozeTime > 0) frozeTime--;
 	}
 
 	public void clear(int color) {
-		if (frozen) return;
+		if (isFrozen()) return;
 		for (int i = 0; i < pixels.length; i++)
 			pixels[i] = color;
 	}
@@ -68,7 +72,7 @@ public class Screen {
 	 */
 
 	public void render(int xp, int yp, int tile, int colors, int bits) {
-		if (frozen) return;
+		if (isFrozen()) return;
 		xp -= xOffset;
 		yp -= yOffset;
 		boolean mirrorX = (bits & BIT_MIRROR_X) > 0;
@@ -101,7 +105,7 @@ public class Screen {
 	private int[] dither = new int[] { 0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5, };
 
 	public void overlay(Screen screen2, int xa, int ya) {
-		if (frozen) return;
+		if (isFrozen()) return;
 		int[] oPixels = screen2.pixels;
 		int i = 0;
 		for (int y = 0; y < h; y++) {
@@ -114,7 +118,7 @@ public class Screen {
 	}
 
 	public void renderLight(int x, int y, int r) {
-		if (frozen) return;
+		if (isFrozen()) return;
 		x -= xOffset;
 		y -= yOffset;
 		int x0 = x - r;

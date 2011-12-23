@@ -3,12 +3,7 @@ package com.mojang.ld22.crafting;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mojang.ld22.entity.Anvil;
-import com.mojang.ld22.entity.Chest;
-import com.mojang.ld22.entity.Furnace;
-import com.mojang.ld22.entity.Oven;
-import com.mojang.ld22.entity.Lantern;
-import com.mojang.ld22.entity.Workbench;
+import com.mojang.ld22.entity.*;
 import com.mojang.ld22.item.ToolType;
 import com.mojang.ld22.item.resource.Resource;
 
@@ -27,6 +22,7 @@ public class Crafting {
 			workbenchRecipes.add(new FurnitureRecipe(Workbench.class).addCost(Resource.wood, 20));
 			workbenchRecipes.add(new FurnitureRecipe(Chest.class).addCost(Resource.wood, 20));
 			workbenchRecipes.add(new FurnitureRecipe(Anvil.class).addCost(Resource.ironIngot, 5));
+			workbenchRecipes.add(new ResourceRecipe(Resource.torch, 5).addCost(Resource.wood, 5).addCost(Resource.coal, 1));
 
 			workbenchRecipes.add(new ToolRecipe(ToolType.sword, 0).addCost(Resource.wood, 5));
 			workbenchRecipes.add(new ToolRecipe(ToolType.axe, 0).addCost(Resource.wood, 5));
